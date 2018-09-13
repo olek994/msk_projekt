@@ -34,7 +34,7 @@ public abstract class BaseAmbassador extends NullFederateAmbassador {
     public int endSimInteractionHandle   = 0;
 
     public Map<Integer, Integer> objects = new HashMap<>();
-    public Map<Class<? extends BaseObject>, List<? extends BaseObject>> objectsInstance = new HashMap<>();
+    public Map<Class<? extends BaseObject>,BaseObject> objectsInstance = new HashMap<>();
 
     private double convertTime( LogicalTime logicalTime )
     {
@@ -80,13 +80,13 @@ public abstract class BaseAmbassador extends NullFederateAmbassador {
         }
     }
 
-    public <T extends BaseObject>  List<? extends BaseObject>  getObjectInstances(Class<T> clazz){
-        return this.objectsInstance.get(clazz);
+    public <T extends BaseObject>  T  getObjectInstances(Class<T> clazz){
+        return clazz.cast(this.objectsInstance.get(clazz));
     }
 
     public <T extends BaseObject> void removeObjectInstance(Class<T> clazz){
         if(this.objectsInstance.containsKey(clazz)){
-            this.objectsInstance.get(clazz).remove(0);
+            this.objectsInstance.remove(clazz);
         }
     }
     @Override

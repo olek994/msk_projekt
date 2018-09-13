@@ -1,16 +1,6 @@
 package msk;
 
-import hla.rti.AttributeHandleSet;
-import hla.rti.FederatesCurrentlyJoined;
-import hla.rti.FederationExecutionAlreadyExists;
-import hla.rti.FederationExecutionDoesNotExist;
-import hla.rti.LogicalTime;
-import hla.rti.LogicalTimeInterval;
-import hla.rti.RTIambassador;
-import hla.rti.RTIexception;
-import hla.rti.ResignAction;
-import hla.rti.SuppliedAttributes;
-import hla.rti.SuppliedParameters;
+import hla.rti.*;
 import hla.rti.jlc.EncodingHelpers;
 import hla.rti.jlc.RtiFactoryFactory;
 import hla13.Example13Federate;
@@ -114,7 +104,7 @@ public abstract class BaseFederate<T extends BaseAmbassador>{
         federationAmbassador.federateTime = timeToAdvance;
     }
 
-    protected abstract void update(double timeToAdvance);
+    protected abstract void update(double timeToAdvance) throws SaveInProgress, AttributeNotDefined, InvalidFederationTime, NameNotFound, RestoreInProgress, ObjectNotKnown, ObjectClassNotDefined, ConcurrentAccessAttempted, AttributeNotOwned, FederateNotExecutionMember, RTIinternalError;
 
     protected void init() throws Exception {
 
@@ -129,6 +119,7 @@ public abstract class BaseFederate<T extends BaseAmbassador>{
         while(!federationAmbassador.isReadyToRun) {
             rtiamb.tick();
         }
+        System.out.println("RUNNING");
     }
 
 

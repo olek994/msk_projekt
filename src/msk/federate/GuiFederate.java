@@ -1,22 +1,11 @@
 package msk.federate;
 
-import hla.rti.ConcurrentAccessAttempted;
-import hla.rti.FederateNotExecutionMember;
-import hla.rti.InteractionClassNotDefined;
-import hla.rti.InteractionClassNotPublished;
-import hla.rti.InteractionParameterNotDefined;
-import hla.rti.InvalidFederationTime;
-import hla.rti.LogicalTime;
-import hla.rti.NameNotFound;
-import hla.rti.RTIexception;
-import hla.rti.RTIinternalError;
-import hla.rti.RestoreInProgress;
-import hla.rti.SaveInProgress;
-import hla.rti.SuppliedParameters;
+import hla.rti.*;
 import hla.rti.jlc.RtiFactoryFactory;
 import javafx.application.Platform;
 import msk.BaseFederate;
 import msk.GuiApplication;
+import msk.Objects.Prom;
 import msk.ambassador.GuiAmbassador;
 
 /**
@@ -53,11 +42,23 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
         Platform.runLater(() -> {
             this.guiApplication.simTime.setText(this.federationAmbassador.federateTime+"");
         });
-        System.out.println("working");
 
         //co okreslony czas (tick) sprawdzane sa czy jakis obiekt sie pojawil
         // czy moze zostal zaktualizowany i modyfikowane jest gui
 
+
+        if(this.federationAmbassador.promClassFlag_newInstance){
+            Prom prom = this.federationAmbassador.getObjectInstances(Prom.class);
+            this.federationAmbassador.promClassFlag_newInstance = false;
+
+            System.out.println("DODANO PROM DO GUI");
+        }
+        if(this.federationAmbassador.promClassFlag_attrsUpdated){
+            Prom prom = this.federationAmbassador.getObjectInstances(Prom.class);
+            this.federationAmbassador.promClassFlag_attrsUpdated = false;
+
+            System.out.println("ZAKTUALIZOWANO PARAMETRY PROMU: "+ prom.getNumerStacji());
+        }
 
         if((sendStartInteraction ++) % 100 == 0){
             sendStartInteraction(timeToAdvance);
@@ -80,6 +81,15 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
         rtiamb.publishInteractionClass(stopSimulation);
 
 
+        this.federationAmbassador.promClass                     = rtiamb.getObjectClassHandle("ObjectRoot.Prom");
+        this.federationAmbassador.promAttr_liczbaWolnychMiejsc  = rtiamb.getAttributeHandle("liczbaWolnychMiejsc",this.federationAmbassador.promClass);
+        this.federationAmbassador.promAttr_numerStacji          = rtiamb.getAttributeHandle("numerStacji",this.federationAmbassador.promClass);
+
+        AttributeHandleSet attributes = RtiFactoryFactory.getRtiFactory().createAttributeHandleSet();
+        attributes.add(this.federationAmbassador.promAttr_liczbaWolnychMiejsc);
+        attributes.add(this.federationAmbassador.promAttr_numerStacji);
+
+        rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.promClass,attributes);
         //i dalej
     }
 

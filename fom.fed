@@ -14,7 +14,20 @@
     (class ObjectRoot 
       (attribute privilegeToDelete reliable timestamp)
       (class RTIprivate)
-
+      (class Prom
+        (attribute liczbaWolnychMiejsc reliable timestamp TestSpace)
+        (attribute numerStacji reliable timestamp TestSpace)
+      )
+      (class  Pasazer
+        (attribute typ reliable timestamp TestSpace)
+        (attribute numerStacji reliable timestamp TestSpace)
+        (attribute stacjaDocelowa reliable timestamp TestSpace)
+      )
+      (class Stacja
+        (attribute Numer reliable timestamp TestSpace)
+        (attribute maxDlugoscKolejki reliable timestamp TestSpace)
+        (attribute numerKolejnejStacji reliable timestamp TestSpace)
+      )
     )
   )
   (interactions 
@@ -23,6 +36,11 @@
       (class Finish reliable timestamp)
       (class KoniecSymulacji reliable timestamp)
       (class PoczatekSymulacji reliable timestamp)
+      (class ruszeniePromu reliable timestamp)
+      (class zatrzymaniePromu reliable timestamp)
+      (class dodaniePasazeraDoKolejki reliable timestamp)
+      (class usunieciePasazeraZKolejki reliable timestamp)
+      (class pasazerNaStacjiDocelowej reliable timestamp)
     )
   )
 )
