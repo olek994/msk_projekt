@@ -5,6 +5,7 @@ import hla.rti.jlc.RtiFactoryFactory;
 import javafx.application.Platform;
 import msk.BaseFederate;
 import msk.GuiApplication;
+import msk.Objects.Pasazer;
 import msk.Objects.Prom;
 import msk.Objects.Stacja;
 import msk.ambassador.GuiAmbassador;
@@ -48,6 +49,7 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
         // czy moze zostal zaktualizowany i modyfikowane jest gui
 
 
+        //--PROM--//
         if(this.federationAmbassador.promClassFlag_newInstance){
             Prom prom = this.federationAmbassador.getObjectInstances(Prom.class);
             this.federationAmbassador.promClassFlag_newInstance = false;
@@ -61,7 +63,7 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
             System.out.println("ZAKTUALIZOWANO PARAMETRY PROMU: "+ prom.getNumerStacji());
         }
 
-
+        //--STACJA--//
         if(this.federationAmbassador.stacjaClassFlag_newInstance){
             Stacja stacja = this.federationAmbassador.getStacjeObjInstances(this.federationAmbassador.stacjaOstatnioDodana);
             this.federationAmbassador.stacjaClassFlag_newInstance = false;
@@ -73,9 +75,26 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
             Stacja stacja = this.federationAmbassador.getStacjeObjInstances(this.federationAmbassador.stacjaOstatnioModyfikowana);
             this.federationAmbassador.stacjaClassFlag_attrsUpdated = false;
             this.federationAmbassador.stacjaOstatnioModyfikowana = 0;
-            String promNaStacji = stacja.getPromNaStacji() == 1 ? "Tak" : "Nie";
+            String promNaStacji = stacja.getPromNaStacji() == 1 ? "Tak" : "Nie"; // TODO zmienic na ikony stacji na gui
 
             System.out.println("ZAKTUALIZOWANO PARAMETRY Stacji: "+ stacja.getNumer()+", "+stacja.getMaxDlugoscKolejki()+", "+stacja.getNumerKolejnejStacji()+" LiczbaPasazerow: "+stacja.getLiczbaPasazerow()+" LiczbaSamochodow: "+stacja.getLiczbaSamochodow()+" Prom na stacji: "+ promNaStacji);
+        }
+
+
+        //--PASAZER--//
+        if(this.federationAmbassador.pasazerClassFlag_newInstance){
+            Pasazer pasazer = this.federationAmbassador.getPasazerObjInstances(this.federationAmbassador.pasazerOstatnioDodany);
+            this.federationAmbassador.pasazerClassFlag_newInstance = false;
+            this.federationAmbassador.pasazerOstatnioDodany = 0;
+
+            System.out.println("DODANO Pasazera DO GUI: "+pasazer.getId());
+        }
+        if(this.federationAmbassador.pasazerClassFlag_attrsUpdated){
+            Pasazer pasazer = this.federationAmbassador.getPasazerObjInstances(this.federationAmbassador.pasazerOstatnioModyfikowany);
+            this.federationAmbassador.pasazerClassFlag_attrsUpdated = false;
+            this.federationAmbassador.pasazerOstatnioModyfikowany   = 0;
+
+            System.out.println("ZAKTUALIZOWANO PARAMETRY Pasazera: "+pasazer.getId());
         }
 
         if((sendStartInteraction ++) % 100 == 0){
@@ -86,6 +105,8 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
             sendStopInteraction(timeToAdvance);
             federationAmbassador.running = false;
         }
+
+        //TODO DODAC GUI LABELKI
 
     }
 
@@ -99,10 +120,10 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
         rtiamb.publishInteractionClass(stopSimulation);
 
         //-----PROM----//
-        this.federationAmbassador.promClass                     = rtiamb.getObjectClassHandle("ObjectRoot.Prom");
-        this.federationAmbassador.promAttr_liczbaWolnychMiejsc  = rtiamb.getAttributeHandle("liczbaWolnychMiejsc",this.federationAmbassador.promClass);
-        this.federationAmbassador.promAttr_liczbaZajetychMiejsc  = rtiamb.getAttributeHandle("liczbaZajetychMiejsc",this.federationAmbassador.promClass);
-        this.federationAmbassador.promAttr_numerStacji          = rtiamb.getAttributeHandle("numerStacji",this.federationAmbassador.promClass);
+        this.federationAmbassador.promClass                         = rtiamb.getObjectClassHandle("ObjectRoot.Prom");
+        this.federationAmbassador.promAttr_liczbaWolnychMiejsc      = rtiamb.getAttributeHandle("liczbaWolnychMiejsc",this.federationAmbassador.promClass);
+        this.federationAmbassador.promAttr_liczbaZajetychMiejsc     = rtiamb.getAttributeHandle("liczbaZajetychMiejsc",this.federationAmbassador.promClass);
+        this.federationAmbassador.promAttr_numerStacji              = rtiamb.getAttributeHandle("numerStacji",this.federationAmbassador.promClass);
 
         AttributeHandleSet attributes = RtiFactoryFactory.getRtiFactory().createAttributeHandleSet();
         attributes.add(this.federationAmbassador.promAttr_liczbaWolnychMiejsc);
@@ -118,9 +139,9 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
         this.federationAmbassador.stacjaAttr_numer                = rtiamb.getAttributeHandle("numer",this.federationAmbassador.stacjaClass);
         this.federationAmbassador.stacjaAttr_MaxDlugoscKolejki    = rtiamb.getAttributeHandle("maxDlugoscKolejki",this.federationAmbassador.stacjaClass);
         this.federationAmbassador.stacjaAttr_numerKolejnejStacji  = rtiamb.getAttributeHandle("numerKolejnejStacji",this.federationAmbassador.stacjaClass);
-        this.federationAmbassador.stacjaAttr_LiczbaPasazerow  = rtiamb.getAttributeHandle("liczbaPasazerow",this.federationAmbassador.stacjaClass);
-        this.federationAmbassador.stacjaAttr_LiczbaSamochodow  = rtiamb.getAttributeHandle("liczbaSamochodow",this.federationAmbassador.stacjaClass);
-        this.federationAmbassador.stacjaAttr_PromNaStacji  = rtiamb.getAttributeHandle("promNaStacji",this.federationAmbassador.stacjaClass);
+        this.federationAmbassador.stacjaAttr_LiczbaPasazerow      = rtiamb.getAttributeHandle("liczbaPasazerow",this.federationAmbassador.stacjaClass);
+        this.federationAmbassador.stacjaAttr_LiczbaSamochodow     = rtiamb.getAttributeHandle("liczbaSamochodow",this.federationAmbassador.stacjaClass);
+        this.federationAmbassador.stacjaAttr_PromNaStacji         = rtiamb.getAttributeHandle("promNaStacji",this.federationAmbassador.stacjaClass);
 
         attributes = RtiFactoryFactory.getRtiFactory().createAttributeHandleSet();
         attributes.add(this.federationAmbassador.stacjaAttr_numer);
@@ -131,6 +152,23 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
         attributes.add(this.federationAmbassador.stacjaAttr_PromNaStacji);
 
         rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.stacjaClass,attributes);
+
+
+        //---PASAZER---//
+        this.federationAmbassador.pasazerClass                  = rtiamb.getObjectClassHandle("ObjectRoot.Pasazer");
+        this.federationAmbassador.pasazerAttr_id                = rtiamb.getAttributeHandle("id",this.federationAmbassador.pasazerClass);
+        this.federationAmbassador.pasazerAttr_typ               = rtiamb.getAttributeHandle("typ",this.federationAmbassador.pasazerClass);
+        this.federationAmbassador.pasazerAttr_numerStacji       = rtiamb.getAttributeHandle("numerStacji",this.federationAmbassador.pasazerClass);
+        this.federationAmbassador.pasazerAttr_stacjaDocelowa    = rtiamb.getAttributeHandle("stacjaDocelowa",this.federationAmbassador.pasazerClass);
+
+
+        attributes = RtiFactoryFactory.getRtiFactory().createAttributeHandleSet();
+        attributes.add(this.federationAmbassador.pasazerAttr_id);
+        attributes.add(this.federationAmbassador.pasazerAttr_typ);
+        attributes.add(this.federationAmbassador.pasazerAttr_numerStacji);
+        attributes.add(this.federationAmbassador.pasazerAttr_stacjaDocelowa);
+
+        rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.pasazerClass,attributes);
 
         //i dalej
     }

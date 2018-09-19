@@ -18,6 +18,7 @@ import hla.rti.jlc.EncodingHelpers;
 import hla.rti.jlc.RtiFactoryFactory;
 import msk.BaseAmbassador;
 import msk.BaseFederate;
+import msk.Objects.Pasazer;
 import msk.Objects.Prom;
 import msk.ambassador.StacjaAmbassador;
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
@@ -28,10 +29,11 @@ import java.util.List;
 public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
 
     private static final int DLUGOSC_KOLEJKI = 15;
+    private static final int LICZBA_STACJI = 6;
     private List<Integer> stacjeList;
     private boolean init = false;
     private int watting = 0;
-    private int poprzedniaStacjaPromu = 0;
+    private int poprzedniaStacjaPromu = -1;
     @Override
     protected void init() throws Exception {
         this.stacjeList = new ArrayList<>();
@@ -89,13 +91,31 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
             Prom prom = this.federationAmbassador.getObjectInstances(Prom.class);
             this.federationAmbassador.promClassFlag_attrsUpdated = false;
             if(prom.getNumerStacji() != poprzedniaStacjaPromu){
-                poprzedniaStacjaPromu = prom.getNumerStacji();
+                //TODO ZMIANA ATRYBUTOW POPRZEDNIEJ STACJI
                 update_StacjaAttr_PromNaStacji(prom.getNumerStacji(),1,timeToAdvance,prom.getNumerStacji()-1);
+                poprzedniaStacjaPromu = prom.getNumerStacji();
             }
 
 
         }
 
+        //--PASAZER--//
+        if(this.federationAmbassador.pasazerClassFlag_newInstance){
+            Pasazer pasazer = this.federationAmbassador.getPasazerObjInstances(this.federationAmbassador.pasazerOstatnioDodany);
+            this.federationAmbassador.pasazerClassFlag_newInstance = false;
+            this.federationAmbassador.pasazerOstatnioDodany = 0;
+
+            System.out.println("WykrytoPasazeraPrzez stacje: "+pasazer.getId());
+        }
+        if(this.federationAmbassador.pasazerClassFlag_attrsUpdated){
+            Pasazer pasazer = this.federationAmbassador.getPasazerObjInstances(this.federationAmbassador.pasazerOstatnioModyfikowany);
+            this.federationAmbassador.pasazerClassFlag_attrsUpdated = false;
+            this.federationAmbassador.pasazerOstatnioModyfikowany   = 0;
+
+            System.out.println("ZAKTUALIZOWANO PARAMETRY Pasazera: "+pasazer.getId());
+        }
+
+        //TODO DODAC REAGOWANIE NA KTOREJ STACJI JEST PASAZER
 
     }
 
@@ -130,6 +150,24 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
         attributes.add(this.federationAmbassador.promAttr_numerStacji);
 
         rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.promClass,attributes);
+
+
+
+        //---PASAZER---//
+        this.federationAmbassador.pasazerClass                  = rtiamb.getObjectClassHandle("ObjectRoot.Pasazer");
+        this.federationAmbassador.pasazerAttr_id                = rtiamb.getAttributeHandle("id",this.federationAmbassador.pasazerClass);
+        this.federationAmbassador.pasazerAttr_typ               = rtiamb.getAttributeHandle("typ",this.federationAmbassador.pasazerClass);
+        this.federationAmbassador.pasazerAttr_numerStacji       = rtiamb.getAttributeHandle("numerStacji",this.federationAmbassador.pasazerClass);
+        this.federationAmbassador.pasazerAttr_stacjaDocelowa    = rtiamb.getAttributeHandle("stacjaDocelowa",this.federationAmbassador.pasazerClass);
+
+
+        attributes = RtiFactoryFactory.getRtiFactory().createAttributeHandleSet();
+        attributes.add(this.federationAmbassador.pasazerAttr_id);
+        attributes.add(this.federationAmbassador.pasazerAttr_typ);
+        attributes.add(this.federationAmbassador.pasazerAttr_numerStacji);
+        attributes.add(this.federationAmbassador.pasazerAttr_stacjaDocelowa);
+
+        rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.pasazerClass,attributes);
 
     }
 

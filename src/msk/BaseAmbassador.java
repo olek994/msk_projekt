@@ -36,6 +36,7 @@ public abstract class BaseAmbassador extends NullFederateAmbassador {
     public Map<Integer, Integer> objects = new HashMap<>();
     public Map<Class<? extends BaseObject>,BaseObject> objectsInstance = new HashMap<>();
     public Map<Integer,BaseObject> stacjeObjInstance = new HashMap<>();
+    public Map<Integer,BaseObject> pasazerObjInstance = new HashMap<>();
 
     private double convertTime( LogicalTime logicalTime )
     {
@@ -89,9 +90,21 @@ public abstract class BaseAmbassador extends NullFederateAmbassador {
             return (T) this.stacjeObjInstance.get(numerStacji);
     }
 
+    public <T extends BaseObject> T getPasazerObjInstances(Integer idPasazera){
+            return (T) this.pasazerObjInstance.get(idPasazera);
+    }
+
+
+
     public  void removeStacjeObjInstances(Integer numerStacji){
         if(this.stacjeObjInstance.containsKey(numerStacji)){
             this.stacjeObjInstance.remove(numerStacji);
+        }
+    }
+
+    public  void removePasazerObjInstances(Integer idPasazera){
+        if(this.stacjeObjInstance.containsKey(idPasazera)){
+            this.stacjeObjInstance.remove(idPasazera);
         }
     }
 

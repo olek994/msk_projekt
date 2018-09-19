@@ -59,7 +59,7 @@ public class StatystykaFederate extends BaseFederate<StatystykaAmbassador> {
 
         // TODO RtiFactory
 
-        rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.promClass, attributes);
+        //rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.promClass, attributes);
 
 
         this.federationAmbassador.stacjaClass = rtiamb.getObjectClassHandle("ObjectRoot.Stacja");
@@ -72,7 +72,7 @@ public class StatystykaFederate extends BaseFederate<StatystykaAmbassador> {
 
         // TODO RtiFactory
 
-        rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.stacjaClass, attributes);
+        //rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.stacjaClass, attributes);
 
 
         //TODO PASAZER
