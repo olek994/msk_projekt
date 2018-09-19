@@ -6,6 +6,7 @@ import javafx.application.Platform;
 import msk.BaseFederate;
 import msk.GuiApplication;
 import msk.Objects.Prom;
+import msk.Objects.Stacja;
 import msk.ambassador.GuiAmbassador;
 
 /**
@@ -60,6 +61,23 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
             System.out.println("ZAKTUALIZOWANO PARAMETRY PROMU: "+ prom.getNumerStacji());
         }
 
+
+        if(this.federationAmbassador.stacjaClassFlag_newInstance){
+            Stacja stacja = this.federationAmbassador.getStacjeObjInstances(this.federationAmbassador.stacjaOstatnioDodana);
+            this.federationAmbassador.stacjaClassFlag_newInstance = false;
+            this.federationAmbassador.stacjaOstatnioDodana = 0;
+
+            System.out.println("DODANO Stacje DO GUI: "+stacja.getNumer());
+        }
+        if(this.federationAmbassador.stacjaClassFlag_attrsUpdated){
+            Stacja stacja = this.federationAmbassador.getStacjeObjInstances(this.federationAmbassador.stacjaOstatnioModyfikowana);
+            this.federationAmbassador.stacjaClassFlag_attrsUpdated = false;
+            this.federationAmbassador.stacjaOstatnioModyfikowana = 0;
+            String promNaStacji = stacja.getPromNaStacji() == 1 ? "Tak" : "Nie";
+
+            System.out.println("ZAKTUALIZOWANO PARAMETRY Stacji: "+ stacja.getNumer()+", "+stacja.getMaxDlugoscKolejki()+", "+stacja.getNumerKolejnejStacji()+" LiczbaPasazerow: "+stacja.getLiczbaPasazerow()+" LiczbaSamochodow: "+stacja.getLiczbaSamochodow()+" Prom na stacji: "+ promNaStacji);
+        }
+
         if((sendStartInteraction ++) % 100 == 0){
             sendStartInteraction(timeToAdvance);
         }
@@ -80,16 +98,40 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
         int stopSimulation = rtiamb.getInteractionClassHandle("InteractionRoot.KoniecSymulacji");
         rtiamb.publishInteractionClass(stopSimulation);
 
-
+        //-----PROM----//
         this.federationAmbassador.promClass                     = rtiamb.getObjectClassHandle("ObjectRoot.Prom");
         this.federationAmbassador.promAttr_liczbaWolnychMiejsc  = rtiamb.getAttributeHandle("liczbaWolnychMiejsc",this.federationAmbassador.promClass);
+        this.federationAmbassador.promAttr_liczbaZajetychMiejsc  = rtiamb.getAttributeHandle("liczbaZajetychMiejsc",this.federationAmbassador.promClass);
         this.federationAmbassador.promAttr_numerStacji          = rtiamb.getAttributeHandle("numerStacji",this.federationAmbassador.promClass);
 
         AttributeHandleSet attributes = RtiFactoryFactory.getRtiFactory().createAttributeHandleSet();
         attributes.add(this.federationAmbassador.promAttr_liczbaWolnychMiejsc);
+        attributes.add(this.federationAmbassador.promAttr_liczbaZajetychMiejsc);
         attributes.add(this.federationAmbassador.promAttr_numerStacji);
 
         rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.promClass,attributes);
+
+
+        //----STACJA----//
+
+        this.federationAmbassador.stacjaClass                     = rtiamb.getObjectClassHandle("ObjectRoot.Stacja");
+        this.federationAmbassador.stacjaAttr_numer                = rtiamb.getAttributeHandle("numer",this.federationAmbassador.stacjaClass);
+        this.federationAmbassador.stacjaAttr_MaxDlugoscKolejki    = rtiamb.getAttributeHandle("maxDlugoscKolejki",this.federationAmbassador.stacjaClass);
+        this.federationAmbassador.stacjaAttr_numerKolejnejStacji  = rtiamb.getAttributeHandle("numerKolejnejStacji",this.federationAmbassador.stacjaClass);
+        this.federationAmbassador.stacjaAttr_LiczbaPasazerow  = rtiamb.getAttributeHandle("liczbaPasazerow",this.federationAmbassador.stacjaClass);
+        this.federationAmbassador.stacjaAttr_LiczbaSamochodow  = rtiamb.getAttributeHandle("liczbaSamochodow",this.federationAmbassador.stacjaClass);
+        this.federationAmbassador.stacjaAttr_PromNaStacji  = rtiamb.getAttributeHandle("promNaStacji",this.federationAmbassador.stacjaClass);
+
+        attributes = RtiFactoryFactory.getRtiFactory().createAttributeHandleSet();
+        attributes.add(this.federationAmbassador.stacjaAttr_numer);
+        attributes.add(this.federationAmbassador.stacjaAttr_MaxDlugoscKolejki);
+        attributes.add(this.federationAmbassador.stacjaAttr_numerKolejnejStacji);
+        attributes.add(this.federationAmbassador.stacjaAttr_LiczbaPasazerow);
+        attributes.add(this.federationAmbassador.stacjaAttr_LiczbaSamochodow);
+        attributes.add(this.federationAmbassador.stacjaAttr_PromNaStacji);
+
+        rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.stacjaClass,attributes);
+
         //i dalej
     }
 

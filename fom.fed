@@ -16,6 +16,7 @@
       (class RTIprivate)
       (class Prom
         (attribute liczbaWolnychMiejsc reliable timestamp TestSpace)
+        (attribute liczbaZajetychMiejsc reliable timestamp TestSpace)
         (attribute numerStacji reliable timestamp TestSpace)
       )
       (class  Pasazer
@@ -24,9 +25,12 @@
         (attribute stacjaDocelowa reliable timestamp TestSpace)
       )
       (class Stacja
-        (attribute Numer reliable timestamp TestSpace)
+        (attribute numer reliable timestamp TestSpace)
+        (attribute liczbaPasazerow reliable timestamp TestSpace)
+        (attribute liczbaSamochodow reliable timestamp TestSpace)
         (attribute maxDlugoscKolejki reliable timestamp TestSpace)
         (attribute numerKolejnejStacji reliable timestamp TestSpace)
+        (attribute promNaStacji reliable timestamp TestSpace)
       )
     )
   )

@@ -7,6 +7,7 @@ import hla.rti.jlc.EncodingHelpers;
 import jdk.nashorn.internal.runtime.regexp.joni.EncodingHelper;
 import msk.BaseAmbassador;
 import msk.Objects.Prom;
+import msk.Objects.Stacja;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,14 +22,28 @@ public class GuiAmbassador extends BaseAmbassador {
     public int promClass                     =0;
     public int promAttr_liczbaWolnychMiejsc  =0;
     public int promAttr_numerStacji          =0;
+    public int promAttr_liczbaZajetychMiejsc =0;
     public boolean promClassFlag_newInstance  = false;
     public boolean promClassFlag_attrsUpdated = false;
+
+    public int stacjaClass                     =0;
+    public int stacjaAttr_MaxDlugoscKolejki    =0;
+    public int stacjaAttr_numer                =0;
+    public int stacjaAttr_numerKolejnejStacji  =0;
+    public int stacjaAttr_LiczbaPasazerow      =0;
+    public int stacjaAttr_LiczbaSamochodow     =0;
+    public int stacjaAttr_PromNaStacji         =0;
+    public int stacjaNumerStworzenia           =1;
+    public int stacjaOstatnioModyfikowana      =0;
+    public int stacjaOstatnioDodana            =0;
+    public boolean stacjaClassFlag_newInstance  = false;
+    public boolean stacjaClassFlag_attrsUpdated = false;
+
 
 
     @Override
     public void reflectAttributeValues(int theObject, ReflectedAttributes theAttributes, byte[] tag, LogicalTime theTime, EventRetractionHandle retractionHandle) {
         //w zaleznosci od theObjcet beda ify ktore cos beda robic na gui
-        System.out.println(this.objects);
         if(this.objects.get(theObject) == this.promClass){
 
             Prom prom =  getObjectInstances(Prom.class);
@@ -41,6 +56,8 @@ public class GuiAmbassador extends BaseAmbassador {
                         prom.setLiczbaWolnychMiejsc(EncodingHelpers.decodeInt(value));
                     } else if (handle == promAttr_numerStacji && value != null){
                         prom.setNumerStacji(EncodingHelpers.decodeInt(value));
+                    } else if (handle == promAttr_liczbaZajetychMiejsc && value != null){
+                        prom.setLiczbaZajetychMiejsc(EncodingHelpers.decodeInt(value));
                     }
 
                 }catch(Exception ex){
@@ -50,7 +67,55 @@ public class GuiAmbassador extends BaseAmbassador {
             this.objectsInstance.replace(Prom.class, prom);
             this.promClassFlag_attrsUpdated = true;
 
+        }else if(this.objects.get(theObject) == this.stacjaClass){
+
+            //Wyszukanie ktora stacja zmienila stan
+            int numerStacji = 0;
+            for(int i = 0;i<theAttributes.size();i++){
+                try{
+                    int handle = theAttributes.getAttributeHandle(i);
+                    byte[] value = theAttributes.getValue(i);
+
+                    if(handle == stacjaAttr_numer && value != null){
+                        numerStacji = EncodingHelpers.decodeInt(value);
+                    }
+
+                }catch(Exception ex){
+                    ex.printStackTrace();
+                }
+            }
+
+            //modyfikowanie wartosci zmiennych stacji
+            Stacja stacja =  getStacjeObjInstances(numerStacji);
+            for(int i = 0;i<theAttributes.size();i++){
+                try{
+                    int handle = theAttributes.getAttributeHandle(i);
+                    byte[] value = theAttributes.getValue(i);
+
+                    if(handle == stacjaAttr_numer && value != null){
+                        stacja.setNumer(EncodingHelpers.decodeInt(value));
+                    } else if (handle == stacjaAttr_MaxDlugoscKolejki && value != null){
+                        stacja.setMaxDlugoscKolejki(EncodingHelpers.decodeInt(value));
+                    } else if (handle == stacjaAttr_numerKolejnejStacji && value != null){
+                        stacja.setNumerKolejnejStacji(EncodingHelpers.decodeInt(value));
+                    } else if (handle == stacjaAttr_LiczbaPasazerow && value != null){
+                        stacja.setLiczbaPasazerow(EncodingHelpers.decodeInt(value));
+                    } else if (handle == stacjaAttr_LiczbaSamochodow && value != null){
+                        stacja.setLiczbaSamochodow(EncodingHelpers.decodeInt(value));
+                    } else if (handle == stacjaAttr_PromNaStacji && value != null){
+                        stacja.setPromNaStacji(EncodingHelpers.decodeInt(value));
+                    }
+
+                }catch(Exception ex){
+                    ex.printStackTrace();
+                }
+            }
+            this.stacjeObjInstance.replace(numerStacji, stacja);
+            this.stacjaClassFlag_attrsUpdated = true;
+            this.stacjaOstatnioModyfikowana = numerStacji;
+
         }
+
 
     }
 
@@ -64,6 +129,16 @@ public class GuiAmbassador extends BaseAmbassador {
             this.objectsInstance.put(Prom.class,prom);
             this.promClassFlag_newInstance = true;
         }
+        if(theObjectClass == this.stacjaClass){
+            System.out.println("DiscoverObject Stacja");
+            Stacja stacja = new Stacja();
+            stacja.setInstance(theObject);
+            this.stacjeObjInstance.put(stacjaNumerStworzenia,stacja);
+            this.stacjaClassFlag_newInstance = true;
+            this.stacjaOstatnioDodana = stacjaNumerStworzenia;
+            stacjaNumerStworzenia++;
+        }
+
 
         //w zaleznosci od theObjcet beda dodawane nowe obiekt do HashMap
 

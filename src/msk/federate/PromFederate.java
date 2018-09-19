@@ -21,16 +21,14 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
 
         if(!init){
             init = true;
-            System.out.print("PIERWSZA ZMIANA");
-                updatePromObj_NumerStacji(23,timeToAdvance);
+                updatePromObj_NumerStacji(1,timeToAdvance);
         }
 
-        updatePromObj_NumerStacji(random.nextInt(29),timeToAdvance);
     }
 
     @Override
     protected void init() throws Exception {
-        this.promObj = createObject("PROM");
+        this.promObj = createObject("Prom");
     }
 
     @Override
@@ -38,11 +36,13 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
         //Publikacja promu
         int promClass                           =rtiamb.getObjectClassHandle("ObjectRoot.Prom");
         int promClassAttrLiczbaWolnychMiejsc    =rtiamb.getAttributeHandle("liczbaWolnychMiejsc",promClass);
+        int promClassAttrLiczbaZajetychMiejsc    =rtiamb.getAttributeHandle("liczbaZajetychMiejsc",promClass);
         int promClassAttrNumerStacji            =rtiamb.getAttributeHandle("numerStacji",promClass);
 
         AttributeHandleSet attributes = RtiFactoryFactory.getRtiFactory().createAttributeHandleSet();
         attributes.add(promClassAttrLiczbaWolnychMiejsc);
         attributes.add(promClassAttrNumerStacji);
+        attributes.add(promClassAttrLiczbaZajetychMiejsc);
 
         rtiamb.publishObjectClass(promClass,attributes);
 
@@ -58,6 +58,14 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
         SuppliedAttributes attributes = RtiFactoryFactory.getRtiFactory().createSuppliedAttributes();
         int classHandle = rtiamb.getObjectClass(this.promObj);
         int attrHandle = rtiamb.getAttributeHandle( "numerStacji", classHandle );
+        attributes.add(attrHandle, EncodingHelpers.encodeInt(value));
+        rtiamb.updateAttributeValues(this.promObj, attributes, generateTag(), convertTime(time));
+    }
+
+    private void updatePromObj_LiczbaZajetychMiejsc(int value,double time) throws SaveInProgress, AttributeNotDefined, InvalidFederationTime, RestoreInProgress, ObjectNotKnown, ConcurrentAccessAttempted, AttributeNotOwned, FederateNotExecutionMember, RTIinternalError, NameNotFound, ObjectClassNotDefined {
+        SuppliedAttributes attributes = RtiFactoryFactory.getRtiFactory().createSuppliedAttributes();
+        int classHandle = rtiamb.getObjectClass(this.promObj);
+        int attrHandle = rtiamb.getAttributeHandle( "liczbaZajetychMiejsc", classHandle );
         attributes.add(attrHandle, EncodingHelpers.encodeInt(value));
         rtiamb.updateAttributeValues(this.promObj, attributes, generateTag(), convertTime(time));
     }

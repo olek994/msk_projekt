@@ -104,7 +104,7 @@ public abstract class BaseFederate<T extends BaseAmbassador>{
         federationAmbassador.federateTime = timeToAdvance;
     }
 
-    protected abstract void update(double timeToAdvance) throws SaveInProgress, AttributeNotDefined, InvalidFederationTime, NameNotFound, RestoreInProgress, ObjectNotKnown, ObjectClassNotDefined, ConcurrentAccessAttempted, AttributeNotOwned, FederateNotExecutionMember, RTIinternalError;
+    protected abstract void update(double timeToAdvance) throws Exception;
 
     protected void init() throws Exception {
 
