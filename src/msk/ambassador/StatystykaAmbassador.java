@@ -3,7 +3,9 @@ package msk.ambassador;
 import hla.rti.EventRetractionHandle;
 import hla.rti.LogicalTime;
 import hla.rti.ReflectedAttributes;
+import hla.rti.jlc.EncodingHelpers;
 import msk.BaseAmbassador;
+import msk.Objects.Pasazer;
 import msk.Objects.Prom;
 import msk.Objects.Stacja;
 
@@ -34,26 +36,97 @@ public class StatystykaAmbassador extends BaseAmbassador {
     public boolean stacjaClassFlag_newInstance  = false;
     public boolean stacjaClassFlag_attrsUpdated = false;
 
-    // TODO DODAC PASAZERA
+    public int pasazerClass                      =0;
+    public int pasazerAttr_id                    =0;
+    public int pasazerAttr_typ                   =0;
+    public int pasazerAttr_numerStacji           =0;
+    public int pasazerAttr_stacjaDocelowa        =0;
+    public int pasazerNumerStworzenia            =1;
+    public int pasazerOstatnioDodany             =0;
+    public int pasazerOstatnioModyfikowany       =0;
+    public boolean pasazerClassFlag_newInstance  = false;
+    public boolean pasazerClassFlag_attrsUpdated = false;
+
 
 
     @Override
     public void reflectAttributeValues(int theObject, ReflectedAttributes theAttributes, byte[] tag, LogicalTime theTime, EventRetractionHandle retractionHandle) {
         if(this.objects.get(theObject) == this.promClass){
             Prom prom = getObjectInstances(Prom.class);
+            for(int i = 0;i<theAttributes.size();i++){
+                try{
+                    int handle = theAttributes.getAttributeHandle(i);
+                    byte[] value = theAttributes.getValue(i);
 
-        } else if(this.objects.get(theObject) == this.stacjaClass){
-            Stacja stacja = getObjectInstances(Stacja.class);
-        } // TODO Pasazer
+                    if(handle == promAttr_liczbaWolnychMiejsc && value != null){
+                        prom.setLiczbaWolnychMiejsc(EncodingHelpers.decodeInt(value));
+                    } else if (handle == promAttr_numerStacji && value != null){
+                        prom.setNumerStacji(EncodingHelpers.decodeInt(value));
+                    }
+
+                }catch(Exception ex){
+                    ex.printStackTrace();
+                }
+            }
+
+        }else if(this.objects.get(theObject) == this.stacjaClass) {
+
+            //Wyszukanie ktora stacja zmienila stan
+            int numerStacji = 0;
+            for (int i = 0; i < theAttributes.size(); i++) {
+                try {
+                    int handle = theAttributes.getAttributeHandle(i);
+                    byte[] value = theAttributes.getValue(i);
+
+                    if (handle == stacjaAttr_numer && value != null) {
+                        numerStacji = EncodingHelpers.decodeInt(value);
+                    }
+
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+            Stacja stacja = getStacjeObjInstances(numerStacji);
+
+        } else if(this.objects.get(theObject) == this.pasazerClass) {
+
+            //Wyszukanie ktora stacja zmienila stan
+            int idPasazera = 0;
+            for (int i = 0; i < theAttributes.size(); i++) {
+                try {
+                    int handle = theAttributes.getAttributeHandle(i);
+                    byte[] value = theAttributes.getValue(i);
+
+                    if (handle == pasazerAttr_id && value != null) {
+                        idPasazera = EncodingHelpers.decodeInt(value);
+                    }
+
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+            Pasazer pasazer = getPasazerObjInstances(idPasazera);
+        }
     }
 
     @Override
     public void discoverObjectInstance(int theObject, int theObjectClass, String objectName) {
         if(theObjectClass == this.promClass){
-
+            Prom prom = new Prom();
+            prom.setInstance(theObject);
+            this.objectsInstance.put(Prom.class, prom);
+            this.promClassFlag_newInstance = true;
         } else if(theObjectClass == this.stacjaClass){
-
-        } // TODO else if pasazerClass
+            Stacja stacja = new Stacja();
+            stacja.setInstance(theObject);
+            this.objectsInstance.put(Stacja.class, stacja);
+            this.stacjaClassFlag_newInstance = true;
+        } else if(theObjectClass == this.pasazerClass){
+            Pasazer pasazer = new Pasazer();
+            pasazer.setInstance(theObject);
+            this.objectsInstance.put(Pasazer.class, pasazer);
+            this.pasazerClassFlag_newInstance = true;
+        }
 
     }
 

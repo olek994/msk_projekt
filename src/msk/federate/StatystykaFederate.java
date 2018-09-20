@@ -2,7 +2,9 @@ package msk.federate;
 
 import hla.rti.AttributeHandleSet;
 import hla.rti.RTIexception;
+import hla.rti.jlc.RtiFactoryFactory;
 import msk.BaseFederate;
+import msk.Objects.Pasazer;
 import msk.Objects.Prom;
 import msk.Objects.Stacja;
 import msk.ambassador.StatystykaAmbassador;
@@ -45,7 +47,17 @@ public class StatystykaFederate extends BaseFederate<StatystykaAmbassador> {
             this.federationAmbassador.stacjaClassFlag_attrsUpdated = false;
         }
 
-        //TODO ADD PASAZER
+        if(this.federationAmbassador.pasazerClassFlag_newInstance) {
+            Pasazer pasazer = this.federationAmbassador.getObjectInstances(Pasazer.class);
+            //TODO
+            this.federationAmbassador.pasazerClassFlag_newInstance = false;
+        }
+
+        if(this.federationAmbassador.pasazerClassFlag_attrsUpdated) {
+            Pasazer pasazer = this.federationAmbassador.getObjectInstances(Pasazer.class);
+            //TODO
+            this.federationAmbassador.pasazerClassFlag_attrsUpdated = false;
+        }
 
     }
 
@@ -57,25 +69,44 @@ public class StatystykaFederate extends BaseFederate<StatystykaAmbassador> {
         this.federationAmbassador.promAttr_liczbaWolnychMiejsc  = rtiamb.getAttributeHandle("liczbaWolnychMiejsc", this.federationAmbassador.promClass);
         this.federationAmbassador.promAttr_liczbaZajetychMiejsc = rtiamb.getAttributeHandle("liczbaZajetychMiejsc", this.federationAmbassador.promClass);
 
-        // TODO RtiFactory
+        AttributeHandleSet attributes = RtiFactoryFactory.getRtiFactory().createAttributeHandleSet();
+        attributes.add(this.federationAmbassador.promAttr_numerStacji);
+        attributes.add(this.federationAmbassador.promAttr_liczbaWolnychMiejsc);
+        attributes.add(this.federationAmbassador.promAttr_liczbaZajetychMiejsc);
 
-        //rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.promClass, attributes);
-
-
-        this.federationAmbassador.stacjaClass = rtiamb.getObjectClassHandle("ObjectRoot.Stacja");
-        this.federationAmbassador.stacjaAttr_numer = rtiamb.getAttributeHandle("numer", this.federationAmbassador.stacjaClass);
-        this.federationAmbassador.stacjaAttr_numerKolejnejStacji = rtiamb.getAttributeHandle("numerKolejnejStacji", this.federationAmbassador.stacjaClass);
-        this.federationAmbassador.stacjaAttr_PromNaStacji = rtiamb.getAttributeHandle("PromNaStacji", this.federationAmbassador.stacjaClass);
-        this.federationAmbassador.stacjaAttr_MaxDlugoscKolejki = rtiamb.getAttributeHandle("MaxDlugoscKolejki", this.federationAmbassador.stacjaClass);
-        this.federationAmbassador.stacjaAttr_LiczbaPasazerow = rtiamb.getAttributeHandle("LiczbaPasazerow", this.federationAmbassador.stacjaClass);
-        this.federationAmbassador.stacjaAttr_LiczbaSamochodow = rtiamb.getAttributeHandle("LiczbaSamochodow", this.federationAmbassador.stacjaClass);
-
-        // TODO RtiFactory
-
-        //rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.stacjaClass, attributes);
+        rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.promClass, attributes);
 
 
-        //TODO PASAZER
+        this.federationAmbassador.stacjaClass                   = rtiamb.getObjectClassHandle("ObjectRoot.Stacja");
+        this.federationAmbassador.stacjaAttr_numer              = rtiamb.getAttributeHandle("numer", this.federationAmbassador.stacjaClass);
+        this.federationAmbassador.stacjaAttr_numerKolejnejStacji= rtiamb.getAttributeHandle("numerKolejnejStacji", this.federationAmbassador.stacjaClass);
+        this.federationAmbassador.stacjaAttr_PromNaStacji       = rtiamb.getAttributeHandle("PromNaStacji", this.federationAmbassador.stacjaClass);
+        this.federationAmbassador.stacjaAttr_MaxDlugoscKolejki  = rtiamb.getAttributeHandle("MaxDlugoscKolejki", this.federationAmbassador.stacjaClass);
+        this.federationAmbassador.stacjaAttr_LiczbaPasazerow    = rtiamb.getAttributeHandle("LiczbaPasazerow", this.federationAmbassador.stacjaClass);
+        this.federationAmbassador.stacjaAttr_LiczbaSamochodow   = rtiamb.getAttributeHandle("LiczbaSamochodow", this.federationAmbassador.stacjaClass);
+
+        attributes.add(this.federationAmbassador.stacjaAttr_numer);
+        attributes.add(this.federationAmbassador.stacjaAttr_numerKolejnejStacji);
+        attributes.add(this.federationAmbassador.stacjaAttr_PromNaStacji);
+        attributes.add(this.federationAmbassador.stacjaAttr_MaxDlugoscKolejki);
+        attributes.add(this.federationAmbassador.stacjaAttr_LiczbaPasazerow);
+        attributes.add(this.federationAmbassador.stacjaAttr_LiczbaSamochodow);
+
+        rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.stacjaClass, attributes);
+
+
+        this.federationAmbassador.pasazerClass                  = rtiamb.getObjectClassHandle("ObjectRoot.Pasazer");
+        this.federationAmbassador.pasazerAttr_id                = rtiamb.getAttributeHandle("id", this.federationAmbassador.pasazerClass);
+        this.federationAmbassador.pasazerAttr_typ               = rtiamb.getAttributeHandle("typ", this.federationAmbassador.pasazerClass);
+        this.federationAmbassador.pasazerAttr_numerStacji       = rtiamb.getAttributeHandle("numerStacji", this.federationAmbassador.pasazerClass);
+        this.federationAmbassador.pasazerAttr_stacjaDocelowa    = rtiamb.getAttributeHandle("stacjaDocelowa", this.federationAmbassador.pasazerClass);
+
+        attributes.add(this.federationAmbassador.pasazerAttr_id);
+        attributes.add(this.federationAmbassador.pasazerAttr_typ);
+        attributes.add(this.federationAmbassador.pasazerAttr_numerStacji);
+        attributes.add(this.federationAmbassador.pasazerAttr_stacjaDocelowa);
+
+        rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.pasazerClass, attributes);
     }
 
     public static void main(String[] args) {
