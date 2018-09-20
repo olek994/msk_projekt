@@ -20,10 +20,19 @@ import msk.BaseFederate;
 import msk.ambassador.PasazerAmbassador;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class PasazerFederate extends BaseFederate<PasazerAmbassador> {
+
+    private static final int LICZBA_PASAZEROW = 5;
+    private static final int LICZBA_SAMOCHODOW = 2;
+
+    private Map<Integer,Integer> max_liczba_pasazerow;
+    private Map<Integer,Integer> max_liczba_samochodow;
+
 
     private List<Integer> pasazerList;
     private int waitToaddNewPassanger = 0;
@@ -35,15 +44,27 @@ public class PasazerFederate extends BaseFederate<PasazerAmbassador> {
         int numerStacji;
         int stacjaDocelowa = 0;
         int typ;
-        if(waitToaddNewPassanger == 20){
+        if(waitToaddNewPassanger == 5){
             numerStacji = random.nextInt(6)+1;
             while (stacjaDocelowa == numerStacji){
                 stacjaDocelowa = random.nextInt(6)+1;
             }
             typ = random.nextInt(2)+1;
-            pasazerList.add(createObject("Pasazer"));
-            update_PasazerAttr(indexOfNewPassanger,numerStacji,typ,stacjaDocelowa,timeToAdvance,numerStacji-1);
-            indexOfNewPassanger++;
+            if(typ == 1){
+                if(max_liczba_pasazerow.get(numerStacji) > 0){
+                    pasazerList.add(createObject("Pasazer"));
+                    update_PasazerAttr(indexOfNewPassanger,numerStacji,typ,stacjaDocelowa,timeToAdvance,numerStacji-1);
+                    max_liczba_pasazerow.replace(numerStacji,max_liczba_pasazerow.get(numerStacji)-1);
+                    indexOfNewPassanger++;
+                }
+            }else if (typ == 2){
+                if(max_liczba_samochodow.get(numerStacji) > 0){
+                    pasazerList.add(createObject("Pasazer"));
+                    update_PasazerAttr(indexOfNewPassanger,numerStacji,typ,stacjaDocelowa,timeToAdvance,numerStacji-1);
+                    max_liczba_samochodow.replace(numerStacji,max_liczba_samochodow.get(numerStacji)-1);
+                    indexOfNewPassanger++;
+                }
+            }
             waitToaddNewPassanger = 0;
         }
 
@@ -55,6 +76,14 @@ public class PasazerFederate extends BaseFederate<PasazerAmbassador> {
     protected void init() throws Exception {
         pasazerList = new ArrayList<>();
         random = new Random();
+        max_liczba_pasazerow = new HashMap<>();
+        max_liczba_samochodow = new HashMap<>();
+
+        for(int i = 1;i<=6;i++){
+            max_liczba_pasazerow.put(i,5);
+            max_liczba_samochodow.put(i,3);
+        }
+
     }
 
     @Override

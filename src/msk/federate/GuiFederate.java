@@ -66,6 +66,12 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
             Prom prom = this.federationAmbassador.getObjectInstances(Prom.class);
             this.federationAmbassador.promClassFlag_attrsUpdated = false;
 
+            System.out.println("LICZBA MIEJSC: "+ prom.getLiczbaWolnychMiejsc());
+
+            Platform.runLater(() -> {
+                this.guiApplication.liczbaWolnychMiejscNaPromie.setText(prom.getLiczbaWolnychMiejsc()+"");
+            });
+
             System.out.println("ZAKTUALIZOWANO PARAMETRY PROMU: "+ prom.getNumerStacji());
         }
 

@@ -47,6 +47,8 @@ public class GuiApplication extends Application {
     @FXML public ImageView imagePiataStacja;
     @FXML public ImageView imageSzostaStacja;
 
+    @FXML public Label liczbaWolnychMiejscNaPromie;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader();

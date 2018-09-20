@@ -46,6 +46,7 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
     private int poprzedniaStacja = 0;
     private int watting = 0;
     private Random random;
+    private int liczbaWolnychMIejscNaStacji = PromFederate.LICZBA_WOLNYCH_MIEJSC;
     @Override
     protected void init() throws Exception {
         this.stacjeList = new ArrayList<>();
@@ -96,6 +97,7 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
                 update_StacjaAttr_PromNaStacji(prom.getNumerStacji(),1,timeToAdvance,prom.getNumerStacji()-1);
                 poprzedniaStacjaPromu = prom.getNumerStacji();
             }
+            liczbaWolnychMIejscNaStacji = prom.getLiczbaWolnychMiejsc();
         }
 
         if(poprzedniDoWylaczenia && oczekiwanieNaWylaczenie == 5){
@@ -108,12 +110,11 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
         Prom prom = this.federationAmbassador.getObjectInstances(Prom.class);
 
         if (prom != null) {
-            if(prom.getNumerStacji() == poprzedniaStacjaPromu && watting == 5){
+            if(prom.getNumerStacji() == poprzedniaStacjaPromu && watting == 20){
                 int losowyWybor = random.nextInt(2)+1;
-
-                if(losowyWybor == 1 && liczbaPasazerowNaStacji.get(poprzedniaStacjaPromu) > 0){
+                if(losowyWybor == 1 && liczbaPasazerowNaStacji.get(poprzedniaStacjaPromu) > 0 && liczbaWolnychMIejscNaStacji >= 1){
                     update_StacjaAttr_usun_Pasazer(poprzedniaStacjaPromu,timeToAdvance,poprzedniaStacjaPromu-1);
-                }else if (losowyWybor == 2 && liczbaSamochodowNaStacji.get(poprzedniaStacjaPromu) > 0){
+                }else if (losowyWybor == 2 && liczbaSamochodowNaStacji.get(poprzedniaStacjaPromu) > 0 && liczbaWolnychMIejscNaStacji >= 3){
                     update_StacjaAttr_usun_Samochod(poprzedniaStacjaPromu,timeToAdvance,poprzedniaStacjaPromu-1);
                 }
                 watting = 0;

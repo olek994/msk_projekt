@@ -3,29 +3,47 @@ package msk.federate;
 import hla.rti.*;
 import hla.rti.jlc.EncodingHelpers;
 import hla.rti.jlc.RtiFactoryFactory;
+import javafx.application.Platform;
+import javafx.scene.image.Image;
 import msk.BaseFederate;
+import msk.Objects.Stacja;
 import msk.ambassador.PromAmbassador;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class PromFederate extends BaseFederate<PromAmbassador> {
 
+    public static int LICZBA_WOLNYCH_MIEJSC = 10;
+
     private int promObj = 0;
     private Random random = new Random();
     private boolean init = false;
-    private float speed = 1f;
     private int waittingForNextStation = 0;
     private int numerStacji = 0;
     private boolean cofanie = false;
+    private Map<Integer,Integer> liczbaPasazerowNaStacji;
+    private Map<Integer,Integer> liczbaSamochodowNaStacji;
+    private int watting = 0;
+
     @Override
-    protected void update(double timeToAdvance) throws SaveInProgress, AttributeNotDefined, InvalidFederationTime, NameNotFound, RestoreInProgress, ObjectNotKnown, ObjectClassNotDefined, ConcurrentAccessAttempted, AttributeNotOwned, FederateNotExecutionMember, RTIinternalError {
+    protected void update(double timeToAdvance) throws Exception {
+
+        if(!init){
+            init = true;
+            numerStacji++;
+            updatePromObj_NumerStacji(numerStacji,LICZBA_WOLNYCH_MIEJSC,timeToAdvance);
+        }
+
         if(waittingForNextStation == 60 && !cofanie) {
             numerStacji++;
-            updatePromObj_NumerStacji(numerStacji,timeToAdvance);
+            updatePromObj_NumerStacji(numerStacji,-1,timeToAdvance);
             waittingForNextStation = 0;
         } else if (waittingForNextStation == 60 && cofanie){
             numerStacji--;
-            updatePromObj_NumerStacji(numerStacji,timeToAdvance);
+            updatePromObj_NumerStacji(numerStacji,-1,timeToAdvance);
             waittingForNextStation = 0;
         }
 
@@ -37,6 +55,49 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
         }
         waittingForNextStation++;
 
+        //--STACJA--//
+        if(this.federationAmbassador.stacjaClassFlag_newInstance){
+            Stacja stacja = this.federationAmbassador.getStacjeObjInstances(this.federationAmbassador.stacjaOstatnioDodana);
+            this.federationAmbassador.stacjaClassFlag_newInstance = false;
+            this.federationAmbassador.stacjaOstatnioDodana = 0;
+            liczbaPasazerowNaStacji.replace(stacja.getNumer(),stacja.getLiczbaPasazerow());
+            liczbaSamochodowNaStacji.replace(stacja.getNumer(),stacja.getLiczbaSamochodow());
+            System.out.println("DODANO Stacje DO GUI: "+stacja.getNumer());
+        }
+        if(this.federationAmbassador.stacjaClassFlag_attrsUpdated) {
+            Stacja stacja = this.federationAmbassador.getStacjeObjInstances(this.federationAmbassador.stacjaOstatnioModyfikowana);
+            this.federationAmbassador.stacjaClassFlag_attrsUpdated = false;
+            this.federationAmbassador.stacjaOstatnioModyfikowana = 0;
+
+            if (numerStacji == stacja.getNumer()) {
+
+                System.out.println("NUMER STACJI: "+numerStacji);
+
+                System.out.println("LICZBA Pasazerow PROM: "+liczbaPasazerowNaStacji+" liczba pasazerow stacja: "+stacja.getLiczbaPasazerow());
+
+                if(liczbaPasazerowNaStacji.get(numerStacji) > stacja.getLiczbaPasazerow() && LICZBA_WOLNYCH_MIEJSC >= 1){
+                    System.out.println("USNIETY PASAZER");
+                    updatePromObj_LiczbaWolnychMiejsc(1,timeToAdvance);
+                }
+
+                if(liczbaSamochodowNaStacji.get(numerStacji) > stacja.getLiczbaSamochodow() && LICZBA_WOLNYCH_MIEJSC >= 3){
+                    System.out.println("USNIETY SAMOCHOD");
+                    updatePromObj_LiczbaWolnychMiejsc(3,timeToAdvance);
+                }
+
+
+                System.out.println("LICZBA PASAZEROW: " + liczbaPasazerowNaStacji.get(numerStacji));
+                System.out.println("LICZBA SAMOCHODOW: " + liczbaSamochodowNaStacji.get(numerStacji));
+
+
+
+
+            }
+
+            liczbaPasazerowNaStacji.replace(numerStacji,stacja.getLiczbaPasazerow());
+            liczbaSamochodowNaStacji.replace(numerStacji,stacja.getLiczbaSamochodow());
+
+        }
 
         //TODO DODAWANIE PASAZEROW
     }
@@ -44,6 +105,13 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
     @Override
     protected void init() throws Exception {
         this.promObj = createObject("Prom");
+        liczbaPasazerowNaStacji = new HashMap<>();
+        liczbaSamochodowNaStacji = new HashMap<>();
+
+        for(int i =1;i<=6;i++){
+            liczbaPasazerowNaStacji.put(i,0);
+            liczbaSamochodowNaStacji.put(i,0);
+        }
     }
 
     @Override
@@ -62,6 +130,29 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
         rtiamb.publishObjectClass(promClass,attributes);
 
 
+
+        //----STACJA----//
+
+        this.federationAmbassador.stacjaClass                     = rtiamb.getObjectClassHandle("ObjectRoot.Stacja");
+        this.federationAmbassador.stacjaAttr_numer                = rtiamb.getAttributeHandle("numer",this.federationAmbassador.stacjaClass);
+        this.federationAmbassador.stacjaAttr_MaxDlugoscKolejki    = rtiamb.getAttributeHandle("maxDlugoscKolejki",this.federationAmbassador.stacjaClass);
+        this.federationAmbassador.stacjaAttr_numerKolejnejStacji  = rtiamb.getAttributeHandle("numerKolejnejStacji",this.federationAmbassador.stacjaClass);
+        this.federationAmbassador.stacjaAttr_LiczbaPasazerow      = rtiamb.getAttributeHandle("liczbaPasazerow",this.federationAmbassador.stacjaClass);
+        this.federationAmbassador.stacjaAttr_LiczbaSamochodow     = rtiamb.getAttributeHandle("liczbaSamochodow",this.federationAmbassador.stacjaClass);
+        this.federationAmbassador.stacjaAttr_PromNaStacji         = rtiamb.getAttributeHandle("promNaStacji",this.federationAmbassador.stacjaClass);
+
+        attributes = RtiFactoryFactory.getRtiFactory().createAttributeHandleSet();
+        attributes.add(this.federationAmbassador.stacjaAttr_numer);
+        attributes.add(this.federationAmbassador.stacjaAttr_MaxDlugoscKolejki);
+        attributes.add(this.federationAmbassador.stacjaAttr_numerKolejnejStacji);
+        attributes.add(this.federationAmbassador.stacjaAttr_LiczbaPasazerow);
+        attributes.add(this.federationAmbassador.stacjaAttr_LiczbaSamochodow);
+        attributes.add(this.federationAmbassador.stacjaAttr_PromNaStacji);
+
+        rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.stacjaClass,attributes);
+
+
+
     }
 
     @Override
@@ -69,20 +160,25 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
         this.deleteObject(this.promObj);
     }
 
-    private void updatePromObj_NumerStacji(int value, double time) throws RTIinternalError, NameNotFound, FederateNotExecutionMember, ObjectClassNotDefined, ObjectNotKnown, RestoreInProgress, AttributeNotOwned, AttributeNotDefined, SaveInProgress, InvalidFederationTime, ConcurrentAccessAttempted {
+    private void updatePromObj_NumerStacji(int value,int liczbaWolnychMiejsc, double time) throws RTIinternalError, NameNotFound, FederateNotExecutionMember, ObjectClassNotDefined, ObjectNotKnown, RestoreInProgress, AttributeNotOwned, AttributeNotDefined, SaveInProgress, InvalidFederationTime, ConcurrentAccessAttempted {
         SuppliedAttributes attributes = RtiFactoryFactory.getRtiFactory().createSuppliedAttributes();
         int classHandle = rtiamb.getObjectClass(this.promObj);
         int attrHandle = rtiamb.getAttributeHandle( "numerStacji", classHandle );
+        int attrLiczbaWolnychMiejscHandle = rtiamb.getAttributeHandle( "liczbaWolnychMiejsc", classHandle );
         attributes.add(attrHandle, EncodingHelpers.encodeInt(value));
+        if(liczbaWolnychMiejsc != -1){
+            attributes.add(attrLiczbaWolnychMiejscHandle, EncodingHelpers.encodeInt(liczbaWolnychMiejsc));
+        }
         rtiamb.updateAttributeValues(this.promObj, attributes, generateTag(), convertTime(time));
     }
 
-    private void updatePromObj_LiczbaZajetychMiejsc(int value,double time) throws SaveInProgress, AttributeNotDefined, InvalidFederationTime, RestoreInProgress, ObjectNotKnown, ConcurrentAccessAttempted, AttributeNotOwned, FederateNotExecutionMember, RTIinternalError, NameNotFound, ObjectClassNotDefined {
+    private void updatePromObj_LiczbaWolnychMiejsc(int value,double time) throws SaveInProgress, AttributeNotDefined, InvalidFederationTime, RestoreInProgress, ObjectNotKnown, ConcurrentAccessAttempted, AttributeNotOwned, FederateNotExecutionMember, RTIinternalError, NameNotFound, ObjectClassNotDefined {
         SuppliedAttributes attributes = RtiFactoryFactory.getRtiFactory().createSuppliedAttributes();
         int classHandle = rtiamb.getObjectClass(this.promObj);
-        int attrHandle = rtiamb.getAttributeHandle( "liczbaZajetychMiejsc", classHandle );
-        attributes.add(attrHandle, EncodingHelpers.encodeInt(value));
+        int attrHandle = rtiamb.getAttributeHandle( "liczbaWolnychMiejsc", classHandle );
+        attributes.add(attrHandle, EncodingHelpers.encodeInt(LICZBA_WOLNYCH_MIEJSC - value));
         rtiamb.updateAttributeValues(this.promObj, attributes, generateTag(), convertTime(time));
+        LICZBA_WOLNYCH_MIEJSC -= value;
     }
 
 
