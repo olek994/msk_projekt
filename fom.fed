@@ -19,6 +19,9 @@
         (attribute liczbaZajetychMiejsc reliable timestamp TestSpace)
         (attribute numerStacji reliable timestamp TestSpace)
       )
+
+      (class Statystyka)
+
       (class  Pasazer
         (attribute id reliable timestamp TestSpace)
         (attribute typ reliable timestamp TestSpace)

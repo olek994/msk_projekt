@@ -86,10 +86,12 @@ public class StatystykaFederate extends BaseFederate<StatystykaAmbassador> {
         this.federationAmbassador.stacjaClass                   = rtiamb.getObjectClassHandle("ObjectRoot.Stacja");
         this.federationAmbassador.stacjaAttr_numer              = rtiamb.getAttributeHandle("numer", this.federationAmbassador.stacjaClass);
         this.federationAmbassador.stacjaAttr_numerKolejnejStacji= rtiamb.getAttributeHandle("numerKolejnejStacji", this.federationAmbassador.stacjaClass);
-        this.federationAmbassador.stacjaAttr_PromNaStacji       = rtiamb.getAttributeHandle("PromNaStacji", this.federationAmbassador.stacjaClass);
-        this.federationAmbassador.stacjaAttr_MaxDlugoscKolejki  = rtiamb.getAttributeHandle("MaxDlugoscKolejki", this.federationAmbassador.stacjaClass);
-        this.federationAmbassador.stacjaAttr_LiczbaPasazerow    = rtiamb.getAttributeHandle("LiczbaPasazerow", this.federationAmbassador.stacjaClass);
-        this.federationAmbassador.stacjaAttr_LiczbaSamochodow   = rtiamb.getAttributeHandle("LiczbaSamochodow", this.federationAmbassador.stacjaClass);
+        this.federationAmbassador.stacjaAttr_PromNaStacji       = rtiamb.getAttributeHandle("promNaStacji", this.federationAmbassador.stacjaClass);
+        this.federationAmbassador.stacjaAttr_MaxDlugoscKolejki  = rtiamb.getAttributeHandle("maxDlugoscKolejki", this.federationAmbassador.stacjaClass);
+        this.federationAmbassador.stacjaAttr_LiczbaPasazerow    = rtiamb.getAttributeHandle("liczbaPasazerow", this.federationAmbassador.stacjaClass);
+        this.federationAmbassador.stacjaAttr_LiczbaSamochodow   = rtiamb.getAttributeHandle("liczbaSamochodow", this.federationAmbassador.stacjaClass);
+
+        attributes = RtiFactoryFactory.getRtiFactory().createAttributeHandleSet();
 
         attributes.add(this.federationAmbassador.stacjaAttr_numer);
         attributes.add(this.federationAmbassador.stacjaAttr_numerKolejnejStacji);
@@ -107,6 +109,8 @@ public class StatystykaFederate extends BaseFederate<StatystykaAmbassador> {
         this.federationAmbassador.pasazerAttr_numerStacji       = rtiamb.getAttributeHandle("numerStacji", this.federationAmbassador.pasazerClass);
         this.federationAmbassador.pasazerAttr_stacjaDocelowa    = rtiamb.getAttributeHandle("stacjaDocelowa", this.federationAmbassador.pasazerClass);
 
+        attributes = RtiFactoryFactory.getRtiFactory().createAttributeHandleSet();
+
         attributes.add(this.federationAmbassador.pasazerAttr_id);
         attributes.add(this.federationAmbassador.pasazerAttr_typ);
         attributes.add(this.federationAmbassador.pasazerAttr_numerStacji);
@@ -117,7 +121,7 @@ public class StatystykaFederate extends BaseFederate<StatystykaAmbassador> {
 
     public static void main(String[] args) {
         try {
-            new StatystykaFederate().runFederate("STATYSTYKA");
+            new StatystykaFederate().runFederate("Statystyka");
         } catch (Exception e) {
             e.printStackTrace();
         }

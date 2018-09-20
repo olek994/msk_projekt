@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
 
@@ -43,9 +44,12 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
     private boolean poprzedniDoWylaczenia = false;
     private int oczekiwanieNaWylaczenie = 0;
     private int poprzedniaStacja = 0;
+    private int watting = 0;
+    private Random random;
     @Override
     protected void init() throws Exception {
         this.stacjeList = new ArrayList<>();
+        this.random = new Random();
         this.liczbaPasazerowNaStacji = new HashMap<>();
         this.liczbaSamochodowNaStacji = new HashMap<>();
     }
@@ -99,6 +103,27 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
             oczekiwanieNaWylaczenie = 0;
             poprzedniDoWylaczenia = false;
         }
+
+
+        Prom prom = this.federationAmbassador.getObjectInstances(Prom.class);
+
+        if (prom != null) {
+            if(prom.getNumerStacji() == poprzedniaStacjaPromu && watting == 5){
+                int losowyWybor = random.nextInt(2)+1;
+
+                if(losowyWybor == 1 && liczbaPasazerowNaStacji.get(poprzedniaStacjaPromu) > 0){
+                    update_StacjaAttr_usun_Pasazer(poprzedniaStacjaPromu,timeToAdvance,poprzedniaStacjaPromu-1);
+                }else if (losowyWybor == 2 && liczbaSamochodowNaStacji.get(poprzedniaStacjaPromu) > 0){
+                    update_StacjaAttr_usun_Samochod(poprzedniaStacjaPromu,timeToAdvance,poprzedniaStacjaPromu-1);
+                }
+                watting = 0;
+            }
+
+            if(prom.getNumerStacji() == poprzedniaStacjaPromu){
+                watting++;
+            }
+        }
+
 
         if(poprzedniDoWylaczenia){
             oczekiwanieNaWylaczenie++;
