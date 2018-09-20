@@ -15,17 +15,25 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
     private boolean init = false;
     private float speed = 1f;
     private int waittingForNextStation = 0;
-    private int numerStacji = 1;
+    private int numerStacji = 0;
+    private boolean cofanie = false;
     @Override
     protected void update(double timeToAdvance) throws SaveInProgress, AttributeNotDefined, InvalidFederationTime, NameNotFound, RestoreInProgress, ObjectNotKnown, ObjectClassNotDefined, ConcurrentAccessAttempted, AttributeNotOwned, FederateNotExecutionMember, RTIinternalError {
-        if(waittingForNextStation == 100) {
-            updatePromObj_NumerStacji(numerStacji,timeToAdvance);
+        if(waittingForNextStation == 60 && !cofanie) {
             numerStacji++;
+            updatePromObj_NumerStacji(numerStacji,timeToAdvance);
+            waittingForNextStation = 0;
+        } else if (waittingForNextStation == 60 && cofanie){
+            numerStacji--;
+            updatePromObj_NumerStacji(numerStacji,timeToAdvance);
             waittingForNextStation = 0;
         }
 
-        if(numerStacji > 6){
-            numerStacji = 1;
+        if(numerStacji >= 6){
+            cofanie = true;
+        }
+        if(numerStacji ==1){
+            cofanie = false;
         }
         waittingForNextStation++;
 

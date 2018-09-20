@@ -40,6 +40,9 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
     private Map<Integer,Integer> liczbaPasazerowNaStacji;
     private Map<Integer,Integer> liczbaSamochodowNaStacji;
     private int numerPoprzednioDodanejStacji = 0;
+    private boolean poprzedniDoWylaczenia = false;
+    private int oczekiwanieNaWylaczenie = 0;
+    private int poprzedniaStacja = 0;
     @Override
     protected void init() throws Exception {
         this.stacjeList = new ArrayList<>();
@@ -83,14 +86,25 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
             this.federationAmbassador.promClassFlag_attrsUpdated = false;
             if(prom.getNumerStacji() != poprzedniaStacjaPromu){
                 if(poprzedniaStacjaPromu != -1){
-                    update_StacjaAttr_PromNaStacji(poprzedniaStacjaPromu,0,timeToAdvance,poprzedniaStacjaPromu-1);
+                    poprzedniDoWylaczenia = true;
+                    poprzedniaStacja = poprzedniaStacjaPromu;
                 }
                 update_StacjaAttr_PromNaStacji(prom.getNumerStacji(),1,timeToAdvance,prom.getNumerStacji()-1);
                 poprzedniaStacjaPromu = prom.getNumerStacji();
             }
-
-
         }
+
+        if(poprzedniDoWylaczenia && oczekiwanieNaWylaczenie == 5){
+            update_StacjaAttr_PromNaStacji(poprzedniaStacja,0,timeToAdvance,poprzedniaStacja-1);
+            oczekiwanieNaWylaczenie = 0;
+            poprzedniDoWylaczenia = false;
+        }
+
+        if(poprzedniDoWylaczenia){
+            oczekiwanieNaWylaczenie++;
+        }
+
+
 
         //--PASAZER--//
         if(this.federationAmbassador.pasazerClassFlag_newInstance){
@@ -284,7 +298,7 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
 
     public static void main(String[] agrs){
         try{
-            new StacjaFederate().runFederate("STACJA ");
+            new StacjaFederate().runFederate("Stacja");
         }catch (Exception ex){
             ex.printStackTrace();
         }
