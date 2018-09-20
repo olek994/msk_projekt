@@ -19,18 +19,24 @@ public class StatystykaFederate extends BaseFederate<StatystykaAmbassador> {
     private double start;
     private double end;
 
+    private int liczbaPrzeplynietychStacji = 0;
+    private int poprzedniaStacja = 0;
 
     @Override
     protected void update(double timeToAdvance) throws Exception {
         if (this.federationAmbassador.promClassFlag_newInstance) {
             Prom prom = this.federationAmbassador.getObjectInstances(Prom.class);
-            //TODO
+            liczbaPrzeplynietychStacji++;
             this.federationAmbassador.promClassFlag_newInstance = false;
         }
 
         if(this.federationAmbassador.promClassFlag_attrsUpdated) {
             Prom prom = this.federationAmbassador.getObjectInstances(Prom.class);
-            //TODO
+            if (prom.getNumerStacji() != poprzedniaStacja) {
+                liczbaPrzeplynietychStacji++;
+                poprzedniaStacja = prom.getNumerStacji();
+                System.out.println("STATYSTYKA: LICZBA PRZEPLYNIETYCH STACJI: "+liczbaPrzeplynietychStacji);
+            }
             this.federationAmbassador.promClassFlag_attrsUpdated = false;
         }
 
@@ -43,7 +49,7 @@ public class StatystykaFederate extends BaseFederate<StatystykaAmbassador> {
 
         if(this.federationAmbassador.stacjaClassFlag_attrsUpdated) {
             Stacja stacja = this.federationAmbassador.getObjectInstances(Stacja.class);
-            //TODO
+
             this.federationAmbassador.stacjaClassFlag_attrsUpdated = false;
         }
 
@@ -111,7 +117,7 @@ public class StatystykaFederate extends BaseFederate<StatystykaAmbassador> {
 
     public static void main(String[] args) {
         try {
-            //new StatystykaFederate().runFederate();
+            new StatystykaFederate().runFederate("STATYSTYKA");
         } catch (Exception e) {
             e.printStackTrace();
         }
