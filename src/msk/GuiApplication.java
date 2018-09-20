@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import msk.federate.GuiFederate;
 
@@ -19,7 +20,6 @@ import java.net.URL;
  * Copyright by RelayOnIT, Warszawa 2018
  */
 public class GuiApplication extends Application {
-
 
 
     GuiFederate guiFederate;
@@ -40,6 +40,12 @@ public class GuiApplication extends Application {
     @FXML public Label liczbaPasazerowSzostej;
     @FXML public Label liczbaSamochodowSzostej;
 
+    @FXML public ImageView imagePierwszaStacja;
+    @FXML public ImageView imageDrugaStacja;
+    @FXML public ImageView imageTrzeciaStacja;
+    @FXML public ImageView imageCzwartaStacja;
+    @FXML public ImageView imagePiataStacja;
+    @FXML public ImageView imageSzostaStacja;
 
     @Override
     public void start(Stage primaryStage) throws Exception {

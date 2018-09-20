@@ -82,7 +82,9 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
             Prom prom = this.federationAmbassador.getObjectInstances(Prom.class);
             this.federationAmbassador.promClassFlag_attrsUpdated = false;
             if(prom.getNumerStacji() != poprzedniaStacjaPromu){
-                //TODO ZMIANA ATRYBUTOW POPRZEDNIEJ STACJI
+                if(poprzedniaStacjaPromu != -1){
+                    update_StacjaAttr_PromNaStacji(poprzedniaStacjaPromu,0,timeToAdvance,poprzedniaStacjaPromu-1);
+                }
                 update_StacjaAttr_PromNaStacji(prom.getNumerStacji(),1,timeToAdvance,prom.getNumerStacji()-1);
                 poprzedniaStacjaPromu = prom.getNumerStacji();
             }

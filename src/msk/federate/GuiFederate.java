@@ -3,12 +3,18 @@ package msk.federate;
 import hla.rti.*;
 import hla.rti.jlc.RtiFactoryFactory;
 import javafx.application.Platform;
+import javafx.scene.image.Image;
 import msk.BaseFederate;
 import msk.GuiApplication;
 import msk.Objects.Pasazer;
 import msk.Objects.Prom;
 import msk.Objects.Stacja;
 import msk.ambassador.GuiAmbassador;
+
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.io.IOException;
+import java.net.URL;
 
 /**
  * Created by Aleksander Małkowicz, Date: 13.09.2018
@@ -79,7 +85,6 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
 
             System.out.println("ZAKTUALIZOWANO PARAMETRY Stacji: "+ stacja.getNumer()+", "+stacja.getMaxDlugoscKolejki()+", "+stacja.getNumerKolejnejStacji()+" LiczbaPasazerow: "+stacja.getLiczbaPasazerow()+" LiczbaSamochodow: "+stacja.getLiczbaSamochodow()+" Prom na stacji: "+ promNaStacji);
 
-            //TODO dodac image stacji i prom
             //TODO dodac reakcje na prom
 
             switch (stacja.getNumer()){
@@ -88,36 +93,115 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
                         this.guiApplication.liczbaPasazerowPierwszej.setText(stacja.getLiczbaPasazerow()+"");
                         this.guiApplication.liczbaSamochodowPierwszej.setText(stacja.getLiczbaSamochodow()+"");
                     });
+
+                    if(stacja.getPromNaStacji() == 1){
+                        Image image = new Image("/stacja_lewa_on.png");
+                        Platform.runLater(() -> {
+                                this.guiApplication.imagePierwszaStacja.setImage(image);
+                        });
+                    }else if(stacja.getPromNaStacji() == 0){
+                        Image image = new Image("/stacja_lewa_off.png");
+                        Platform.runLater(() -> {
+                                this.guiApplication.imagePierwszaStacja.setImage(image);
+                        });
+                    }
+
                     break;
                 case 2:
                     Platform.runLater(() -> {
                         this.guiApplication.liczbaPasazerowDrugiej.setText(stacja.getLiczbaPasazerow()+"");
                         this.guiApplication.liczbaSamochodowDrugiej.setText(stacja.getLiczbaSamochodow()+"");
                     });
+
+                    if(stacja.getPromNaStacji() == 1){
+                        Image image = new Image("/stacja_prawa_on.png");
+                        Platform.runLater(() -> {
+                            this.guiApplication.imageDrugaStacja.setImage(image);
+                        });
+                    }else if(stacja.getPromNaStacji() == 0){
+                        Image image = new Image("/stacja_prawa_off.png");
+                        Platform.runLater(() -> {
+                            this.guiApplication.imageDrugaStacja.setImage(image);
+                        });
+                    }
+
                     break;
                 case 3:
                     Platform.runLater(() -> {
                         this.guiApplication.liczbaPasazerowTrzeciej.setText(stacja.getLiczbaPasazerow()+"");
                         this.guiApplication.liczbaSamochodowTrzeciej.setText(stacja.getLiczbaSamochodow()+"");
                     });
+
+                    if(stacja.getPromNaStacji() == 1){
+                        Image image = new Image("/stacja_lewa_on.png");
+                        Platform.runLater(() -> {
+                            this.guiApplication.imageTrzeciaStacja.setImage(image);
+                        });
+                    }else if(stacja.getPromNaStacji() == 0){
+                        Image image = new Image("/stacja_lewa_off.png");
+                        Platform.runLater(() -> {
+                            this.guiApplication.imageTrzeciaStacja.setImage(image);
+                        });
+                    }
+
                     break;
                 case 4:
+
                     Platform.runLater(() -> {
                         this.guiApplication.liczbaPasazerowCzwartej.setText(stacja.getLiczbaPasazerow()+"");
                         this.guiApplication.liczbaSamochodowCzwartej.setText(stacja.getLiczbaSamochodow()+"");
                     });
+
+                    if(stacja.getPromNaStacji() == 1){
+                        Image image = new Image("/stacja_prawa_on.png");
+                        Platform.runLater(() -> {
+                            this.guiApplication.imageCzwartaStacja.setImage(image);
+                        });
+                    }else if(stacja.getPromNaStacji() == 0){
+                        Image image = new Image("/stacja_prawa_off.png");
+                        Platform.runLater(() -> {
+                            this.guiApplication.imageCzwartaStacja.setImage(image);
+                        });
+                    }
+
                     break;
                 case 5:
                     Platform.runLater(() -> {
                         this.guiApplication.liczbaPasazerowPiatej.setText(stacja.getLiczbaPasazerow()+"");
                         this.guiApplication.liczbaSamochodowPiatej.setText(stacja.getLiczbaSamochodow()+"");
                     });
+
+                    if(stacja.getPromNaStacji() == 1){
+                        Image image = new Image("/stacja_lewa_on.png");
+                        Platform.runLater(() -> {
+                            this.guiApplication.imagePiataStacja.setImage(image);
+                        });
+                    }else if(stacja.getPromNaStacji() == 0){
+                        Image image = new Image("/stacja_lewa_off.png");
+                        Platform.runLater(() -> {
+                            this.guiApplication.imagePiataStacja.setImage(image);
+                        });
+                    }
+
                     break;
                 case 6:
                     Platform.runLater(() -> {
                         this.guiApplication.liczbaPasazerowSzostej.setText(stacja.getLiczbaPasazerow()+"");
                         this.guiApplication.liczbaSamochodowSzostej.setText(stacja.getLiczbaSamochodow()+"");
                     });
+
+                    if(stacja.getPromNaStacji() == 1){
+                        Image image = new Image("/stacja_prawa_on.png");
+                        Platform.runLater(() -> {
+                            this.guiApplication.imageSzostaStacja.setImage(image);
+                        });
+                    }else if(stacja.getPromNaStacji() == 0){
+                        Image image = new Image("/stacja_prawa_off.png");
+                        Platform.runLater(() -> {
+                            this.guiApplication.imageSzostaStacja.setImage(image);
+                        });
+                    }
+
                     break;
             }
 
