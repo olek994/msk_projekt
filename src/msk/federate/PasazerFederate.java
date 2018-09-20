@@ -21,28 +21,40 @@ import msk.ambassador.PasazerAmbassador;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class PasazerFederate extends BaseFederate<PasazerAmbassador> {
 
     private List<Integer> pasazerList;
-    private boolean init = false;
+    private int waitToaddNewPassanger = 0;
+    private int indexOfNewPassanger = 1;
+    private Random random;
 
     @Override
     protected void update(double timeToAdvance) throws Exception {
-
-        if(!init){
-            init = true;
-            update_PasazerAttr_NumerStacji(1,2,timeToAdvance,0);
+        int numerStacji;
+        int stacjaDocelowa = 0;
+        int typ;
+        if(waitToaddNewPassanger == 20){
+            numerStacji = random.nextInt(6)+1;
+            while (stacjaDocelowa == numerStacji){
+                stacjaDocelowa = random.nextInt(6)+1;
+            }
+            typ = random.nextInt(2)+1;
+            pasazerList.add(createObject("Pasazer"));
+            update_PasazerAttr(indexOfNewPassanger,numerStacji,typ,stacjaDocelowa,timeToAdvance,numerStacji-1);
+            indexOfNewPassanger++;
+            waitToaddNewPassanger = 0;
         }
 
-        //TODO DODAC WIECEJ PASAZEROW
+        waitToaddNewPassanger++;
 
     }
 
     @Override
     protected void init() throws Exception {
         pasazerList = new ArrayList<>();
-        pasazerList.add(createObject("Pasazer"));
+        random = new Random();
     }
 
     @Override
@@ -64,6 +76,24 @@ public class PasazerFederate extends BaseFederate<PasazerAmbassador> {
 
     }
 
+
+    private void update_PasazerAttr(int idPasazer,int numerStacji,int typ, int stacjaDocelowa, double time, int idx) throws ObjectClassNotDefined, RTIinternalError, NameNotFound, FederateNotExecutionMember, SaveInProgress, RestoreInProgress, AttributeNotOwned, ObjectNotKnown, AttributeNotDefined, InvalidFederationTime, ConcurrentAccessAttempted {
+        if(idx > pasazerList.size()-1){
+            return;
+        }
+        SuppliedAttributes attributes = RtiFactoryFactory.getRtiFactory().createSuppliedAttributes();
+        int obj = this.pasazerList.get(idx);
+        int classHandle = rtiamb.getObjectClass(obj);
+        int attrIdHandle = rtiamb.getAttributeHandle("id",classHandle);
+        int attrNumerStacjiHandle = rtiamb.getAttributeHandle("numerStacji",classHandle);
+        int attrTypHandle = rtiamb.getAttributeHandle("typ",classHandle);
+        int attrStacjaDocelowaHandle = rtiamb.getAttributeHandle("stacjaDocelowa",classHandle);
+        attributes.add(attrIdHandle , EncodingHelpers.encodeInt(idPasazer));
+        attributes.add(attrNumerStacjiHandle , EncodingHelpers.encodeInt(numerStacji));
+        attributes.add(attrTypHandle , EncodingHelpers.encodeInt(typ));
+        attributes.add(attrStacjaDocelowaHandle , EncodingHelpers.encodeInt(stacjaDocelowa));
+        rtiamb.updateAttributeValues(obj,attributes,generateTag(),convertTime(time));
+    }
 
     private void update_PasazerAttr_NumerStacji(int idPasazer,int numerStacji,double time,int idx) throws ObjectNotKnown, FederateNotExecutionMember, RTIinternalError, NameNotFound, ObjectClassNotDefined, RestoreInProgress, AttributeNotOwned, AttributeNotDefined, SaveInProgress, InvalidFederationTime, ConcurrentAccessAttempted {
         if(idx > pasazerList.size()-1){

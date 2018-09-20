@@ -21,11 +21,24 @@ import java.net.URL;
 public class GuiApplication extends Application {
 
 
+
     GuiFederate guiFederate;
 
     @FXML public MenuItem startButton;
     @FXML public MenuItem endButton;
     @FXML public Label simTime;
+    @FXML public Label liczbaPasazerowPierwszej;
+    @FXML public Label liczbaSamochodowPierwszej;
+    @FXML public Label liczbaPasazerowDrugiej;
+    @FXML public Label liczbaSamochodowDrugiej;
+    @FXML public Label liczbaPasazerowTrzeciej;
+    @FXML public Label liczbaSamochodowTrzeciej;
+    @FXML public Label liczbaPasazerowCzwartej;
+    @FXML public Label liczbaSamochodowCzwartej;
+    @FXML public Label liczbaPasazerowPiatej;
+    @FXML public Label liczbaSamochodowPiatej;
+    @FXML public Label liczbaPasazerowSzostej;
+    @FXML public Label liczbaSamochodowSzostej;
 
 
     @Override

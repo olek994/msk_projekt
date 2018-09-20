@@ -78,24 +78,67 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
             String promNaStacji = stacja.getPromNaStacji() == 1 ? "Tak" : "Nie"; // TODO zmienic na ikony stacji na gui
 
             System.out.println("ZAKTUALIZOWANO PARAMETRY Stacji: "+ stacja.getNumer()+", "+stacja.getMaxDlugoscKolejki()+", "+stacja.getNumerKolejnejStacji()+" LiczbaPasazerow: "+stacja.getLiczbaPasazerow()+" LiczbaSamochodow: "+stacja.getLiczbaSamochodow()+" Prom na stacji: "+ promNaStacji);
+
+            //TODO dodac image stacji i prom
+            //TODO dodac reakcje na prom
+
+            switch (stacja.getNumer()){
+                case 1:
+                    Platform.runLater(() -> {
+                        this.guiApplication.liczbaPasazerowPierwszej.setText(stacja.getLiczbaPasazerow()+"");
+                        this.guiApplication.liczbaSamochodowPierwszej.setText(stacja.getLiczbaSamochodow()+"");
+                    });
+                    break;
+                case 2:
+                    Platform.runLater(() -> {
+                        this.guiApplication.liczbaPasazerowDrugiej.setText(stacja.getLiczbaPasazerow()+"");
+                        this.guiApplication.liczbaSamochodowDrugiej.setText(stacja.getLiczbaSamochodow()+"");
+                    });
+                    break;
+                case 3:
+                    Platform.runLater(() -> {
+                        this.guiApplication.liczbaPasazerowTrzeciej.setText(stacja.getLiczbaPasazerow()+"");
+                        this.guiApplication.liczbaSamochodowTrzeciej.setText(stacja.getLiczbaSamochodow()+"");
+                    });
+                    break;
+                case 4:
+                    Platform.runLater(() -> {
+                        this.guiApplication.liczbaPasazerowCzwartej.setText(stacja.getLiczbaPasazerow()+"");
+                        this.guiApplication.liczbaSamochodowCzwartej.setText(stacja.getLiczbaSamochodow()+"");
+                    });
+                    break;
+                case 5:
+                    Platform.runLater(() -> {
+                        this.guiApplication.liczbaPasazerowPiatej.setText(stacja.getLiczbaPasazerow()+"");
+                        this.guiApplication.liczbaSamochodowPiatej.setText(stacja.getLiczbaSamochodow()+"");
+                    });
+                    break;
+                case 6:
+                    Platform.runLater(() -> {
+                        this.guiApplication.liczbaPasazerowSzostej.setText(stacja.getLiczbaPasazerow()+"");
+                        this.guiApplication.liczbaSamochodowSzostej.setText(stacja.getLiczbaSamochodow()+"");
+                    });
+                    break;
+            }
+
         }
 
 
-        //--PASAZER--//
-        if(this.federationAmbassador.pasazerClassFlag_newInstance){
-            Pasazer pasazer = this.federationAmbassador.getPasazerObjInstances(this.federationAmbassador.pasazerOstatnioDodany);
-            this.federationAmbassador.pasazerClassFlag_newInstance = false;
-            this.federationAmbassador.pasazerOstatnioDodany = 0;
-
-            System.out.println("DODANO Pasazera DO GUI: "+pasazer.getId());
-        }
-        if(this.federationAmbassador.pasazerClassFlag_attrsUpdated){
-            Pasazer pasazer = this.federationAmbassador.getPasazerObjInstances(this.federationAmbassador.pasazerOstatnioModyfikowany);
-            this.federationAmbassador.pasazerClassFlag_attrsUpdated = false;
-            this.federationAmbassador.pasazerOstatnioModyfikowany   = 0;
-
-            System.out.println("ZAKTUALIZOWANO PARAMETRY Pasazera: "+pasazer.getId());
-        }
+//        //--PASAZER--//
+//        if(this.federationAmbassador.pasazerClassFlag_newInstance){
+//            Pasazer pasazer = this.federationAmbassador.getPasazerObjInstances(this.federationAmbassador.pasazerOstatnioDodany);
+//            this.federationAmbassador.pasazerClassFlag_newInstance = false;
+//            this.federationAmbassador.pasazerOstatnioDodany = 0;
+//
+//            System.out.println("DODANO Pasazera DO GUI: "+pasazer.getId());
+//        }
+//        if(this.federationAmbassador.pasazerClassFlag_attrsUpdated){
+//            Pasazer pasazer = this.federationAmbassador.getPasazerObjInstances(this.federationAmbassador.pasazerOstatnioModyfikowany);
+//            this.federationAmbassador.pasazerClassFlag_attrsUpdated = false;
+//            this.federationAmbassador.pasazerOstatnioModyfikowany   = 0;
+//
+//            System.out.println("ZAKTUALIZOWANO PARAMETRY Pasazera: "+pasazer.getId());
+//        }
 
         if((sendStartInteraction ++) % 100 == 0){
             sendStartInteraction(timeToAdvance);
@@ -154,21 +197,21 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
         rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.stacjaClass,attributes);
 
 
-        //---PASAZER---//
-        this.federationAmbassador.pasazerClass                  = rtiamb.getObjectClassHandle("ObjectRoot.Pasazer");
-        this.federationAmbassador.pasazerAttr_id                = rtiamb.getAttributeHandle("id",this.federationAmbassador.pasazerClass);
-        this.federationAmbassador.pasazerAttr_typ               = rtiamb.getAttributeHandle("typ",this.federationAmbassador.pasazerClass);
-        this.federationAmbassador.pasazerAttr_numerStacji       = rtiamb.getAttributeHandle("numerStacji",this.federationAmbassador.pasazerClass);
-        this.federationAmbassador.pasazerAttr_stacjaDocelowa    = rtiamb.getAttributeHandle("stacjaDocelowa",this.federationAmbassador.pasazerClass);
-
-
-        attributes = RtiFactoryFactory.getRtiFactory().createAttributeHandleSet();
-        attributes.add(this.federationAmbassador.pasazerAttr_id);
-        attributes.add(this.federationAmbassador.pasazerAttr_typ);
-        attributes.add(this.federationAmbassador.pasazerAttr_numerStacji);
-        attributes.add(this.federationAmbassador.pasazerAttr_stacjaDocelowa);
-
-        rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.pasazerClass,attributes);
+//        //---PASAZER---//
+//        this.federationAmbassador.pasazerClass                  = rtiamb.getObjectClassHandle("ObjectRoot.Pasazer");
+//        this.federationAmbassador.pasazerAttr_id                = rtiamb.getAttributeHandle("id",this.federationAmbassador.pasazerClass);
+//        this.federationAmbassador.pasazerAttr_typ               = rtiamb.getAttributeHandle("typ",this.federationAmbassador.pasazerClass);
+//        this.federationAmbassador.pasazerAttr_numerStacji       = rtiamb.getAttributeHandle("numerStacji",this.federationAmbassador.pasazerClass);
+//        this.federationAmbassador.pasazerAttr_stacjaDocelowa    = rtiamb.getAttributeHandle("stacjaDocelowa",this.federationAmbassador.pasazerClass);
+//
+//
+//        attributes = RtiFactoryFactory.getRtiFactory().createAttributeHandleSet();
+//        attributes.add(this.federationAmbassador.pasazerAttr_id);
+//        attributes.add(this.federationAmbassador.pasazerAttr_typ);
+//        attributes.add(this.federationAmbassador.pasazerAttr_numerStacji);
+//        attributes.add(this.federationAmbassador.pasazerAttr_stacjaDocelowa);
+//
+//        rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.pasazerClass,attributes);
 
         //i dalej
     }

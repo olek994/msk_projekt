@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="msk.GuiApplication">
+<AnchorPane prefHeight="500.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="msk.GuiApplication">
     <children>
         <MenuBar layoutX="33.0" layoutY="73.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <menus>
@@ -25,11 +25,143 @@
                 <Font size="20.0" />
             </font>
         </Label>
-        <Label fx:id="simTime" layoutX="99.0" layoutY="473.0" text="Label">
+        <Label fx:id="simTime" layoutX="99.0" layoutY="473.0" text="-">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
+      <Label layoutX="241.0" layoutY="50.0" text="STACJA A1">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="32.0" layoutY="76.0" text="Liczba osób w kolejce: ">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="31.0" layoutY="100.0" text="Liczba samochodow:">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+        <Label fx:id="liczbaPasazerowPierwszej" layoutX="191.0" layoutY="76.0" text="-">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="liczbaSamochodowPierwszej" layoutX="191.0" layoutY="100.0" text="-">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+      <Label layoutX="244.0" layoutY="193.0" text="STACJA A2">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="240.0" layoutY="340.0" text="STACJA A3">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="29.0" layoutY="222.0" text="Liczba osób w kolejce:">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="29.0" layoutY="253.0" text="Liczba samochodów: ">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="25.0" layoutY="369.0" text="Liczba osób w kolejce:">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="25.0" layoutY="398.0" text="Liczba samochodów:">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+        <Label fx:id="liczbaPasazerowTrzeciej" layoutX="194.0" layoutY="222.0" text="-">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+      <Label fx:id="liczbaSamochodowTrzeciej" layoutX="194.0" layoutY="253.0" text="-">
+          <font>
+              <Font name="System Bold" size="15.0" />
+          </font>
+      </Label>
+      <Label fx:id="liczbaPasazerowPiatej" layoutX="190.0" layoutY="369.0" text="-">
+               <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+      <Label fx:id="liczbaSamochodowPiatej" layoutX="190.0" layoutY="398.0" text="-">
+          <font>
+              <Font name="System Bold" size="15.0" />
+          </font>
+      </Label>
+      <Label layoutX="897.0" layoutY="50.0" text="STACJA B1">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="897.0" layoutY="193.0" text="STACJA B2">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="897.0" layoutY="340.0" text="STACJA B3">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="1013.0" layoutY="75.0" text="Liczba osób w kolejce:">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="1013.0" layoutY="99.0" text="Liczba samochodów:">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="1013.0" layoutY="221.0" text="Liczba osób w kolejce:">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="1013.0" layoutY="252.0" text="Liczba samochodów:">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="1013.0" layoutY="369.0" text="Liczba osób w kolejce:">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="1013.0" layoutY="398.0" text="Liczba samochodów:">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label fx:id="liczbaPasazerowDrugiej" layoutX="1169.0" layoutY="76.0" text="-">
+          <font>
+              <Font name="System Bold" size="15.0" />
+          </font>
+      </Label>
+      <Label fx:id="liczbaSamochodowDrugiej" layoutX="1169.0" layoutY="99.0" text="-">
+          <font>
+              <Font name="System Bold" size="15.0" />
+          </font>
+      </Label>
+      <Label fx:id="liczbaPasazerowCzwartej" layoutX="1169.0" layoutY="221.0" text="-">
+          <font>
+              <Font name="System Bold" size="15.0" />
+          </font>
+      </Label>
+      <Label fx:id="liczbaSamochodowCzwartej" layoutX="1169.0" layoutY="252.0" text="-">
+          <font>
+              <Font name="System Bold" size="15.0" />
+          </font>
+      </Label>
+      <Label fx:id="liczbaPasazerowSzostej" layoutX="1169.0" layoutY="368.0" text="-">
+          <font>
+              <Font name="System Bold" size="15.0" />
+          </font>
+      </Label>
+      <Label fx:id="liczbaSamochodowSzostej" layoutX="1169.0" layoutY="398.0" text="-">
+          <font>
+              <Font name="System Bold" size="15.0" />
+          </font>
+      </Label>
     </children>
 
 </AnchorPane>

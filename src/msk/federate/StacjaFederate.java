@@ -20,11 +20,14 @@ import msk.BaseAmbassador;
 import msk.BaseFederate;
 import msk.Objects.Pasazer;
 import msk.Objects.Prom;
+import msk.Objects.Stacja;
 import msk.ambassador.StacjaAmbassador;
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
 
@@ -32,52 +35,40 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
     private static final int LICZBA_STACJI = 6;
     private List<Integer> stacjeList;
     private boolean init = false;
-    private int watting = 0;
+    private int wattingForStationCreation = 0;
     private int poprzedniaStacjaPromu = -1;
+    private Map<Integer,Integer> liczbaPasazerowNaStacji;
+    private Map<Integer,Integer> liczbaSamochodowNaStacji;
+    private int numerPoprzednioDodanejStacji = 0;
     @Override
     protected void init() throws Exception {
         this.stacjeList = new ArrayList<>();
-        stacjeList.add(createObject("Stacja"));
+        this.liczbaPasazerowNaStacji = new HashMap<>();
+        this.liczbaSamochodowNaStacji = new HashMap<>();
     }
 
     @Override
     protected void update(double timeToAdvance) throws Exception {
 
-        if(!init){
-            System.out.println("DODANO STACJE PIERWSZA");
-            init = true;
-            update_StacjaAttr(1,DLUGOSC_KOLEJKI,2,0,0,timeToAdvance,stacjeList.size()-1);
+
+        if(wattingForStationCreation == 5 && numerPoprzednioDodanejStacji < LICZBA_STACJI){
+            int kolejnaStacja = numerPoprzednioDodanejStacji +2;
+            if(kolejnaStacja == 7){
+                kolejnaStacja = 1;
+            }
+            System.out.println("DODANO STACJE: "+(numerPoprzednioDodanejStacji+1));
+            stacjeList.add(createObject("Stacja"));
+            update_StacjaAttr(numerPoprzednioDodanejStacji+1,DLUGOSC_KOLEJKI,kolejnaStacja,0,0,timeToAdvance,numerPoprzednioDodanejStacji);//numerPoprzednioDodanej moze posluzyc do listy (bo od 0 sie zaczyna)
+            liczbaPasazerowNaStacji.put(numerPoprzednioDodanejStacji+1,0);
+            liczbaSamochodowNaStacji.put(numerPoprzednioDodanejStacji+1,0);
+            numerPoprzednioDodanejStacji++;
         }
 
-        if(watting == 10){
-            System.out.println("DODANO STACJE Druga");
-            stacjeList.add(createObject("Stacja"));
-            update_StacjaAttr(2,DLUGOSC_KOLEJKI,3,0,0,timeToAdvance,stacjeList.size()-1);
+        if(wattingForStationCreation == 5){
+            wattingForStationCreation = 0;
         }
 
-        if(watting == 20){
-            System.out.println("DODANO STACJE Trzecia");
-            stacjeList.add(createObject("Stacja"));
-            update_StacjaAttr(3,DLUGOSC_KOLEJKI,4,0,0,timeToAdvance,stacjeList.size()-1);
-        }
-
-        if(watting == 30){
-            System.out.println("DODANO STACJE Czwarta");
-            stacjeList.add(createObject("Stacja"));
-            update_StacjaAttr(4,DLUGOSC_KOLEJKI,5,0,0,timeToAdvance,stacjeList.size()-1);
-        }
-        if(watting == 40){
-            System.out.println("DODANO STACJE Piątą");
-            stacjeList.add(createObject("Stacja"));
-            update_StacjaAttr(5,DLUGOSC_KOLEJKI,6,0,0,timeToAdvance,stacjeList.size()-1);
-        }
-        if(watting == 50){
-            System.out.println("DODANO STACJE szóstą");
-            stacjeList.add(createObject("Stacja"));
-            update_StacjaAttr(6,DLUGOSC_KOLEJKI,1,0,0,timeToAdvance,stacjeList.size()-1);
-        }
-
-        watting++;
+        wattingForStationCreation++;
 
 
         //-----nasluchiwanie----//
@@ -105,7 +96,14 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
             this.federationAmbassador.pasazerClassFlag_newInstance = false;
             this.federationAmbassador.pasazerOstatnioDodany = 0;
 
-            System.out.println("WykrytoPasazeraPrzez stacje: "+pasazer.getId());
+            System.out.println("WykrytoPasazera przez stacje id: "+pasazer.getId()+" numer stacji: "+pasazer.getNumerStacji());
+
+            if(pasazer.getTyp() == 1){
+                update_StacjaAttr_dodaj_Pasazer(pasazer.getNumerStacji(),timeToAdvance,pasazer.getNumerStacji()-1);
+            }else if(pasazer.getTyp() == 2){
+                update_StacjaAttr_dodaj_Samochod(pasazer.getNumerStacji(),timeToAdvance,pasazer.getNumerStacji()-1);
+            }
+
         }
         if(this.federationAmbassador.pasazerClassFlag_attrsUpdated){
             Pasazer pasazer = this.federationAmbassador.getPasazerObjInstances(this.federationAmbassador.pasazerOstatnioModyfikowany);
@@ -118,6 +116,7 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
         //TODO DODAC REAGOWANIE NA KTOREJ STACJI JEST PASAZER
 
     }
+
 
     @Override
     protected void publishAndSubscribe() throws RTIexception {
@@ -199,6 +198,73 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
         rtiamb.updateAttributeValues(obj,attributes,generateTag(),convertTime(time));
 
     }
+
+    private void update_StacjaAttr_dodaj_Pasazer(int numerStacji,double time,int idx) throws ObjectClassNotDefined, RTIinternalError, NameNotFound, FederateNotExecutionMember, SaveInProgress, RestoreInProgress, AttributeNotOwned, ObjectNotKnown, AttributeNotDefined, InvalidFederationTime, ConcurrentAccessAttempted {
+        if(idx >= stacjeList.size()){
+            return;
+        }
+        liczbaPasazerowNaStacji.replace(numerStacji,liczbaPasazerowNaStacji.get(numerStacji)+1);
+        SuppliedAttributes attributes = RtiFactoryFactory.getRtiFactory().createSuppliedAttributes();
+        int obj = this.stacjeList.get(idx);
+        int classHandle = rtiamb.getObjectClass(obj);
+        int attrNumerHandle = rtiamb.getAttributeHandle("numer",classHandle);
+        int attrLiczbaPasazerowHandle = rtiamb.getAttributeHandle("liczbaPasazerow",classHandle);
+        attributes.add(attrNumerHandle, EncodingHelpers.encodeInt(numerStacji));
+        attributes.add(attrLiczbaPasazerowHandle, EncodingHelpers.encodeInt(liczbaPasazerowNaStacji.get(numerStacji)));
+        rtiamb.updateAttributeValues(obj,attributes,generateTag(),convertTime(time));
+    }
+
+    private void update_StacjaAttr_usun_Pasazer(int numerStacji,double time,int idx) throws ObjectClassNotDefined, RTIinternalError, NameNotFound, FederateNotExecutionMember, SaveInProgress, RestoreInProgress, AttributeNotOwned, ObjectNotKnown, AttributeNotDefined, InvalidFederationTime, ConcurrentAccessAttempted {
+        if(idx >= stacjeList.size()){
+            return;
+        }
+        if(liczbaPasazerowNaStacji.get(numerStacji) == 0){
+            return;
+        }
+        liczbaPasazerowNaStacji.replace(numerStacji,liczbaPasazerowNaStacji.get(numerStacji)-1);
+        SuppliedAttributes attributes = RtiFactoryFactory.getRtiFactory().createSuppliedAttributes();
+        int obj = this.stacjeList.get(idx);
+        int classHandle = rtiamb.getObjectClass(obj);
+        int attrNumerHandle = rtiamb.getAttributeHandle("numer",classHandle);
+        int attrLiczbaPasazerowHandle = rtiamb.getAttributeHandle("liczbaPasazerow",classHandle);
+        attributes.add(attrNumerHandle, EncodingHelpers.encodeInt(numerStacji));
+        attributes.add(attrLiczbaPasazerowHandle, EncodingHelpers.encodeInt(liczbaPasazerowNaStacji.get(numerStacji)));
+        rtiamb.updateAttributeValues(obj,attributes,generateTag(),convertTime(time));
+    }
+
+    private void update_StacjaAttr_dodaj_Samochod(int numerStacji, double timeToAdvance, int idx) throws ObjectClassNotDefined, RTIinternalError, NameNotFound, FederateNotExecutionMember, SaveInProgress, RestoreInProgress, AttributeNotOwned, ObjectNotKnown, AttributeNotDefined, InvalidFederationTime, ConcurrentAccessAttempted {
+        if(idx >= stacjeList.size()){
+            return;
+        }
+        liczbaSamochodowNaStacji.replace(numerStacji,liczbaSamochodowNaStacji.get(numerStacji)+1);
+        SuppliedAttributes attributes = RtiFactoryFactory.getRtiFactory().createSuppliedAttributes();
+        int obj = this.stacjeList.get(idx);
+        int classHandle = rtiamb.getObjectClass(obj);
+        int attrNumerHandle = rtiamb.getAttributeHandle("numer",classHandle);
+        int attrLLiczbaSamochodowHandle = rtiamb.getAttributeHandle("liczbaSamochodow",classHandle);
+        attributes.add(attrNumerHandle, EncodingHelpers.encodeInt(numerStacji));
+        attributes.add(attrLLiczbaSamochodowHandle, EncodingHelpers.encodeInt(liczbaSamochodowNaStacji.get(numerStacji)));
+        rtiamb.updateAttributeValues(obj,attributes,generateTag(),convertTime(timeToAdvance));
+    }
+
+    private void update_StacjaAttr_usun_Samochod(int numerStacji,double time,int idx) throws ObjectClassNotDefined, RTIinternalError, NameNotFound, FederateNotExecutionMember, SaveInProgress, RestoreInProgress, AttributeNotOwned, ObjectNotKnown, AttributeNotDefined, InvalidFederationTime, ConcurrentAccessAttempted {
+        if(idx >= stacjeList.size()){
+            return;
+        }
+        if(liczbaSamochodowNaStacji.get(numerStacji) == 0){
+            return;
+        }
+        liczbaSamochodowNaStacji.replace(numerStacji,liczbaSamochodowNaStacji.get(numerStacji)-1);
+        SuppliedAttributes attributes = RtiFactoryFactory.getRtiFactory().createSuppliedAttributes();
+        int obj = this.stacjeList.get(idx);
+        int classHandle = rtiamb.getObjectClass(obj);
+        int attrNumerHandle = rtiamb.getAttributeHandle("numer",classHandle);
+        int attrLLiczbaSamochodowHandle = rtiamb.getAttributeHandle("liczbaSamochodow",classHandle);
+        attributes.add(attrNumerHandle, EncodingHelpers.encodeInt(numerStacji));
+        attributes.add(attrLLiczbaSamochodowHandle, EncodingHelpers.encodeInt(liczbaSamochodowNaStacji.get(numerStacji)));
+        rtiamb.updateAttributeValues(obj,attributes,generateTag(),convertTime(time));
+    }
+
 
     private void update_StacjaAttr_PromNaStacji(int numerStacji,int promNaStacji,double time, int idx) throws SaveInProgress, AttributeNotDefined, InvalidFederationTime, RestoreInProgress, ObjectNotKnown, ConcurrentAccessAttempted, AttributeNotOwned, FederateNotExecutionMember, RTIinternalError, NameNotFound, ObjectClassNotDefined {
         if(idx >= stacjeList.size()){
