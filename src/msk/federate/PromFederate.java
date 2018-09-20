@@ -10,20 +10,27 @@ import java.util.Random;
 
 public class PromFederate extends BaseFederate<PromAmbassador> {
 
-
     private int promObj = 0;
     private Random random = new Random();
     private boolean init = false;
     private float speed = 1f;
-
+    private int waittingForNextStation = 0;
+    private int numerStacji = 1;
     @Override
     protected void update(double timeToAdvance) throws SaveInProgress, AttributeNotDefined, InvalidFederationTime, NameNotFound, RestoreInProgress, ObjectNotKnown, ObjectClassNotDefined, ConcurrentAccessAttempted, AttributeNotOwned, FederateNotExecutionMember, RTIinternalError {
-
-        if(!init){
-            init = true;
-                updatePromObj_NumerStacji(1,timeToAdvance);
+        if(waittingForNextStation == 100) {
+            updatePromObj_NumerStacji(numerStacji,timeToAdvance);
+            numerStacji++;
+            waittingForNextStation = 0;
         }
 
+        if(numerStacji > 6){
+            numerStacji = 1;
+        }
+        waittingForNextStation++;
+
+
+        //TODO DODAWANIE PASAZEROW
     }
 
     @Override
