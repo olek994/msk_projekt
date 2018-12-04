@@ -16,7 +16,7 @@ import java.util.Random;
 
 public class PromFederate extends BaseFederate<PromAmbassador> {
 
-    public static int LICZBA_WOLNYCH_MIEJSC = 10;
+    public static int LICZBA_WOLNYCH_MIEJSC = 30;
 
     private int promObj = 0;
     private Random random = new Random();
@@ -27,6 +27,8 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
     private Map<Integer,Integer> liczbaPasazerowNaStacji;
     private Map<Integer,Integer> liczbaSamochodowNaStacji;
     private int watting = 0;
+
+
 
     @Override
     protected void update(double timeToAdvance) throws Exception {
@@ -60,14 +62,22 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
             Stacja stacja = this.federationAmbassador.getStacjeObjInstances(this.federationAmbassador.stacjaOstatnioDodana);
             this.federationAmbassador.stacjaClassFlag_newInstance = false;
             this.federationAmbassador.stacjaOstatnioDodana = 0;
-            liczbaPasazerowNaStacji.replace(stacja.getNumer(),stacja.getLiczbaPasazerow());
-            liczbaSamochodowNaStacji.replace(stacja.getNumer(),stacja.getLiczbaSamochodow());
             System.out.println("DODANO Stacje DO GUI: "+stacja.getNumer());
         }
         if(this.federationAmbassador.stacjaClassFlag_attrsUpdated) {
             Stacja stacja = this.federationAmbassador.getStacjeObjInstances(this.federationAmbassador.stacjaOstatnioModyfikowana);
             this.federationAmbassador.stacjaClassFlag_attrsUpdated = false;
             this.federationAmbassador.stacjaOstatnioModyfikowana = 0;
+            System.out.println("LICZBA PASAZEROW: "+stacja.getLiczbaPasazerow());
+            System.out.println("LICZBA PASAZEROW na promie stacjo: "+liczbaPasazerowNaStacji.get(stacja.getNumer()));
+            System.out.println("LICZBA Samochodow: "+stacja.getLiczbaSamochodow());
+            System.out.println("LICZBA Samochodow na promie stacji: "+liczbaSamochodowNaStacji.get(stacja.getNumer()));
+            if(liczbaPasazerowNaStacji.get(stacja.getNumer()) < stacja.getLiczbaPasazerow()){
+                liczbaPasazerowNaStacji.replace(stacja.getNumer(),stacja.getLiczbaPasazerow());
+            }
+            if(liczbaSamochodowNaStacji.get(stacja.getNumer()) <stacja.getLiczbaSamochodow()){
+                liczbaSamochodowNaStacji.replace(stacja.getNumer(),stacja.getLiczbaPasazerow());
+            }
 
             if (numerStacji == stacja.getNumer()) {
 
@@ -75,13 +85,15 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
 
                 System.out.println("LICZBA Pasazerow PROM: "+liczbaPasazerowNaStacji+" liczba pasazerow stacja: "+stacja.getLiczbaPasazerow());
 
-                if(liczbaPasazerowNaStacji.get(numerStacji) > stacja.getLiczbaPasazerow() && LICZBA_WOLNYCH_MIEJSC >= 1){
-                    System.out.println("USNIETY PASAZER");
-                    updatePromObj_LiczbaWolnychMiejsc(1,timeToAdvance);
-                }
 
-                if(liczbaSamochodowNaStacji.get(numerStacji) > stacja.getLiczbaSamochodow() && LICZBA_WOLNYCH_MIEJSC >= 3){
-                    System.out.println("USNIETY SAMOCHOD");
+
+                //TODO OGARNIECIE USUWANIA PASAZEROW Z PROMU
+                //DODAWANIE PASAZEROW DO PROMU
+                if(liczbaPasazerowNaStacji.get(numerStacji) > stacja.getLiczbaPasazerow() && LICZBA_WOLNYCH_MIEJSC >= 1){
+                    System.out.println("dodano pasazera na prom");
+                    updatePromObj_LiczbaWolnychMiejsc(1,timeToAdvance);
+                }else if(liczbaSamochodowNaStacji.get(numerStacji) > stacja.getLiczbaSamochodow() && LICZBA_WOLNYCH_MIEJSC >= 3){
+                    System.out.println("Dodano samochod na prom");
                     updatePromObj_LiczbaWolnychMiejsc(3,timeToAdvance);
                 }
 

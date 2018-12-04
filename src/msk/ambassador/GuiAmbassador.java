@@ -41,16 +41,16 @@ public class GuiAmbassador extends BaseAmbassador {
     public boolean stacjaClassFlag_attrsUpdated = false;
 
 
-//    public int pasazerClass                      =0;
-//    public int pasazerAttr_id                    =0;
-//    public int pasazerAttr_typ                   =0;
-//    public int pasazerAttr_numerStacji           =0;
-//    public int pasazerAttr_stacjaDocelowa        =0;
-//    public int pasazerNumerStworzenia            =1;
-//    public int pasazerOstatnioDodany             =0;
-//    public int pasazerOstatnioModyfikowany       =0;
-//    public boolean pasazerClassFlag_newInstance  = false;
-//    public boolean pasazerClassFlag_attrsUpdated = false;
+    public int pasazerClass                      =0;
+    public int pasazerAttr_id                    =0;
+    public int pasazerAttr_typ                   =0;
+    public int pasazerAttr_numerStacji           =0;
+    public int pasazerAttr_stacjaDocelowa        =0;
+    public int pasazerNumerStworzenia            =1;
+    public int pasazerOstatnioDodany             =0;
+    public int pasazerOstatnioModyfikowany       =0;
+    public boolean pasazerClassFlag_newInstance  = false;
+    public boolean pasazerClassFlag_attrsUpdated = false;
 
 
     @Override
@@ -127,50 +127,50 @@ public class GuiAmbassador extends BaseAmbassador {
             this.stacjaOstatnioModyfikowana = numerStacji;
 
         }
-//        else if(this.objects.get(theObject) == this.pasazerClass){
-//
-//            //Wyszukanie ktora stacja zmienila stan
-//            int idPasazera = 0;
-//            for(int i = 0;i<theAttributes.size();i++){
-//                try{
-//                    int handle = theAttributes.getAttributeHandle(i);
-//                    byte[] value = theAttributes.getValue(i);
-//
-//                    if(handle == pasazerAttr_id && value != null){
-//                        idPasazera = EncodingHelpers.decodeInt(value);
-//                    }
-//
-//                }catch(Exception ex){
-//                    ex.printStackTrace();
-//                }
-//            }
-//
-//            //modyfikowanie wartosci zmiennych stacji
-//            Pasazer pasazer =  getPasazerObjInstances(idPasazera);
-//            for(int i = 0;i<theAttributes.size();i++){
-//                try{
-//                    int handle = theAttributes.getAttributeHandle(i);
-//                    byte[] value = theAttributes.getValue(i);
-//
-//                    if(handle == pasazerAttr_id && value != null){
-//                        pasazer.setId(EncodingHelpers.decodeInt(value));
-//                    } else if (handle == pasazerAttr_numerStacji && value != null){
-//                        pasazer.setNumerStacji(EncodingHelpers.decodeInt(value));
-//                    } else if (handle == pasazerAttr_typ && value != null){
-//                        pasazer.setTyp(EncodingHelpers.decodeInt(value));
-//                    } else if (handle == pasazerAttr_stacjaDocelowa && value != null){
-//                        pasazer.setStacjaDocelowa(EncodingHelpers.decodeInt(value));
-//                    }
-//
-//                }catch(Exception ex){
-//                    ex.printStackTrace();
-//                }
-//            }
-//            this.pasazerObjInstance.replace(idPasazera, pasazer);
-//            this.pasazerClassFlag_attrsUpdated = true;
-//            this.pasazerOstatnioModyfikowany = idPasazera;
-//
-//        }
+        else if(this.objects.get(theObject) == this.pasazerClass){
+
+            //Wyszukanie ktora stacja zmienila stan
+            int idPasazera = 0;
+            for(int i = 0;i<theAttributes.size();i++){
+                try{
+                    int handle = theAttributes.getAttributeHandle(i);
+                    byte[] value = theAttributes.getValue(i);
+
+                    if(handle == pasazerAttr_id && value != null){
+                        idPasazera = EncodingHelpers.decodeInt(value);
+                    }
+
+                }catch(Exception ex){
+                    ex.printStackTrace();
+                }
+            }
+
+            //modyfikowanie wartosci zmiennych stacji
+            Pasazer pasazer =  getPasazerObjInstances(idPasazera);
+            for(int i = 0;i<theAttributes.size();i++){
+                try{
+                    int handle = theAttributes.getAttributeHandle(i);
+                    byte[] value = theAttributes.getValue(i);
+
+                    if(handle == pasazerAttr_id && value != null){
+                        pasazer.setId(EncodingHelpers.decodeInt(value));
+                    } else if (handle == pasazerAttr_numerStacji && value != null){
+                        pasazer.setNumerStacji(EncodingHelpers.decodeInt(value));
+                    } else if (handle == pasazerAttr_typ && value != null){
+                        pasazer.setTyp(EncodingHelpers.decodeInt(value));
+                    } else if (handle == pasazerAttr_stacjaDocelowa && value != null){
+                        pasazer.setStacjaDocelowa(EncodingHelpers.decodeInt(value));
+                    }
+
+                }catch(Exception ex){
+                    ex.printStackTrace();
+                }
+            }
+            this.pasazerObjInstance.replace(idPasazera, pasazer);
+            this.pasazerClassFlag_attrsUpdated = true;
+            this.pasazerOstatnioModyfikowany = idPasazera;
+
+        }
 
 
     }
@@ -194,15 +194,15 @@ public class GuiAmbassador extends BaseAmbassador {
             this.stacjaOstatnioDodana = stacjaNumerStworzenia;
             stacjaNumerStworzenia++;
         }
-//        if(theObjectClass == this.pasazerClass){
-//            System.out.println("DiscoverObject Pasazer");
-//            Pasazer pasazer = new Pasazer();
-//            pasazer.setInstance(theObject);
-//            this.pasazerObjInstance.put(pasazerNumerStworzenia,pasazer);
-//            this.pasazerClassFlag_newInstance = true;
-//            this.pasazerOstatnioDodany = pasazerNumerStworzenia;
-//            pasazerNumerStworzenia++;
-//        }
+        if(theObjectClass == this.pasazerClass){
+            System.out.println("DiscoverObject Pasazer");
+            Pasazer pasazer = new Pasazer();
+            pasazer.setInstance(theObject);
+            this.pasazerObjInstance.put(pasazerNumerStworzenia,pasazer);
+            this.pasazerClassFlag_newInstance = true;
+            this.pasazerOstatnioDodany = pasazerNumerStworzenia;
+            pasazerNumerStworzenia++;
+        }
 
         //w zaleznosci od theObjcet beda dodawane nowe obiekt do HashMap
 

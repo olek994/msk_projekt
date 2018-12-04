@@ -1500,3 +1500,1698 @@ org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: msk
 	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
 	at msk.BaseFederate.runFederate(BaseFederate.java:74)
 	at msk.federate.StacjaFederate.main(StacjaFederate.java:181)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:181)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:76)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-62474] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-62474] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:76)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:63)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:181)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-45559] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-45559] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:63)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:81)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-45559] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:63)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:80)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-57288] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:80)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:63)
+	at java.lang.Thread.run(Thread.java:748)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-37611] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:183)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:80)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-2779] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-2779] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:201)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:80)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-32735] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-32735] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:206)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:80)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-927] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-31452] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-31452] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:206)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:63)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:206)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:80)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-53442] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-53442] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:206)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:206)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:80)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-61510] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-61510] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:63)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:80)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-18240] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-18240] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:63)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:80)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-25747] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:199)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:80)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-37458] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-37458] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:200)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:80)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:63)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PasazerFederate.main(PasazerFederate.java:90)
+ERROR [Thread-4] portico.lrc: FAILURE Exception encountered while processing incoming message: msk.Objects.Stacja cannot be cast to msk.Objects.Pasazer
+java.lang.ClassCastException: msk.Objects.Stacja cannot be cast to msk.Objects.Pasazer
+	at msk.ambassador.GuiAmbassador.reflectAttributeValues(GuiAmbassador.java:148)
+	at org.portico.impl.hla13.handlers.ReflectAttributesCallbackHandler.process(ReflectAttributesCallbackHandler.java:101)
+	at org.portico.utils.messaging.MessageChain.process(MessageChain.java:78)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.lrc.LRC.tickProcess(LRC.java:688)
+	at org.portico.lrc.LRC.tickUntilEmpty(LRC.java:489)
+	at org.portico.lrc.LRC.tick(LRC.java:449)
+	at org.portico.impl.hla13.Impl13Helper.tick(Impl13Helper.java:130)
+	at org.portico.impl.hla13.Rti13Ambassador.tick(Rti13Ambassador.java:5781)
+	at msk.BaseFederate.advanceTime(BaseFederate.java:210)
+	at msk.BaseFederate.loop(BaseFederate.java:97)
+	at msk.BaseFederate.runFederate(BaseFederate.java:88)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:63)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:63)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PasazerFederate.main(PasazerFederate.java:90)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:201)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PasazerFederate.main(PasazerFederate.java:90)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:63)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PasazerFederate.main(PasazerFederate.java:90)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:201)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PasazerFederate.main(PasazerFederate.java:90)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:80)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-928] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-928] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-928] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-928] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-928] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-928] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:63)
+	at java.lang.Thread.run(Thread.java:748)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-19821] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:327)
+ERROR [main] portico.lrc: federate name in use: StacjaFederate
+org.portico.lrc.compat.JFederateAlreadyExecutionMember: federate name in use: StacjaFederate
+	at org.portico.bindings.jgroups.channel.FederationChannel.joinFederation(FederationChannel.java:319)
+	at org.portico.bindings.jgroups.JGroupsConnection.joinFederation(JGroupsConnection.java:255)
+	at org.portico.lrc.services.federation.handlers.outgoing.JoinFederationHandler.process(JoinFederationHandler.java:105)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.joinFederationExecution(Rti13Ambassador.java:321)
+	at msk.BaseFederate.getFederationAmbassadorAndJoinToFederation(BaseFederate.java:145)
+	at msk.BaseFederate.runFederate(BaseFederate.java:76)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:327)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PasazerFederate.main(PasazerFederate.java:151)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:187)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:187)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PasazerFederate.main(PasazerFederate.java:151)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-33376] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-50794] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-50794] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-50794] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-50794] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-50794] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-50794] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PasazerFederate.main(PasazerFederate.java:151)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PasazerFederate.main(PasazerFederate.java:151)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PasazerFederate.main(PasazerFederate.java:151)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-34070] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:327)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-28602] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PasazerFederate.main(PasazerFederate.java:151)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-57171] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-57171] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:164)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:322)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:164)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:322)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-60970] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:164)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-60610] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [Thread-4] portico.lrc: federates still joined: [1]
+org.portico.lrc.compat.JFederatesCurrentlyJoined: federates still joined: [1]
+	at org.portico.bindings.jgroups.channel.FederationChannel.destroyFederation(FederationChannel.java:402)
+	at org.portico.bindings.jgroups.JGroupsConnection.destroyFederation(JGroupsConnection.java:322)
+	at org.portico.lrc.services.federation.handlers.outgoing.DestroyFederationHandler.process(DestroyFederationHandler.java:57)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.destroyFederationExecution(Rti13Ambassador.java:257)
+	at msk.BaseFederate.destoryFederation(BaseFederate.java:232)
+	at msk.BaseFederate.runFederate(BaseFederate.java:92)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-52575] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:310)
+ERROR [main] portico.lrc: Waited 5 seconds for RoleCall from federate [1], none received, connection error
+org.portico.lrc.compat.JRTIinternalError: Waited 5 seconds for RoleCall from federate [1], none received, connection error
+	at org.portico.lrc.services.federation.handlers.outgoing.JoinFederationHandler.process(JoinFederationHandler.java:146)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.joinFederationExecution(Rti13Ambassador.java:321)
+	at msk.BaseFederate.getFederationAmbassadorAndJoinToFederation(BaseFederate.java:145)
+	at msk.BaseFederate.runFederate(BaseFederate.java:76)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:310)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:164)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-25808] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:187)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:187)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PasazerFederate.main(PasazerFederate.java:151)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:327)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PasazerFederate.main(PasazerFederate.java:151)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:189)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:327)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:327)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:189)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:329)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:189)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-18240] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PasazerFederate.main(PasazerFederate.java:151)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:189)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:330)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PasazerFederate.main(PasazerFederate.java:151)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:189)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PasazerFederate.main(PasazerFederate.java:151)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:189)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-59602] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:330)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PasazerFederate.main(PasazerFederate.java:151)
+ERROR [Thread-4] portico.lrc: federates still joined: [1, 2, 4]
+org.portico.lrc.compat.JFederatesCurrentlyJoined: federates still joined: [1, 2, 4]
+	at org.portico.bindings.jgroups.channel.FederationChannel.destroyFederation(FederationChannel.java:402)
+	at org.portico.bindings.jgroups.JGroupsConnection.destroyFederation(JGroupsConnection.java:322)
+	at org.portico.lrc.services.federation.handlers.outgoing.DestroyFederationHandler.process(DestroyFederationHandler.java:57)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.destroyFederationExecution(Rti13Ambassador.java:257)
+	at msk.BaseFederate.destoryFederation(BaseFederate.java:232)
+	at msk.BaseFederate.runFederate(BaseFederate.java:92)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc: federates still joined: [4]
+org.portico.lrc.compat.JFederatesCurrentlyJoined: federates still joined: [4]
+	at org.portico.bindings.jgroups.channel.FederationChannel.destroyFederation(FederationChannel.java:402)
+	at org.portico.bindings.jgroups.JGroupsConnection.destroyFederation(JGroupsConnection.java:322)
+	at org.portico.lrc.services.federation.handlers.outgoing.DestroyFederationHandler.process(DestroyFederationHandler.java:57)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.destroyFederationExecution(Rti13Ambassador.java:257)
+	at msk.BaseFederate.destoryFederation(BaseFederate.java:232)
+	at msk.BaseFederate.runFederate(BaseFederate.java:92)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:330)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-54884] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [main] portico.lrc: TimeoutException
+org.jgroups.TimeoutException: TimeoutException
+	at org.jgroups.util.Promise._getResultWithTimeout(Promise.java:145)
+	at org.jgroups.util.Promise.getResultWithTimeout(Promise.java:40)
+	at org.jgroups.util.AckCollector.waitForAllAcks(AckCollector.java:93)
+	at org.jgroups.protocols.RSVP$Entry.block(RSVP.java:287)
+	at org.jgroups.protocols.RSVP.down(RSVP.java:118)
+	at org.jgroups.protocols.pbcast.STABLE.down(STABLE.java:328)
+	at org.jgroups.protocols.pbcast.GMS.down(GMS.java:965)
+	at org.jgroups.protocols.FlowControl.down(FlowControl.java:351)
+	at org.jgroups.protocols.FlowControl.down(FlowControl.java:351)
+	at org.jgroups.protocols.FRAG2.down(FRAG2.java:147)
+	at org.jgroups.protocols.pbcast.STATE_TRANSFER.down(STATE_TRANSFER.java:238)
+	at org.jgroups.protocols.pbcast.FLUSH.down(FLUSH.java:312)
+	at org.jgroups.stack.ProtocolStack.down(ProtocolStack.java:1025)
+	at org.jgroups.JChannel.down(JChannel.java:729)
+	at org.jgroups.JChannel.send(JChannel.java:445)
+	at org.portico.bindings.jgroups.channel.FederationChannel.destroyFederation(FederationChannel.java:413)
+	at org.portico.bindings.jgroups.JGroupsConnection.destroyFederation(JGroupsConnection.java:322)
+	at org.portico.lrc.services.federation.handlers.outgoing.DestroyFederationHandler.process(DestroyFederationHandler.java:57)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.destroyFederationExecution(Rti13Ambassador.java:257)
+	at msk.BaseFederate.destoryFederation(BaseFederate.java:232)
+	at msk.BaseFederate.runFederate(BaseFederate.java:92)
+	at msk.federate.PromFederate.main(PromFederate.java:196)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-54884] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-54884] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-54884] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-54884] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-54884] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-54884] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-54884] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-54884] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-54884] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-54884] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:199)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PasazerFederate.main(PasazerFederate.java:151)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-29678] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:199)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.StacjaFederate.main(StacjaFederate.java:330)
+WARN  [VERIFY_SUSPECT.TimerThread,mskFederation,DESKTOP-JVOQLD0-25565] portico.lrc.jgroups: Detected that federate [1] may have crashed, investigating...
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PasazerFederate.main(PasazerFederate.java:151)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:199)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PasazerFederate.main(PasazerFederate.java:151)
+ERROR [Thread-4] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [Thread-4] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.GuiApplication.lambda$startSimBtn$1(GuiApplication.java:84)
+	at java.lang.Thread.run(Thread.java:748)
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=mskFederation
+ERROR [main] portico.lrc: federation exists: mskFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: mskFederation
+	at org.portico.bindings.jgroups.channel.FederationChannel.createFederation(FederationChannel.java:268)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:232)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:79)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at msk.BaseFederate.tryCreateFederation(BaseFederate.java:129)
+	at msk.BaseFederate.runFederate(BaseFederate.java:74)
+	at msk.federate.PromFederate.main(PromFederate.java:199)
