@@ -66,7 +66,7 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
             }
             System.out.println("DODANO STACJE: "+(numerPoprzednioDodanejStacji+1));
             stacjeList.add(createObject("Stacja"));
-            update_StacjaAttr(numerPoprzednioDodanejStacji+1,DLUGOSC_KOLEJKI,kolejnaStacja,0,0,timeToAdvance,numerPoprzednioDodanejStacji);//numerPoprzednioDodanej moze posluzyc do listy (bo od 0 sie zaczyna)
+            update_StacjaAttr(numerPoprzednioDodanejStacji+1,timeToAdvance,numerPoprzednioDodanejStacji);//numerPoprzednioDodanej moze posluzyc do listy (bo od 0 sie zaczyna)
             liczbaPasazerowNaStacji.put(numerPoprzednioDodanejStacji+1,0);
             liczbaSamochodowNaStacji.put(numerPoprzednioDodanejStacji+1,0);
             numerPoprzednioDodanejStacji++;
@@ -138,18 +138,8 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
 
         int stacjaClass                         = rtiamb.getObjectClassHandle("ObjectRoot.Stacja");
         int stacjaClassAttrNumer                = rtiamb.getAttributeHandle("numer",stacjaClass);
-        int stacjaClassAttrMaxDlugoscKolejki    = rtiamb.getAttributeHandle("maxDlugoscKolejki",stacjaClass);
-        int stacjaClassAttrNumerKolejnejStacji  = rtiamb.getAttributeHandle("numerKolejnejStacji",stacjaClass);
-        int stacjaClassAttrLiczbaPasazerow      = rtiamb.getAttributeHandle("liczbaPasazerow",stacjaClass);
-        int stacjaClassAttrLiczbaSamochodow     = rtiamb.getAttributeHandle("liczbaSamochodow",stacjaClass);
-        int stacjaClassAttrPromNaStacji     = rtiamb.getAttributeHandle("promNaStacji",stacjaClass);
         AttributeHandleSet attributes = RtiFactoryFactory.getRtiFactory().createAttributeHandleSet();
         attributes.add(stacjaClassAttrNumer);
-        attributes.add(stacjaClassAttrMaxDlugoscKolejki);
-        attributes.add(stacjaClassAttrNumerKolejnejStacji);
-        attributes.add(stacjaClassAttrLiczbaPasazerow);
-        attributes.add(stacjaClassAttrLiczbaSamochodow);
-        attributes.add(stacjaClassAttrPromNaStacji);
 
         rtiamb.publishObjectClass(stacjaClass,attributes);
 
@@ -195,7 +185,7 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
         }
     }
 
-    private void update_StacjaAttr(int numer,int maxDlugoscKolejki,int numerKolejnejStacji,int liczbaPasazerow,int liczbaSamochodow,double time, int idx) throws ObjectNotKnown, FederateNotExecutionMember, RTIinternalError, NameNotFound, ObjectClassNotDefined, RestoreInProgress, AttributeNotOwned, AttributeNotDefined, SaveInProgress, InvalidFederationTime, ConcurrentAccessAttempted {
+    private void update_StacjaAttr(int numer,double time, int idx) throws ObjectNotKnown, FederateNotExecutionMember, RTIinternalError, NameNotFound, ObjectClassNotDefined, RestoreInProgress, AttributeNotOwned, AttributeNotDefined, SaveInProgress, InvalidFederationTime, ConcurrentAccessAttempted {
         if(idx > stacjeList.size()-1){
             return;
         }
@@ -203,15 +193,7 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
         int obj = this.stacjeList.get(idx);
         int classHandle = rtiamb.getObjectClass(obj);
         int attrNumerHandle = rtiamb.getAttributeHandle("numer",classHandle);
-        int attrMaxDlugoscKolejkiHandle = rtiamb.getAttributeHandle("maxDlugoscKolejki",classHandle);
-        int attrNumerKolejnejStacjiHandle = rtiamb.getAttributeHandle("numerKolejnejStacji",classHandle);
-        int attrLiczbaPasazerowHandle = rtiamb.getAttributeHandle("liczbaPasazerow",classHandle);
-        int attrNLiczbaSamochodowHandle = rtiamb.getAttributeHandle("liczbaSamochodow",classHandle);
         attributes.add(attrNumerHandle, EncodingHelpers.encodeInt(numer));
-        attributes.add(attrMaxDlugoscKolejkiHandle, EncodingHelpers.encodeInt(maxDlugoscKolejki));
-        attributes.add(attrNumerKolejnejStacjiHandle, EncodingHelpers.encodeInt(numerKolejnejStacji));
-        attributes.add(attrLiczbaPasazerowHandle, EncodingHelpers.encodeInt(liczbaPasazerow));
-        attributes.add(attrNLiczbaSamochodowHandle, EncodingHelpers.encodeInt(liczbaSamochodow));
         rtiamb.updateAttributeValues(obj,attributes,generateTag(),convertTime(time));
 
     }
@@ -291,9 +273,7 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
         int obj = this.stacjeList.get(idx);
         int classHandle = rtiamb.getObjectClass(obj);
         int attrNumerHandle = rtiamb.getAttributeHandle("numer",classHandle);
-        int attrPromNaStacjiHandle = rtiamb.getAttributeHandle("promNaStacji",classHandle);
         attributes.add(attrNumerHandle, EncodingHelpers.encodeInt(numerStacji));
-        attributes.add(attrPromNaStacjiHandle, EncodingHelpers.encodeInt(promNaStacji));
         rtiamb.updateAttributeValues(obj,attributes,generateTag(),convertTime(time));
     }
 

@@ -54,16 +54,6 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
             Stacja stacja = this.federationAmbassador.getStacjeObjInstances(this.federationAmbassador.stacjaOstatnioModyfikowana);
             this.federationAmbassador.stacjaClassFlag_attrsUpdated = false;
             this.federationAmbassador.stacjaOstatnioModyfikowana = 0;
-//            System.out.println("LICZBA PASAZEROW: "+stacja.getLiczbaPasazerow());
-//            System.out.println("LICZBA PASAZEROW na promie stacjo: "+liczbaPasazerowNaStacji.get(stacja.getNumer()));
-//            System.out.println("LICZBA Samochodow: "+stacja.getLiczbaSamochodow());
-//            System.out.println("LICZBA Samochodow na promie stacji: "+liczbaSamochodowNaStacji.get(stacja.getNumer()));
-            if(liczbaPasazerowNaStacji.get(stacja.getNumer()) < stacja.getLiczbaPasazerow()){
-                liczbaPasazerowNaStacji.replace(stacja.getNumer(),stacja.getLiczbaPasazerow());
-            }
-            if(liczbaSamochodowNaStacji.get(stacja.getNumer()) <stacja.getLiczbaSamochodow()){
-                liczbaSamochodowNaStacji.replace(stacja.getNumer(),stacja.getLiczbaPasazerow());
-            }
 
 
         }
@@ -110,8 +100,6 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
                 updatePromObj_LiczbaWolnychMiejscDodajWolneMiejsca(1,timeToAdvance);
             }
 
-
-
         }
 
 
@@ -134,13 +122,11 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
         //Publikacja promu
         int promClass                           =rtiamb.getObjectClassHandle("ObjectRoot.Prom");
         int promClassAttrLiczbaWolnychMiejsc    =rtiamb.getAttributeHandle("liczbaWolnychMiejsc",promClass);
-        int promClassAttrLiczbaZajetychMiejsc    =rtiamb.getAttributeHandle("liczbaZajetychMiejsc",promClass);
         int promClassAttrNumerStacji            =rtiamb.getAttributeHandle("numerStacji",promClass);
 
         AttributeHandleSet attributes = RtiFactoryFactory.getRtiFactory().createAttributeHandleSet();
         attributes.add(promClassAttrLiczbaWolnychMiejsc);
         attributes.add(promClassAttrNumerStacji);
-        attributes.add(promClassAttrLiczbaZajetychMiejsc);
 
         rtiamb.publishObjectClass(promClass,attributes);
 
@@ -150,19 +136,9 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
 
         this.federationAmbassador.stacjaClass                     = rtiamb.getObjectClassHandle("ObjectRoot.Stacja");
         this.federationAmbassador.stacjaAttr_numer                = rtiamb.getAttributeHandle("numer",this.federationAmbassador.stacjaClass);
-        this.federationAmbassador.stacjaAttr_MaxDlugoscKolejki    = rtiamb.getAttributeHandle("maxDlugoscKolejki",this.federationAmbassador.stacjaClass);
-        this.federationAmbassador.stacjaAttr_numerKolejnejStacji  = rtiamb.getAttributeHandle("numerKolejnejStacji",this.federationAmbassador.stacjaClass);
-        this.federationAmbassador.stacjaAttr_LiczbaPasazerow      = rtiamb.getAttributeHandle("liczbaPasazerow",this.federationAmbassador.stacjaClass);
-        this.federationAmbassador.stacjaAttr_LiczbaSamochodow     = rtiamb.getAttributeHandle("liczbaSamochodow",this.federationAmbassador.stacjaClass);
-        this.federationAmbassador.stacjaAttr_PromNaStacji         = rtiamb.getAttributeHandle("promNaStacji",this.federationAmbassador.stacjaClass);
 
         attributes = RtiFactoryFactory.getRtiFactory().createAttributeHandleSet();
         attributes.add(this.federationAmbassador.stacjaAttr_numer);
-        attributes.add(this.federationAmbassador.stacjaAttr_MaxDlugoscKolejki);
-        attributes.add(this.federationAmbassador.stacjaAttr_numerKolejnejStacji);
-        attributes.add(this.federationAmbassador.stacjaAttr_LiczbaPasazerow);
-        attributes.add(this.federationAmbassador.stacjaAttr_LiczbaSamochodow);
-        attributes.add(this.federationAmbassador.stacjaAttr_PromNaStacji);
 
         rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.stacjaClass,attributes);
 

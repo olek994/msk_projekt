@@ -180,7 +180,6 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
 
         Prom prom = this.federationAmbassador.getObjectInstances(Prom.class);
         if(prom != null){
-            System.out.println("PROM LICZBA WOLNYCH MIEJSC: "+prom.getLiczbaWolnychMiejsc());
             Platform.runLater(() -> {
                 this.guiApplication.liczbaWolnychMiejscNaPromie.setText(prom.getLiczbaWolnychMiejsc()+ "");
             });
@@ -199,7 +198,7 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
             this.federationAmbassador.stacjaClassFlag_attrsUpdated = false;
             this.federationAmbassador.stacjaOstatnioModyfikowana = 0;
 
-            System.out.println("ZAKTUALIZOWANO PARAMETRY Stacji: " + stacja.getNumer() + ", " + stacja.getMaxDlugoscKolejki() + ", " + stacja.getNumerKolejnejStacji() + " LiczbaPasazerow: " + stacja.getLiczbaPasazerow() + " LiczbaSamochodow: " + stacja.getLiczbaSamochodow());
+            System.out.println("ZAKTUALIZOWANO PARAMETRY Stacji: " + stacja.getNumer() );
 
 
 
@@ -221,6 +220,7 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
 
             System.out.println("ZAKTUALIZOWANO PARAMETRY Pasazera: " + pasazer.getId()+" Na promie "+pasazer.getNaPromie());
 
+            System.out.println("PASAZER PROM: "+pasazer.getNaPromie()+", WYSIADA: "+pasazer.getWysiada());
             if(pasazer.getNaPromie() == 0){
                 int pasazerowie;
                 int samochody;
@@ -314,9 +314,13 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
                         pasazerowie = liczbaPasazerowNaStacji.get(1);
                         samochody = liczbaSamochodowNaStacji.get(1);
                         if(pasazer.getTyp() == 1){
-                            liczbaPasazerowNaStacji.put(1,pasazerowie-1);
+                            if(pasazerowie > 0){
+                                liczbaPasazerowNaStacji.put(1,pasazerowie-1);
+                            }
                         }else if(pasazer.getTyp() == 2){
-                            liczbaSamochodowNaStacji.put(1,samochody-1);
+                            if(samochody > 0){
+                                liczbaSamochodowNaStacji.put(1,samochody-1);
+                            }
                         }
                         Platform.runLater(() -> {
                             this.guiApplication.liczbaPasazerowPierwszej.setText(liczbaPasazerowNaStacji.get(1) + "");
@@ -328,9 +332,13 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
                         pasazerowie = liczbaPasazerowNaStacji.get(2);
                         samochody = liczbaSamochodowNaStacji.get(2);
                         if(pasazer.getTyp() == 1){
-                            liczbaPasazerowNaStacji.put(2,pasazerowie-1);
+                            if(pasazerowie > 0){
+                                liczbaPasazerowNaStacji.put(2,pasazerowie-1);
+                            }
                         }else if(pasazer.getTyp() == 2){
-                            liczbaSamochodowNaStacji.put(2,samochody-1);
+                            if(samochody > 0){
+                                liczbaSamochodowNaStacji.put(2,samochody-1);
+                            }
                         }
                         Platform.runLater(() -> {
                             this.guiApplication.liczbaPasazerowDrugiej.setText(liczbaPasazerowNaStacji.get(2) + "");
@@ -341,9 +349,13 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
                         pasazerowie = liczbaPasazerowNaStacji.get(3);
                         samochody = liczbaSamochodowNaStacji.get(3);
                         if(pasazer.getTyp() == 1){
-                            liczbaPasazerowNaStacji.put(3,pasazerowie-1);
+                            if(pasazerowie > 0){
+                                liczbaPasazerowNaStacji.put(3,pasazerowie-1);
+                            }
                         }else if(pasazer.getTyp() == 2){
-                            liczbaSamochodowNaStacji.put(3,samochody-1);
+                            if(samochody > 0){
+                                liczbaSamochodowNaStacji.put(3,samochody-1);
+                            }
                         }
                         Platform.runLater(() -> {
                             this.guiApplication.liczbaPasazerowTrzeciej.setText(liczbaPasazerowNaStacji.get(3) + "");
@@ -354,9 +366,13 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
                         pasazerowie = liczbaPasazerowNaStacji.get(4);
                         samochody = liczbaSamochodowNaStacji.get(4);
                         if(pasazer.getTyp() == 1){
-                            liczbaPasazerowNaStacji.put(4,pasazerowie-1);
+                            if(pasazerowie > 0){
+                                liczbaPasazerowNaStacji.put(4,pasazerowie-1);
+                            }
                         }else if(pasazer.getTyp() == 2){
-                            liczbaSamochodowNaStacji.put(4,samochody-1);
+                            if(samochody > 0){
+                                liczbaSamochodowNaStacji.put(4,samochody-1);
+                            }
                         }
                         Platform.runLater(() -> {
                             this.guiApplication.liczbaPasazerowCzwartej.setText(liczbaPasazerowNaStacji.get(4) + "");
@@ -367,9 +383,13 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
                         pasazerowie = liczbaPasazerowNaStacji.get(5);
                         samochody = liczbaSamochodowNaStacji.get(5);
                         if(pasazer.getTyp() == 1){
-                            liczbaPasazerowNaStacji.put(5,pasazerowie-1);
+                            if(pasazerowie > 0){
+                                liczbaPasazerowNaStacji.put(5,pasazerowie-1);
+                            }
                         }else if(pasazer.getTyp() == 2){
-                            liczbaSamochodowNaStacji.put(5,samochody-1);
+                            if(samochody > 0){
+                                liczbaSamochodowNaStacji.put(5,samochody-1);
+                            }
                         }
                         Platform.runLater(() -> {
                             this.guiApplication.liczbaPasazerowPiatej.setText(liczbaPasazerowNaStacji.get(5) + "");
@@ -380,9 +400,13 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
                         pasazerowie = liczbaPasazerowNaStacji.get(6);
                         samochody = liczbaSamochodowNaStacji.get(6);
                         if(pasazer.getTyp() == 1){
-                            liczbaPasazerowNaStacji.put(6,pasazerowie-1);
+                            if(pasazerowie > 0){
+                                liczbaPasazerowNaStacji.put(6,pasazerowie-1);
+                            }
                         }else if(pasazer.getTyp() == 2){
-                            liczbaSamochodowNaStacji.put(6,samochody-1);
+                            if(samochody > 0){
+                                liczbaSamochodowNaStacji.put(6,samochody-1);
+                            }
                         }
                         Platform.runLater(() -> {
                             this.guiApplication.liczbaPasazerowSzostej.setText(liczbaPasazerowNaStacji.get(6) + "");
@@ -420,12 +444,10 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
         //-----PROM----//
         this.federationAmbassador.promClass = rtiamb.getObjectClassHandle("ObjectRoot.Prom");
         this.federationAmbassador.promAttr_liczbaWolnychMiejsc = rtiamb.getAttributeHandle("liczbaWolnychMiejsc", this.federationAmbassador.promClass);
-        this.federationAmbassador.promAttr_liczbaZajetychMiejsc = rtiamb.getAttributeHandle("liczbaZajetychMiejsc", this.federationAmbassador.promClass);
         this.federationAmbassador.promAttr_numerStacji = rtiamb.getAttributeHandle("numerStacji", this.federationAmbassador.promClass);
 
         AttributeHandleSet attributes = RtiFactoryFactory.getRtiFactory().createAttributeHandleSet();
         attributes.add(this.federationAmbassador.promAttr_liczbaWolnychMiejsc);
-        attributes.add(this.federationAmbassador.promAttr_liczbaZajetychMiejsc);
         attributes.add(this.federationAmbassador.promAttr_numerStacji);
 
         rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.promClass, attributes);
@@ -435,19 +457,9 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
 
         this.federationAmbassador.stacjaClass = rtiamb.getObjectClassHandle("ObjectRoot.Stacja");
         this.federationAmbassador.stacjaAttr_numer = rtiamb.getAttributeHandle("numer", this.federationAmbassador.stacjaClass);
-        this.federationAmbassador.stacjaAttr_MaxDlugoscKolejki = rtiamb.getAttributeHandle("maxDlugoscKolejki", this.federationAmbassador.stacjaClass);
-        this.federationAmbassador.stacjaAttr_numerKolejnejStacji = rtiamb.getAttributeHandle("numerKolejnejStacji", this.federationAmbassador.stacjaClass);
-        this.federationAmbassador.stacjaAttr_LiczbaPasazerow = rtiamb.getAttributeHandle("liczbaPasazerow", this.federationAmbassador.stacjaClass);
-        this.federationAmbassador.stacjaAttr_LiczbaSamochodow = rtiamb.getAttributeHandle("liczbaSamochodow", this.federationAmbassador.stacjaClass);
-        this.federationAmbassador.stacjaAttr_PromNaStacji = rtiamb.getAttributeHandle("promNaStacji", this.federationAmbassador.stacjaClass);
 
         attributes = RtiFactoryFactory.getRtiFactory().createAttributeHandleSet();
         attributes.add(this.federationAmbassador.stacjaAttr_numer);
-        attributes.add(this.federationAmbassador.stacjaAttr_MaxDlugoscKolejki);
-        attributes.add(this.federationAmbassador.stacjaAttr_numerKolejnejStacji);
-        attributes.add(this.federationAmbassador.stacjaAttr_LiczbaPasazerow);
-        attributes.add(this.federationAmbassador.stacjaAttr_LiczbaSamochodow);
-        attributes.add(this.federationAmbassador.stacjaAttr_PromNaStacji);
 
         rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.stacjaClass, attributes);
 

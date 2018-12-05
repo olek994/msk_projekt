@@ -138,7 +138,7 @@ public class PasazerFederate extends BaseFederate<PasazerAmbassador> {
 
         if (prom != null) {
 
-            if(prom.getNumerStacji() == poprzedniaStacjaPromu && wychodzeniePasazerow == 5){
+            if(prom.getNumerStacji() == poprzedniaStacjaPromu && wychodzeniePasazerow == 7){
                 List<Integer> pasazerowie = pasazerowieNaPromie.get(prom.getNumerStacji());
                 if(pasazerowie.size() > 0){
                     System.out.println("PASAZER: "+pasazerowie.get(pasazerowie.size()-1)+", wysiada");
@@ -151,28 +151,50 @@ public class PasazerFederate extends BaseFederate<PasazerAmbassador> {
             wychodzeniePasazerow++;
 
             if (prom.getNumerStacji() == poprzedniaStacjaPromu && oczekiwanieNaPojscieNaProm == 15) {
-                int losowyWybor = random.nextInt(2) + 1;
-                if (losowyWybor == 1) {
-                    List<Integer> pasazerowie = pasazerowieNastacji.get(prom.getNumerStacji());
-                    if (pasazerowie.size() > 0) {
-                        update_PasazerAttr_NaPromie(pasazerowie.get(pasazerowie.size() - 1) + 1, 1, timeToAdvance, pasazerowie.get(pasazerowie.size() - 1));
-                        System.out.println("Pasazer: " + (pasazerowie.get(pasazerowie.size() - 1) + 1));
+                List<Integer> pasazerowie = pasazerowieNastacji.get(prom.getNumerStacji());
+                List<Integer> samochody = samochodyNaStacji.get(prom.getNumerStacji());
 
-                        pasazerowieNaPromie.get(stacjaDocelowaPasazera.get((pasazerowie.get(pasazerowie.size() - 1) + 1))).add((pasazerowie.get(pasazerowie.size() - 1) + 1));
+                if(samochody.size() == 0 && pasazerowie.size() > 0){ //jezeli nie ma samochodow to bierz pasazera
+                    update_PasazerAttr_NaPromie(pasazerowie.get(pasazerowie.size() - 1) + 1, 1, timeToAdvance, pasazerowie.get(pasazerowie.size() - 1));
+                    System.out.println("Pasazer: " + (pasazerowie.get(pasazerowie.size() - 1) + 1));
 
-                        pasazerowie.remove(pasazerowie.size() - 1);
-                        pasazerowieNastacji.replace(prom.getNumerStacji(), pasazerowie);
+                    pasazerowieNaPromie.get(stacjaDocelowaPasazera.get((pasazerowie.get(pasazerowie.size() - 1) + 1))).add((pasazerowie.get(pasazerowie.size() - 1) + 1));
+
+                    pasazerowie.remove(pasazerowie.size() - 1);
+                    pasazerowieNastacji.replace(prom.getNumerStacji(), pasazerowie);
+                }else if(pasazerowie.size() == 0 && samochody.size() > 0){
+                    update_PasazerAttr_NaPromie(samochody.get(samochody.size()-1)+1,1,timeToAdvance,samochody.get(samochody.size()-1));
+                    System.out.println("Samochod: "+(samochody.get(samochody.size()-1)+1));
+
+                    pasazerowieNaPromie.get( stacjaDocelowaPasazera.get((samochody.get(samochody.size()-1)+1))).add((samochody.get(samochody.size()-1)+1));
+
+                    samochody.remove(samochody.size()-1);
+                    samochodyNaStacji.replace(prom.getNumerStacji(),samochody);
+                }else if(samochody.size() > 0 && pasazerowie.size() > 0){
+                    int losowyWybor = random.nextInt(2) + 1;
+                    if (losowyWybor == 1) {
+                        if (pasazerowie.size() > 0) {
+                            update_PasazerAttr_NaPromie(pasazerowie.get(pasazerowie.size() - 1) + 1, 1, timeToAdvance, pasazerowie.get(pasazerowie.size() - 1));
+                            System.out.println("Pasazer: " + (pasazerowie.get(pasazerowie.size() - 1) + 1));
+
+                            pasazerowieNaPromie.get(stacjaDocelowaPasazera.get((pasazerowie.get(pasazerowie.size() - 1) + 1))).add((pasazerowie.get(pasazerowie.size() - 1) + 1));
+
+                            pasazerowie.remove(pasazerowie.size() - 1);
+                            pasazerowieNastacji.replace(prom.getNumerStacji(), pasazerowie);
+                        }
+                    } else if (losowyWybor == 2) {
+                        if(samochody.size() > 0){
+                            update_PasazerAttr_NaPromie(samochody.get(samochody.size()-1)+1,1,timeToAdvance,samochody.get(samochody.size()-1));
+                            System.out.println("Samochod: "+(samochody.get(samochody.size()-1)+1));
+
+                            pasazerowieNaPromie.get( stacjaDocelowaPasazera.get((samochody.get(samochody.size()-1)+1))).add((samochody.get(samochody.size()-1)+1));
+
+                            samochody.remove(samochody.size()-1);
+                            samochodyNaStacji.replace(prom.getNumerStacji(),samochody);
+                        }
                     }
-                } else if (losowyWybor == 2) {
-                    List<Integer> samochody = samochodyNaStacji.get(prom.getNumerStacji());
-//                    if(samochody.size() > 0){
-//                        update_PasazerAttr_NaPromie(samochody.get(samochody.size()-1)+1,1,timeToAdvance,samochody.get(samochody.size()-1));
-//                        System.out.println("Samochod: "+(samochody.get(samochody.size()-1)+1));
-//                        samochody.remove(samochody.size()-1);
-//                        samochodyNaStacji.replace(prom.getNumerStacji(),samochody);
-//                        pasazerowieNaPromie.get( stacjaDocelowaPasazera.get((samochody.get(samochody.size()-1)+1))).add((samochody.get(samochody.size()-1)+1));
-//                    }
-                }//TODO WYSIADANIE SAMOCHODU
+                }
+        //TODO SPRAWDZIC CZY WSZCYSCY PASAZEROWIE PISZA SIE W GUI
                 oczekiwanieNaPojscieNaProm = 0;
             }
             oczekiwanieNaPojscieNaProm++;

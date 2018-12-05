@@ -23,17 +23,11 @@ public class GuiAmbassador extends BaseAmbassador {
     public int promClass                     =0;
     public int promAttr_liczbaWolnychMiejsc  =0;
     public int promAttr_numerStacji          =0;
-    public int promAttr_liczbaZajetychMiejsc =0;
     public boolean promClassFlag_newInstance  = false;
     public boolean promClassFlag_attrsUpdated = false;
 
     public int stacjaClass                     =0;
-    public int stacjaAttr_MaxDlugoscKolejki    =0;
     public int stacjaAttr_numer                =0;
-    public int stacjaAttr_numerKolejnejStacji  =0;
-    public int stacjaAttr_LiczbaPasazerow      =0;
-    public int stacjaAttr_LiczbaSamochodow     =0;
-    public int stacjaAttr_PromNaStacji         =0;
     public int stacjaNumerStworzenia           =1;
     public int stacjaOstatnioModyfikowana      =0;
     public int stacjaOstatnioDodana            =0;
@@ -69,8 +63,6 @@ public class GuiAmbassador extends BaseAmbassador {
                         prom.setLiczbaWolnychMiejsc(EncodingHelpers.decodeInt(value));
                     } else if (handle == promAttr_numerStacji && value != null){
                         prom.setNumerStacji(EncodingHelpers.decodeInt(value));
-                    } else if (handle == promAttr_liczbaZajetychMiejsc && value != null){
-                        prom.setLiczbaZajetychMiejsc(EncodingHelpers.decodeInt(value));
                     }
 
                 }catch(Exception ex){
@@ -107,16 +99,6 @@ public class GuiAmbassador extends BaseAmbassador {
 
                     if(handle == stacjaAttr_numer && value != null){
                         stacja.setNumer(EncodingHelpers.decodeInt(value));
-                    } else if (handle == stacjaAttr_MaxDlugoscKolejki && value != null){
-                        stacja.setMaxDlugoscKolejki(EncodingHelpers.decodeInt(value));
-                    } else if (handle == stacjaAttr_numerKolejnejStacji && value != null){
-                        stacja.setNumerKolejnejStacji(EncodingHelpers.decodeInt(value));
-                    } else if (handle == stacjaAttr_LiczbaPasazerow && value != null){
-                        stacja.setLiczbaPasazerow(EncodingHelpers.decodeInt(value));
-                    } else if (handle == stacjaAttr_LiczbaSamochodow && value != null){
-                        stacja.setLiczbaSamochodow(EncodingHelpers.decodeInt(value));
-                    } else if (handle == stacjaAttr_PromNaStacji && value != null){
-                        stacja.setPromNaStacji(EncodingHelpers.decodeInt(value));
                     }
 
                 }catch(Exception ex){
