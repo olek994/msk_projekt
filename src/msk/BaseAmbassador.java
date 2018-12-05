@@ -18,7 +18,7 @@ import java.util.Map;
 public abstract class BaseAmbassador extends NullFederateAmbassador {
 
     public double federateTime        = 0.0;
-    public double federateLookahead   = 1.0;
+    public double federateLookahead   = 10.0;
     public double grantedTime         = 0.0;
 
     public boolean isRegulating       = false;

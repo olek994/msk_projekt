@@ -39,23 +39,8 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
             updatePromObj_NumerStacji(numerStacji,LICZBA_WOLNYCH_MIEJSC,timeToAdvance);
         }
 
-        if(waittingForNextStation == 60 && !cofanie) {
-            numerStacji++;
-            updatePromObj_NumerStacji(numerStacji,-1,timeToAdvance);
-            waittingForNextStation = 0;
-        } else if (waittingForNextStation == 60 && cofanie){
-            numerStacji--;
-            updatePromObj_NumerStacji(numerStacji,-1,timeToAdvance);
-            waittingForNextStation = 0;
-        }
 
-        if(numerStacji >= 6){
-            cofanie = true;
-        }
-        if(numerStacji ==1){
-            cofanie = false;
-        }
-        waittingForNextStation++;
+        //TODO SPRAWDZIC KOLEJNOSC W UPDATE FEDERATOW
 
         //--STACJA--//
         if(this.federationAmbassador.stacjaClassFlag_newInstance){
@@ -83,7 +68,7 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
 
                 System.out.println("NUMER STACJI: "+numerStacji);
 
-                System.out.println("LICZBA Pasazerow PROM: "+liczbaPasazerowNaStacji+" liczba pasazerow stacja: "+stacja.getLiczbaPasazerow());
+                System.out.println("LICZBA Pasazerow PROM: "+liczbaPasazerowNaStacji+" liczba pasazerow stacja: "+stacja.getLiczbaPasazerow()+" Liczba wolnych miejsc: "+LICZBA_WOLNYCH_MIEJSC);
 
 
 
@@ -110,6 +95,27 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
             liczbaSamochodowNaStacji.replace(numerStacji,stacja.getLiczbaSamochodow());
 
         }
+
+
+        if(waittingForNextStation == 60 && !cofanie) {
+            numerStacji++;
+            updatePromObj_NumerStacji(numerStacji,-1,timeToAdvance);
+            waittingForNextStation = 0;
+        } else if (waittingForNextStation == 60 && cofanie){
+            numerStacji--;
+            updatePromObj_NumerStacji(numerStacji,-1,timeToAdvance);
+            waittingForNextStation = 0;
+        }
+
+        if(numerStacji >= 6){
+            cofanie = true;
+        }
+        if(numerStacji ==1){
+            cofanie = false;
+        }
+        waittingForNextStation++;
+
+
 
         //TODO DODAWANIE PASAZEROW
     }
