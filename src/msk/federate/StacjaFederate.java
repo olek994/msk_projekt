@@ -106,26 +106,6 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
             poprzedniDoWylaczenia = false;
         }
 
-
-        Prom prom = this.federationAmbassador.getObjectInstances(Prom.class);
-
-        if (prom != null) {
-            if(prom.getNumerStacji() == poprzedniaStacjaPromu && watting == 20){
-                int losowyWybor = random.nextInt(2)+1;
-                if(losowyWybor == 1 && liczbaPasazerowNaStacji.get(poprzedniaStacjaPromu) > 0 && prom.getLiczbaWolnychMiejsc() >= 1){
-                    update_StacjaAttr_usun_Pasazer(poprzedniaStacjaPromu,timeToAdvance,poprzedniaStacjaPromu-1);
-                }else if (losowyWybor == 2 && liczbaSamochodowNaStacji.get(poprzedniaStacjaPromu) > 0 && prom.getLiczbaWolnychMiejsc() >= 3){
-                    update_StacjaAttr_usun_Samochod(poprzedniaStacjaPromu,timeToAdvance,poprzedniaStacjaPromu-1);
-                }
-                watting = 0;
-            }
-
-            if(prom.getNumerStacji() == poprzedniaStacjaPromu){
-                watting++;
-            }
-        }
-
-
         if(poprzedniDoWylaczenia){
             oczekiwanieNaWylaczenie++;
         }
@@ -138,13 +118,6 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
             this.federationAmbassador.pasazerClassFlag_newInstance = false;
             this.federationAmbassador.pasazerOstatnioDodany = 0;
 
-            System.out.println("WykrytoPasazera przez stacje id: "+pasazer.getId()+" numer stacji: "+pasazer.getNumerStacji());
-
-            if(pasazer.getTyp() == 1){
-                update_StacjaAttr_dodaj_Pasazer(pasazer.getNumerStacji(),timeToAdvance,pasazer.getNumerStacji()-1);
-            }else if(pasazer.getTyp() == 2){
-                update_StacjaAttr_dodaj_Samochod(pasazer.getNumerStacji(),timeToAdvance,pasazer.getNumerStacji()-1);
-            }
 
         }
         if(this.federationAmbassador.pasazerClassFlag_attrsUpdated){
@@ -200,6 +173,7 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
         this.federationAmbassador.pasazerAttr_typ               = rtiamb.getAttributeHandle("typ",this.federationAmbassador.pasazerClass);
         this.federationAmbassador.pasazerAttr_numerStacji       = rtiamb.getAttributeHandle("numerStacji",this.federationAmbassador.pasazerClass);
         this.federationAmbassador.pasazerAttr_stacjaDocelowa    = rtiamb.getAttributeHandle("stacjaDocelowa",this.federationAmbassador.pasazerClass);
+        this.federationAmbassador.pasazerAttr_naPromie          = rtiamb.getAttributeHandle("naPromie",this.federationAmbassador.pasazerClass);
 
 
         attributes = RtiFactoryFactory.getRtiFactory().createAttributeHandleSet();
@@ -207,6 +181,7 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
         attributes.add(this.federationAmbassador.pasazerAttr_typ);
         attributes.add(this.federationAmbassador.pasazerAttr_numerStacji);
         attributes.add(this.federationAmbassador.pasazerAttr_stacjaDocelowa);
+        attributes.add(this.federationAmbassador.pasazerAttr_naPromie);
 
         rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.pasazerClass,attributes);
 

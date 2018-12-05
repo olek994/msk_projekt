@@ -1,6 +1,11 @@
 package msk.ambassador;
 
-import hla.rti.*;
+import hla.rti.EventRetractionHandle;
+import hla.rti.FederateInternalError;
+import hla.rti.InvalidFederationTime;
+import hla.rti.LogicalTime;
+import hla.rti.ObjectNotKnown;
+import hla.rti.ReflectedAttributes;
 import hla.rti.jlc.EncodingHelpers;
 import msk.BaseAmbassador;
 import msk.Objects.Pasazer;
@@ -20,6 +25,7 @@ public class StacjaAmbassador extends BaseAmbassador {
     public int pasazerAttr_typ                   =0;
     public int pasazerAttr_numerStacji           =0;
     public int pasazerAttr_stacjaDocelowa        =0;
+    public int pasazerAttr_naPromie              =0;
     public int pasazerNumerStworzenia            =1;
     public int pasazerOstatnioDodany             =0;
     public int pasazerOstatnioModyfikowany       =0;
@@ -82,6 +88,8 @@ public class StacjaAmbassador extends BaseAmbassador {
                         pasazer.setTyp(EncodingHelpers.decodeInt(value));
                     } else if (handle == pasazerAttr_stacjaDocelowa && value != null){
                         pasazer.setStacjaDocelowa(EncodingHelpers.decodeInt(value));
+                    }else if(handle == pasazerAttr_naPromie && value != null){
+                        pasazer.setNaPromie(EncodingHelpers.decodeInt(value));
                     }
 
                 }catch(Exception ex){

@@ -46,6 +46,7 @@ public class GuiAmbassador extends BaseAmbassador {
     public int pasazerAttr_typ                   =0;
     public int pasazerAttr_numerStacji           =0;
     public int pasazerAttr_stacjaDocelowa        =0;
+    public int pasazerAttr_naPromie              =0;
     public int pasazerNumerStworzenia            =1;
     public int pasazerOstatnioDodany             =0;
     public int pasazerOstatnioModyfikowany       =0;
@@ -129,7 +130,6 @@ public class GuiAmbassador extends BaseAmbassador {
         }
         else if(this.objects.get(theObject) == this.pasazerClass){
 
-            //Wyszukanie ktora stacja zmienila stan
             int idPasazera = 0;
             for(int i = 0;i<theAttributes.size();i++){
                 try{
@@ -145,7 +145,6 @@ public class GuiAmbassador extends BaseAmbassador {
                 }
             }
 
-            //modyfikowanie wartosci zmiennych stacji
             Pasazer pasazer =  getPasazerObjInstances(idPasazera);
             for(int i = 0;i<theAttributes.size();i++){
                 try{
@@ -160,6 +159,8 @@ public class GuiAmbassador extends BaseAmbassador {
                         pasazer.setTyp(EncodingHelpers.decodeInt(value));
                     } else if (handle == pasazerAttr_stacjaDocelowa && value != null){
                         pasazer.setStacjaDocelowa(EncodingHelpers.decodeInt(value));
+                    } else if(handle == pasazerAttr_naPromie && value != null){
+                        pasazer.setNaPromie(EncodingHelpers.decodeInt(value));
                     }
 
                 }catch(Exception ex){

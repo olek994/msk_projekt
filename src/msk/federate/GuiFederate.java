@@ -37,7 +37,6 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
     private boolean stopSim = false;
     private Map<Integer, Integer> liczbaPasazerowNaStacji;
     private Map<Integer, Integer> liczbaSamochodowNaStacji;
-    private int liczbaWolnychMiejscNaPromie = 0;
     private GuiApplication guiApplication;
 
     public GuiFederate(GuiApplication guiApplication) {
@@ -88,10 +87,6 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
 
 
 
-        Platform.runLater(() -> {
-            this.guiApplication.liczbaWolnychMiejscNaPromie.setText(liczbaWolnychMiejscNaPromie+ "");
-        });
-
         //--PROM--//
         if (this.federationAmbassador.promClassFlag_newInstance) {
             Prom prom = this.federationAmbassador.getObjectInstances(Prom.class);
@@ -104,7 +99,6 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
             this.federationAmbassador.promClassFlag_attrsUpdated = false;
 
             System.out.println("LICZBA MIEJSC: " + prom.getLiczbaWolnychMiejsc());
-            liczbaWolnychMiejscNaPromie = prom.getLiczbaWolnychMiejsc();
 
             System.out.println("ZAKTUALIZOWANO PARAMETRY PROMU: " + prom.getNumerStacji());
 
@@ -184,6 +178,14 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
 
         }
 
+        Prom prom = this.federationAmbassador.getObjectInstances(Prom.class);
+        if(prom != null){
+            System.out.println("PROM LICZBA WOLNYCH MIEJSC: "+prom.getLiczbaWolnychMiejsc());
+            Platform.runLater(() -> {
+                this.guiApplication.liczbaWolnychMiejscNaPromie.setText(prom.getLiczbaWolnychMiejsc()+ "");
+            });
+        }
+
         //--STACJA--//
         if (this.federationAmbassador.stacjaClassFlag_newInstance) {
             Stacja stacja = this.federationAmbassador.getStacjeObjInstances(this.federationAmbassador.stacjaOstatnioDodana);
@@ -199,94 +201,6 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
 
             System.out.println("ZAKTUALIZOWANO PARAMETRY Stacji: " + stacja.getNumer() + ", " + stacja.getMaxDlugoscKolejki() + ", " + stacja.getNumerKolejnejStacji() + " LiczbaPasazerow: " + stacja.getLiczbaPasazerow() + " LiczbaSamochodow: " + stacja.getLiczbaSamochodow());
 
-
-            switch (stacja.getNumer()) {
-                case 1:
-                    if(liczbaPasazerowNaStacji.get(1) > stacja.getLiczbaPasazerow()){
-                        //jezeli w gui jest wiecej pasazerow niz na stacji
-                        liczbaPasazerowNaStacji.put(1,stacja.getLiczbaPasazerow());
-                    }
-                    if(liczbaSamochodowNaStacji.get(1) > stacja.getLiczbaSamochodow()){
-                        //jezeli w gui jest wiecej samochodow niz na stacji
-                        liczbaSamochodowNaStacji.put(1,stacja.getLiczbaSamochodow());
-                    }
-                    Platform.runLater(() -> {
-                        this.guiApplication.liczbaPasazerowPierwszej.setText(liczbaPasazerowNaStacji.get(1) + "");
-                        this.guiApplication.liczbaSamochodowPierwszej.setText(liczbaSamochodowNaStacji.get(1) + "");
-                    });
-
-                    break;
-                case 2:
-                    if(liczbaPasazerowNaStacji.get(2) > stacja.getLiczbaPasazerow()){
-                        //jezeli w gui jest wiecej pasazerow niz na stacji
-                        liczbaPasazerowNaStacji.put(2,stacja.getLiczbaPasazerow());
-                    }
-                    if(liczbaSamochodowNaStacji.get(2) > stacja.getLiczbaSamochodow()){
-                        //jezeli w gui jest wiecej samochodow niz na stacji
-                        liczbaSamochodowNaStacji.put(2,stacja.getLiczbaSamochodow());
-                    }
-                    Platform.runLater(() -> {
-                        this.guiApplication.liczbaPasazerowDrugiej.setText(liczbaPasazerowNaStacji.get(2) + "");
-                        this.guiApplication.liczbaSamochodowDrugiej.setText(liczbaSamochodowNaStacji.get(2) + "");
-                    });
-                    break;
-                case 3:
-                    if(liczbaPasazerowNaStacji.get(3) > stacja.getLiczbaPasazerow()){
-                        //jezeli w gui jest wiecej pasazerow niz na stacji
-                        liczbaPasazerowNaStacji.put(3,stacja.getLiczbaPasazerow());
-                    }
-                    if(liczbaSamochodowNaStacji.get(3) > stacja.getLiczbaSamochodow()){
-                        //jezeli w gui jest wiecej samochodow niz na stacji
-                        liczbaSamochodowNaStacji.put(3,stacja.getLiczbaSamochodow());
-                    }
-                    Platform.runLater(() -> {
-                        this.guiApplication.liczbaPasazerowTrzeciej.setText(liczbaPasazerowNaStacji.get(3) + "");
-                        this.guiApplication.liczbaSamochodowTrzeciej.setText(liczbaSamochodowNaStacji.get(3) + "");
-                    });
-                    break;
-                case 4:
-                    if(liczbaPasazerowNaStacji.get(4) > stacja.getLiczbaPasazerow()){
-                        //jezeli w gui jest wiecej pasazerow niz na stacji
-                        liczbaPasazerowNaStacji.put(4,stacja.getLiczbaPasazerow());
-                    }
-                    if(liczbaSamochodowNaStacji.get(4) > stacja.getLiczbaSamochodow()){
-                        //jezeli w gui jest wiecej samochodow niz na stacji
-                        liczbaSamochodowNaStacji.put(4,stacja.getLiczbaSamochodow());
-                    }
-                    Platform.runLater(() -> {
-                        this.guiApplication.liczbaPasazerowCzwartej.setText(liczbaPasazerowNaStacji.get(4) + "");
-                        this.guiApplication.liczbaSamochodowCzwartej.setText(liczbaSamochodowNaStacji.get(4) + "");
-                    });
-                    break;
-                case 5:
-                    if(liczbaPasazerowNaStacji.get(5) > stacja.getLiczbaPasazerow()){
-                        //jezeli w gui jest wiecej pasazerow niz na stacji
-                        liczbaPasazerowNaStacji.put(5,stacja.getLiczbaPasazerow());
-                    }
-                    if(liczbaSamochodowNaStacji.get(5) > stacja.getLiczbaSamochodow()){
-                        //jezeli w gui jest wiecej samochodow niz na stacji
-                        liczbaSamochodowNaStacji.put(5,stacja.getLiczbaSamochodow());
-                    }
-                    Platform.runLater(() -> {
-                        this.guiApplication.liczbaPasazerowPiatej.setText(liczbaPasazerowNaStacji.get(5) + "");
-                        this.guiApplication.liczbaSamochodowPiatej.setText(liczbaSamochodowNaStacji.get(5) + "");
-                    });
-                    break;
-                case 6:
-                    if(liczbaPasazerowNaStacji.get(6) > stacja.getLiczbaPasazerow()){
-                        //jezeli w gui jest wiecej pasazerow niz na stacji
-                        liczbaPasazerowNaStacji.put(6,stacja.getLiczbaPasazerow());
-                    }
-                    if(liczbaSamochodowNaStacji.get(6) > stacja.getLiczbaSamochodow()){
-                        //jezeli w gui jest wiecej samochodow niz na stacji
-                        liczbaSamochodowNaStacji.put(6,stacja.getLiczbaSamochodow());
-                    }
-                    Platform.runLater(() -> {
-                        this.guiApplication.liczbaPasazerowSzostej.setText(liczbaPasazerowNaStacji.get(6) + "");
-                        this.guiApplication.liczbaSamochodowSzostej.setText(liczbaSamochodowNaStacji.get(6) + "");
-                    });
-                    break;
-            }
 
 
         }
@@ -305,91 +219,179 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
             this.federationAmbassador.pasazerClassFlag_attrsUpdated = false;
             this.federationAmbassador.pasazerOstatnioModyfikowany = 0;
 
-            System.out.println("ZAKTUALIZOWANO PARAMETRY Pasazera: " + pasazer.getId());
+            System.out.println("ZAKTUALIZOWANO PARAMETRY Pasazera: " + pasazer.getId()+" Na promie "+pasazer.getNaPromie());
 
-            int pasazerowie;
-            int samochody;
-            switch (pasazer.getNumerStacji()) {
-                case 1:
-                    pasazerowie = liczbaPasazerowNaStacji.get(1);
-                    samochody = liczbaSamochodowNaStacji.get(1);
-                    if(pasazer.getTyp() == 1){
-                        liczbaPasazerowNaStacji.put(1,pasazerowie+1);
-                    }else if(pasazer.getTyp() == 2){
-                        liczbaSamochodowNaStacji.put(1,samochody+1);
-                    }
-                    Platform.runLater(() -> {
-                        this.guiApplication.liczbaPasazerowPierwszej.setText(liczbaPasazerowNaStacji.get(1) + "");
-                        this.guiApplication.liczbaSamochodowPierwszej.setText(liczbaSamochodowNaStacji.get(1) + "");
-                    });
+            if(pasazer.getNaPromie() == 0){
+                int pasazerowie;
+                int samochody;
+                switch (pasazer.getNumerStacji()) {
+                    case 1:
+                        pasazerowie = liczbaPasazerowNaStacji.get(1);
+                        samochody = liczbaSamochodowNaStacji.get(1);
+                        if(pasazer.getTyp() == 1){
+                            liczbaPasazerowNaStacji.put(1,pasazerowie+1);
+                        }else if(pasazer.getTyp() == 2){
+                            liczbaSamochodowNaStacji.put(1,samochody+1);
+                        }
+                        Platform.runLater(() -> {
+                            this.guiApplication.liczbaPasazerowPierwszej.setText(liczbaPasazerowNaStacji.get(1) + "");
+                            this.guiApplication.liczbaSamochodowPierwszej.setText(liczbaSamochodowNaStacji.get(1) + "");
+                        });
 
-                    break;
-                case 2:
-                    pasazerowie = liczbaPasazerowNaStacji.get(2);
-                    samochody = liczbaSamochodowNaStacji.get(2);
-                    if(pasazer.getTyp() == 1){
-                        liczbaPasazerowNaStacji.put(2,pasazerowie+1);
-                    }else if(pasazer.getTyp() == 2){
-                        liczbaSamochodowNaStacji.put(2,samochody+1);
-                    }
-                    Platform.runLater(() -> {
-                        this.guiApplication.liczbaPasazerowDrugiej.setText(liczbaPasazerowNaStacji.get(2) + "");
-                        this.guiApplication.liczbaSamochodowDrugiej.setText(liczbaSamochodowNaStacji.get(2) + "");
-                    });
-                    break;
-                case 3:
-                    pasazerowie = liczbaPasazerowNaStacji.get(3);
-                    samochody = liczbaSamochodowNaStacji.get(3);
-                    if(pasazer.getTyp() == 1){
-                        liczbaPasazerowNaStacji.put(3,pasazerowie+1);
-                    }else if(pasazer.getTyp() == 2){
-                        liczbaSamochodowNaStacji.put(3,samochody+1);
-                    }
-                    Platform.runLater(() -> {
-                        this.guiApplication.liczbaPasazerowTrzeciej.setText(liczbaPasazerowNaStacji.get(3) + "");
-                        this.guiApplication.liczbaSamochodowTrzeciej.setText(liczbaSamochodowNaStacji.get(3) + "");
-                    });
-                    break;
-                case 4:
-                    pasazerowie = liczbaPasazerowNaStacji.get(4);
-                    samochody = liczbaSamochodowNaStacji.get(4);
-                    if(pasazer.getTyp() == 1){
-                        liczbaPasazerowNaStacji.put(4,pasazerowie+1);
-                    }else if(pasazer.getTyp() == 2){
-                        liczbaSamochodowNaStacji.put(4,samochody+1);
-                    }
-                    Platform.runLater(() -> {
-                        this.guiApplication.liczbaPasazerowCzwartej.setText(liczbaPasazerowNaStacji.get(4) + "");
-                        this.guiApplication.liczbaSamochodowCzwartej.setText(liczbaSamochodowNaStacji.get(4) + "");
-                    });
-                    break;
-                case 5:
-                    pasazerowie = liczbaPasazerowNaStacji.get(5);
-                    samochody = liczbaSamochodowNaStacji.get(5);
-                    if(pasazer.getTyp() == 1){
-                        liczbaPasazerowNaStacji.put(5,pasazerowie+1);
-                    }else if(pasazer.getTyp() == 2){
-                        liczbaSamochodowNaStacji.put(5,samochody+1);
-                    }
-                    Platform.runLater(() -> {
-                        this.guiApplication.liczbaPasazerowPiatej.setText(liczbaPasazerowNaStacji.get(5) + "");
-                        this.guiApplication.liczbaSamochodowPiatej.setText(liczbaSamochodowNaStacji.get(5) + "");
-                    });
-                    break;
-                case 6:
-                    pasazerowie = liczbaPasazerowNaStacji.get(6);
-                    samochody = liczbaSamochodowNaStacji.get(6);
-                    if(pasazer.getTyp() == 1){
-                        liczbaPasazerowNaStacji.put(6,pasazerowie+1);
-                    }else if(pasazer.getTyp() == 2){
-                        liczbaSamochodowNaStacji.put(6,samochody+1);
-                    }
-                    Platform.runLater(() -> {
-                        this.guiApplication.liczbaPasazerowSzostej.setText(liczbaPasazerowNaStacji.get(6) + "");
-                        this.guiApplication.liczbaSamochodowSzostej.setText(liczbaSamochodowNaStacji.get(6) + "");
-                    });
-                    break;
+                        break;
+                    case 2:
+                        pasazerowie = liczbaPasazerowNaStacji.get(2);
+                        samochody = liczbaSamochodowNaStacji.get(2);
+                        if(pasazer.getTyp() == 1){
+                            liczbaPasazerowNaStacji.put(2,pasazerowie+1);
+                        }else if(pasazer.getTyp() == 2){
+                            liczbaSamochodowNaStacji.put(2,samochody+1);
+                        }
+                        Platform.runLater(() -> {
+                            this.guiApplication.liczbaPasazerowDrugiej.setText(liczbaPasazerowNaStacji.get(2) + "");
+                            this.guiApplication.liczbaSamochodowDrugiej.setText(liczbaSamochodowNaStacji.get(2) + "");
+                        });
+                        break;
+                    case 3:
+                        pasazerowie = liczbaPasazerowNaStacji.get(3);
+                        samochody = liczbaSamochodowNaStacji.get(3);
+                        if(pasazer.getTyp() == 1){
+                            liczbaPasazerowNaStacji.put(3,pasazerowie+1);
+                        }else if(pasazer.getTyp() == 2){
+                            liczbaSamochodowNaStacji.put(3,samochody+1);
+                        }
+                        Platform.runLater(() -> {
+                            this.guiApplication.liczbaPasazerowTrzeciej.setText(liczbaPasazerowNaStacji.get(3) + "");
+                            this.guiApplication.liczbaSamochodowTrzeciej.setText(liczbaSamochodowNaStacji.get(3) + "");
+                        });
+                        break;
+                    case 4:
+                        pasazerowie = liczbaPasazerowNaStacji.get(4);
+                        samochody = liczbaSamochodowNaStacji.get(4);
+                        if(pasazer.getTyp() == 1){
+                            liczbaPasazerowNaStacji.put(4,pasazerowie+1);
+                        }else if(pasazer.getTyp() == 2){
+                            liczbaSamochodowNaStacji.put(4,samochody+1);
+                        }
+                        Platform.runLater(() -> {
+                            this.guiApplication.liczbaPasazerowCzwartej.setText(liczbaPasazerowNaStacji.get(4) + "");
+                            this.guiApplication.liczbaSamochodowCzwartej.setText(liczbaSamochodowNaStacji.get(4) + "");
+                        });
+                        break;
+                    case 5:
+                        pasazerowie = liczbaPasazerowNaStacji.get(5);
+                        samochody = liczbaSamochodowNaStacji.get(5);
+                        if(pasazer.getTyp() == 1){
+                            liczbaPasazerowNaStacji.put(5,pasazerowie+1);
+                        }else if(pasazer.getTyp() == 2){
+                            liczbaSamochodowNaStacji.put(5,samochody+1);
+                        }
+                        Platform.runLater(() -> {
+                            this.guiApplication.liczbaPasazerowPiatej.setText(liczbaPasazerowNaStacji.get(5) + "");
+                            this.guiApplication.liczbaSamochodowPiatej.setText(liczbaSamochodowNaStacji.get(5) + "");
+                        });
+                        break;
+                    case 6:
+                        pasazerowie = liczbaPasazerowNaStacji.get(6);
+                        samochody = liczbaSamochodowNaStacji.get(6);
+                        if(pasazer.getTyp() == 1){
+                            liczbaPasazerowNaStacji.put(6,pasazerowie+1);
+                        }else if(pasazer.getTyp() == 2){
+                            liczbaSamochodowNaStacji.put(6,samochody+1);
+                        }
+                        Platform.runLater(() -> {
+                            this.guiApplication.liczbaPasazerowSzostej.setText(liczbaPasazerowNaStacji.get(6) + "");
+                            this.guiApplication.liczbaSamochodowSzostej.setText(liczbaSamochodowNaStacji.get(6) + "");
+                        });
+                        break;
+                }
+            } else if(pasazer.getNaPromie() == 1 && pasazer.getWysiada() == 0){
+                System.out.println("PASAZER WSZEDL NA PROM");
+                int pasazerowie;
+                int samochody;
+                switch (pasazer.getNumerStacji()) {
+                    case 1:
+                        pasazerowie = liczbaPasazerowNaStacji.get(1);
+                        samochody = liczbaSamochodowNaStacji.get(1);
+                        if(pasazer.getTyp() == 1){
+                            liczbaPasazerowNaStacji.put(1,pasazerowie-1);
+                        }else if(pasazer.getTyp() == 2){
+                            liczbaSamochodowNaStacji.put(1,samochody-1);
+                        }
+                        Platform.runLater(() -> {
+                            this.guiApplication.liczbaPasazerowPierwszej.setText(liczbaPasazerowNaStacji.get(1) + "");
+                            this.guiApplication.liczbaSamochodowPierwszej.setText(liczbaSamochodowNaStacji.get(1) + "");
+                        });
+
+                        break;
+                    case 2:
+                        pasazerowie = liczbaPasazerowNaStacji.get(2);
+                        samochody = liczbaSamochodowNaStacji.get(2);
+                        if(pasazer.getTyp() == 1){
+                            liczbaPasazerowNaStacji.put(2,pasazerowie-1);
+                        }else if(pasazer.getTyp() == 2){
+                            liczbaSamochodowNaStacji.put(2,samochody-1);
+                        }
+                        Platform.runLater(() -> {
+                            this.guiApplication.liczbaPasazerowDrugiej.setText(liczbaPasazerowNaStacji.get(2) + "");
+                            this.guiApplication.liczbaSamochodowDrugiej.setText(liczbaSamochodowNaStacji.get(2) + "");
+                        });
+                        break;
+                    case 3:
+                        pasazerowie = liczbaPasazerowNaStacji.get(3);
+                        samochody = liczbaSamochodowNaStacji.get(3);
+                        if(pasazer.getTyp() == 1){
+                            liczbaPasazerowNaStacji.put(3,pasazerowie-1);
+                        }else if(pasazer.getTyp() == 2){
+                            liczbaSamochodowNaStacji.put(3,samochody-1);
+                        }
+                        Platform.runLater(() -> {
+                            this.guiApplication.liczbaPasazerowTrzeciej.setText(liczbaPasazerowNaStacji.get(3) + "");
+                            this.guiApplication.liczbaSamochodowTrzeciej.setText(liczbaSamochodowNaStacji.get(3) + "");
+                        });
+                        break;
+                    case 4:
+                        pasazerowie = liczbaPasazerowNaStacji.get(4);
+                        samochody = liczbaSamochodowNaStacji.get(4);
+                        if(pasazer.getTyp() == 1){
+                            liczbaPasazerowNaStacji.put(4,pasazerowie-1);
+                        }else if(pasazer.getTyp() == 2){
+                            liczbaSamochodowNaStacji.put(4,samochody-1);
+                        }
+                        Platform.runLater(() -> {
+                            this.guiApplication.liczbaPasazerowCzwartej.setText(liczbaPasazerowNaStacji.get(4) + "");
+                            this.guiApplication.liczbaSamochodowCzwartej.setText(liczbaSamochodowNaStacji.get(4) + "");
+                        });
+                        break;
+                    case 5:
+                        pasazerowie = liczbaPasazerowNaStacji.get(5);
+                        samochody = liczbaSamochodowNaStacji.get(5);
+                        if(pasazer.getTyp() == 1){
+                            liczbaPasazerowNaStacji.put(5,pasazerowie-1);
+                        }else if(pasazer.getTyp() == 2){
+                            liczbaSamochodowNaStacji.put(5,samochody-1);
+                        }
+                        Platform.runLater(() -> {
+                            this.guiApplication.liczbaPasazerowPiatej.setText(liczbaPasazerowNaStacji.get(5) + "");
+                            this.guiApplication.liczbaSamochodowPiatej.setText(liczbaSamochodowNaStacji.get(5) + "");
+                        });
+                        break;
+                    case 6:
+                        pasazerowie = liczbaPasazerowNaStacji.get(6);
+                        samochody = liczbaSamochodowNaStacji.get(6);
+                        if(pasazer.getTyp() == 1){
+                            liczbaPasazerowNaStacji.put(6,pasazerowie-1);
+                        }else if(pasazer.getTyp() == 2){
+                            liczbaSamochodowNaStacji.put(6,samochody-1);
+                        }
+                        Platform.runLater(() -> {
+                            this.guiApplication.liczbaPasazerowSzostej.setText(liczbaPasazerowNaStacji.get(6) + "");
+                            this.guiApplication.liczbaSamochodowSzostej.setText(liczbaSamochodowNaStacji.get(6) + "");
+                        });
+                        break;
+                }
             }
+
 
 
         }
@@ -456,6 +458,7 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
         this.federationAmbassador.pasazerAttr_typ = rtiamb.getAttributeHandle("typ", this.federationAmbassador.pasazerClass);
         this.federationAmbassador.pasazerAttr_numerStacji = rtiamb.getAttributeHandle("numerStacji", this.federationAmbassador.pasazerClass);
         this.federationAmbassador.pasazerAttr_stacjaDocelowa = rtiamb.getAttributeHandle("stacjaDocelowa", this.federationAmbassador.pasazerClass);
+        this.federationAmbassador.pasazerAttr_naPromie = rtiamb.getAttributeHandle("naPromie", this.federationAmbassador.pasazerClass);
 
 
         attributes = RtiFactoryFactory.getRtiFactory().createAttributeHandleSet();
@@ -463,6 +466,7 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
         attributes.add(this.federationAmbassador.pasazerAttr_typ);
         attributes.add(this.federationAmbassador.pasazerAttr_numerStacji);
         attributes.add(this.federationAmbassador.pasazerAttr_stacjaDocelowa);
+        attributes.add(this.federationAmbassador.pasazerAttr_naPromie);
 
         rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.pasazerClass, attributes);
 

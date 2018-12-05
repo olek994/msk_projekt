@@ -27,6 +27,8 @@
         (attribute typ reliable timestamp TestSpace)
         (attribute numerStacji reliable timestamp TestSpace)
         (attribute stacjaDocelowa reliable timestamp TestSpace)
+        (attribute naPromie reliable timestamp TestSpace)
+        (attribute wysiada reliable timestamp TestSpace)
       )
       (class Stacja
         (attribute numer reliable timestamp TestSpace)

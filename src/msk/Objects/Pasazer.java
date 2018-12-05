@@ -12,7 +12,8 @@ public class Pasazer extends BaseObject {
     private int typ;
     private int numerStacji;
     private int stacjaDocelowa;
-
+    private int naPromie;
+    private int wysiada;
     public int getId() {
         return id;
     }
@@ -43,5 +44,21 @@ public class Pasazer extends BaseObject {
 
     public void setStacjaDocelowa(int stacjaDocelowa) {
         this.stacjaDocelowa = stacjaDocelowa;
+    }
+
+    public int getNaPromie() {
+        return naPromie;
+    }
+
+    public void setNaPromie(int naPromie) {
+        this.naPromie = naPromie;
+    }
+
+    public int getWysiada() {
+        return wysiada;
+    }
+
+    public void setWysiada(int wysiada) {
+        this.wysiada = wysiada;
     }
 }

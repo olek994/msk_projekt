@@ -41,6 +41,7 @@ public class StatystykaAmbassador extends BaseAmbassador {
     public int pasazerAttr_typ                   =0;
     public int pasazerAttr_numerStacji           =0;
     public int pasazerAttr_stacjaDocelowa        =0;
+    public int pasazerAttr_naPromie              =0;
     public int pasazerNumerStworzenia            =1;
     public int pasazerOstatnioDodany             =0;
     public int pasazerOstatnioModyfikowany       =0;

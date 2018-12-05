@@ -6,6 +6,7 @@ import hla.rti.jlc.RtiFactoryFactory;
 import javafx.application.Platform;
 import javafx.scene.image.Image;
 import msk.BaseFederate;
+import msk.Objects.Pasazer;
 import msk.Objects.Stacja;
 import msk.ambassador.PromAmbassador;
 
@@ -53,10 +54,10 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
             Stacja stacja = this.federationAmbassador.getStacjeObjInstances(this.federationAmbassador.stacjaOstatnioModyfikowana);
             this.federationAmbassador.stacjaClassFlag_attrsUpdated = false;
             this.federationAmbassador.stacjaOstatnioModyfikowana = 0;
-            System.out.println("LICZBA PASAZEROW: "+stacja.getLiczbaPasazerow());
-            System.out.println("LICZBA PASAZEROW na promie stacjo: "+liczbaPasazerowNaStacji.get(stacja.getNumer()));
-            System.out.println("LICZBA Samochodow: "+stacja.getLiczbaSamochodow());
-            System.out.println("LICZBA Samochodow na promie stacji: "+liczbaSamochodowNaStacji.get(stacja.getNumer()));
+//            System.out.println("LICZBA PASAZEROW: "+stacja.getLiczbaPasazerow());
+//            System.out.println("LICZBA PASAZEROW na promie stacjo: "+liczbaPasazerowNaStacji.get(stacja.getNumer()));
+//            System.out.println("LICZBA Samochodow: "+stacja.getLiczbaSamochodow());
+//            System.out.println("LICZBA Samochodow na promie stacji: "+liczbaSamochodowNaStacji.get(stacja.getNumer()));
             if(liczbaPasazerowNaStacji.get(stacja.getNumer()) < stacja.getLiczbaPasazerow()){
                 liczbaPasazerowNaStacji.replace(stacja.getNumer(),stacja.getLiczbaPasazerow());
             }
@@ -64,35 +65,6 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
                 liczbaSamochodowNaStacji.replace(stacja.getNumer(),stacja.getLiczbaPasazerow());
             }
 
-            if (numerStacji == stacja.getNumer()) {
-
-                System.out.println("NUMER STACJI: "+numerStacji);
-
-                System.out.println("LICZBA Pasazerow PROM: "+liczbaPasazerowNaStacji+" liczba pasazerow stacja: "+stacja.getLiczbaPasazerow()+" Liczba wolnych miejsc: "+LICZBA_WOLNYCH_MIEJSC);
-
-
-
-                //TODO OGARNIECIE USUWANIA PASAZEROW Z PROMU
-                //DODAWANIE PASAZEROW DO PROMU
-                if(liczbaPasazerowNaStacji.get(numerStacji) > stacja.getLiczbaPasazerow() && LICZBA_WOLNYCH_MIEJSC >= 1){
-                    System.out.println("dodano pasazera na prom");
-                    updatePromObj_LiczbaWolnychMiejsc(1,timeToAdvance);
-                }else if(liczbaSamochodowNaStacji.get(numerStacji) > stacja.getLiczbaSamochodow() && LICZBA_WOLNYCH_MIEJSC >= 3){
-                    System.out.println("Dodano samochod na prom");
-                    updatePromObj_LiczbaWolnychMiejsc(3,timeToAdvance);
-                }
-
-
-                System.out.println("LICZBA PASAZEROW: " + liczbaPasazerowNaStacji.get(numerStacji));
-                System.out.println("LICZBA SAMOCHODOW: " + liczbaSamochodowNaStacji.get(numerStacji));
-
-
-
-
-            }
-
-            liczbaPasazerowNaStacji.replace(numerStacji,stacja.getLiczbaPasazerow());
-            liczbaSamochodowNaStacji.replace(numerStacji,stacja.getLiczbaSamochodow());
 
         }
 
@@ -116,8 +88,33 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
         waittingForNextStation++;
 
 
+        //--PASAZER--//
+        if(this.federationAmbassador.pasazerClassFlag_newInstance){
+            Pasazer pasazer = this.federationAmbassador.getPasazerObjInstances(this.federationAmbassador.pasazerOstatnioDodany);
+            this.federationAmbassador.pasazerClassFlag_newInstance = false;
+            this.federationAmbassador.pasazerOstatnioDodany = 0;
 
-        //TODO DODAWANIE PASAZEROW
+
+        }
+        if(this.federationAmbassador.pasazerClassFlag_attrsUpdated){
+            Pasazer pasazer = this.federationAmbassador.getPasazerObjInstances(this.federationAmbassador.pasazerOstatnioModyfikowany);
+            this.federationAmbassador.pasazerClassFlag_attrsUpdated = false;
+            this.federationAmbassador.pasazerOstatnioModyfikowany   = 0;
+
+//            System.out.println("ZAKTUALIZOWANO PARAMETRY Pasazera: "+pasazer.getId());
+            if(pasazer.getNaPromie() == 1 && pasazer.getWysiada() == 0){ //TODO OGARNAC TYP
+                updatePromObj_LiczbaWolnychMiejsc(1,timeToAdvance);
+                System.out.println("LICZBA WOLNYCH MIEJSC: "+LICZBA_WOLNYCH_MIEJSC);
+            }else if(pasazer.getNaPromie() == 1 && pasazer.getWysiada() == 1){
+                System.out.println("PASAZZER WYSIADL Z PROMU: "+pasazer.getId());
+                updatePromObj_LiczbaWolnychMiejscDodajWolneMiejsca(1,timeToAdvance);
+            }
+
+
+
+        }
+
+
     }
 
     @Override
@@ -170,6 +167,26 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
         rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.stacjaClass,attributes);
 
 
+        //---PASAZER---//
+        this.federationAmbassador.pasazerClass                  = rtiamb.getObjectClassHandle("ObjectRoot.Pasazer");
+        this.federationAmbassador.pasazerAttr_id                = rtiamb.getAttributeHandle("id",this.federationAmbassador.pasazerClass);
+        this.federationAmbassador.pasazerAttr_typ               = rtiamb.getAttributeHandle("typ",this.federationAmbassador.pasazerClass);
+        this.federationAmbassador.pasazerAttr_numerStacji       = rtiamb.getAttributeHandle("numerStacji",this.federationAmbassador.pasazerClass);
+        this.federationAmbassador.pasazerAttr_stacjaDocelowa    = rtiamb.getAttributeHandle("stacjaDocelowa",this.federationAmbassador.pasazerClass);
+        this.federationAmbassador.pasazerAttr_naPromie          = rtiamb.getAttributeHandle("naPromie",this.federationAmbassador.pasazerClass);
+        this.federationAmbassador.pasazerAttr_wysiada           = rtiamb.getAttributeHandle("wysiada",this.federationAmbassador.pasazerClass);
+
+
+        attributes = RtiFactoryFactory.getRtiFactory().createAttributeHandleSet();
+        attributes.add(this.federationAmbassador.pasazerAttr_id);
+        attributes.add(this.federationAmbassador.pasazerAttr_typ);
+        attributes.add(this.federationAmbassador.pasazerAttr_numerStacji);
+        attributes.add(this.federationAmbassador.pasazerAttr_stacjaDocelowa);
+        attributes.add(this.federationAmbassador.pasazerAttr_naPromie);
+        attributes.add(this.federationAmbassador.pasazerAttr_wysiada);
+
+        rtiamb.subscribeObjectClassAttributes(this.federationAmbassador.pasazerClass,attributes);
+
 
     }
 
@@ -197,6 +214,15 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
         attributes.add(attrHandle, EncodingHelpers.encodeInt(LICZBA_WOLNYCH_MIEJSC - value));
         rtiamb.updateAttributeValues(this.promObj, attributes, generateTag(), convertTime(time));
         LICZBA_WOLNYCH_MIEJSC -= value;
+    }
+
+    private void updatePromObj_LiczbaWolnychMiejscDodajWolneMiejsca(int value,double time) throws SaveInProgress, AttributeNotDefined, InvalidFederationTime, RestoreInProgress, ObjectNotKnown, ConcurrentAccessAttempted, AttributeNotOwned, FederateNotExecutionMember, RTIinternalError, NameNotFound, ObjectClassNotDefined {
+        SuppliedAttributes attributes = RtiFactoryFactory.getRtiFactory().createSuppliedAttributes();
+        int classHandle = rtiamb.getObjectClass(this.promObj);
+        int attrHandle = rtiamb.getAttributeHandle( "liczbaWolnychMiejsc", classHandle );
+        attributes.add(attrHandle, EncodingHelpers.encodeInt(LICZBA_WOLNYCH_MIEJSC + value));
+        rtiamb.updateAttributeValues(this.promObj, attributes, generateTag(), convertTime(time));
+        LICZBA_WOLNYCH_MIEJSC += value;
     }
 
 
