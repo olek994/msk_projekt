@@ -216,11 +216,9 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
         if (this.federationAmbassador.pasazerClassFlag_attrsUpdated) {
             Pasazer pasazer = this.federationAmbassador.getPasazerObjInstances(this.federationAmbassador.pasazerOstatnioModyfikowany);
             this.federationAmbassador.pasazerClassFlag_attrsUpdated = false;
-            this.federationAmbassador.pasazerOstatnioModyfikowany = 0;
 
             System.out.println("ZAKTUALIZOWANO PARAMETRY Pasazera: " + pasazer.getId()+" Na promie "+pasazer.getNaPromie());
 
-            System.out.println("PASAZER PROM: "+pasazer.getNaPromie()+", WYSIADA: "+pasazer.getWysiada());
             if(pasazer.getNaPromie() == 0){
                 int pasazerowie;
                 int samochody;
@@ -414,8 +412,10 @@ public class GuiFederate extends BaseFederate<GuiAmbassador> {
                         });
                         break;
                 }
+            }else if(pasazer.getNaPromie() == 1 && pasazer.getWysiada() == 1){
+                this.federationAmbassador.removePasazerObjInstances(this.federationAmbassador.pasazerOstatnioModyfikowany);
             }
-
+            this.federationAmbassador.pasazerOstatnioModyfikowany = 0;
 
 
         }

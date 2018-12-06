@@ -88,7 +88,7 @@ public class PasazerFederate extends BaseFederate<PasazerAmbassador> {
                     nowyPasazer = createObject("Pasazer");
                     pasazerList.add(nowyPasazer);
                     pasazerowieNastacji.get(numerStacji).add(pasazerList.size() - 1);
-                    update_PasazerAttr(indexOfNewPassanger, numerStacji, typ, stacjaDocelowa, 0, timeToAdvance, indexOfNewPassanger - 1);
+                    update_PasazerAttr(indexOfNewPassanger, numerStacji, typ, stacjaDocelowa, 0, 0,timeToAdvance, indexOfNewPassanger - 1);
                     max_liczba_pasazerow.replace(numerStacji, max_liczba_pasazerow.get(numerStacji) - 1);
                     stacjaDocelowaPasazera.put(indexOfNewPassanger, stacjaDocelowa);
 
@@ -99,7 +99,7 @@ public class PasazerFederate extends BaseFederate<PasazerAmbassador> {
                     nowyPasazer = createObject("Pasazer");
                     pasazerList.add(nowyPasazer);
                     samochodyNaStacji.get(numerStacji).add(pasazerList.size() - 1);
-                    update_PasazerAttr(indexOfNewPassanger, numerStacji, typ, stacjaDocelowa, 0, timeToAdvance, indexOfNewPassanger - 1);
+                    update_PasazerAttr(indexOfNewPassanger, numerStacji, typ, stacjaDocelowa, 0,0, timeToAdvance, indexOfNewPassanger - 1);
                     max_liczba_samochodow.replace(numerStacji, max_liczba_samochodow.get(numerStacji) - 1);
 
                     stacjaDocelowaPasazera.put(indexOfNewPassanger, stacjaDocelowa);
@@ -112,7 +112,7 @@ public class PasazerFederate extends BaseFederate<PasazerAmbassador> {
 
         waitToaddNewPassanger++;
 
-
+        //PROM//
         if (this.federationAmbassador.promClassFlag_newInstance) {
             Prom prom = this.federationAmbassador.getObjectInstances(Prom.class);
             this.federationAmbassador.promClassFlag_newInstance = false;
@@ -150,7 +150,7 @@ public class PasazerFederate extends BaseFederate<PasazerAmbassador> {
             }
             wychodzeniePasazerow++;
 
-            if (prom.getNumerStacji() == poprzedniaStacjaPromu && oczekiwanieNaPojscieNaProm == 15) {
+            if (prom.getNumerStacji() == poprzedniaStacjaPromu && oczekiwanieNaPojscieNaProm == 15 && prom.getLiczbaWolnychMiejsc() > 0) {
                 List<Integer> pasazerowie = pasazerowieNastacji.get(prom.getNumerStacji());
                 List<Integer> samochody = samochodyNaStacji.get(prom.getNumerStacji());
 
@@ -240,7 +240,7 @@ public class PasazerFederate extends BaseFederate<PasazerAmbassador> {
     }
 
 
-    private void update_PasazerAttr(int idPasazer, int numerStacji, int typ, int stacjaDocelowa, int naPromie, double time, int idx) throws ObjectClassNotDefined, RTIinternalError, NameNotFound, FederateNotExecutionMember, SaveInProgress, RestoreInProgress, AttributeNotOwned, ObjectNotKnown, AttributeNotDefined, InvalidFederationTime, ConcurrentAccessAttempted {
+    private void update_PasazerAttr(int idPasazer, int numerStacji, int typ, int stacjaDocelowa, int naPromie,int wysiada, double time, int idx) throws ObjectClassNotDefined, RTIinternalError, NameNotFound, FederateNotExecutionMember, SaveInProgress, RestoreInProgress, AttributeNotOwned, ObjectNotKnown, AttributeNotDefined, InvalidFederationTime, ConcurrentAccessAttempted {
         if (idx > pasazerList.size() - 1) {
             return;
         }
@@ -252,11 +252,14 @@ public class PasazerFederate extends BaseFederate<PasazerAmbassador> {
         int attrTypHandle = rtiamb.getAttributeHandle("typ", classHandle);
         int attrStacjaDocelowaHandle = rtiamb.getAttributeHandle("stacjaDocelowa", classHandle);
         int attrNaPromieHandle = rtiamb.getAttributeHandle("naPromie", classHandle);
+        int attrWysiadaHandle = rtiamb.getAttributeHandle("wysiada", classHandle);
+
         attributes.add(attrIdHandle, EncodingHelpers.encodeInt(idPasazer));
         attributes.add(attrNumerStacjiHandle, EncodingHelpers.encodeInt(numerStacji));
         attributes.add(attrTypHandle, EncodingHelpers.encodeInt(typ));
         attributes.add(attrStacjaDocelowaHandle, EncodingHelpers.encodeInt(stacjaDocelowa));
         attributes.add(attrNaPromieHandle, EncodingHelpers.encodeInt(naPromie));
+        attributes.add(attrWysiadaHandle, EncodingHelpers.encodeInt(wysiada));
         rtiamb.updateAttributeValues(obj, attributes, generateTag(), convertTime(time));
     }
 

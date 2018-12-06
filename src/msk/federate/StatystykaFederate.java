@@ -34,6 +34,7 @@ public class StatystykaFederate extends BaseFederate<StatystykaAmbassador> {
         if (this.federationAmbassador.promClassFlag_attrsUpdated) {
             Prom prom = this.federationAmbassador.getObjectInstances(Prom.class);
             this.federationAmbassador.promClassFlag_attrsUpdated = false;
+            this.federationAmbassador.liczbaMiejscNaPromie = PromFederate.LICZBA_WOLNYCH_MIEJSC;
             if (prom.getNumerStacji() != poprzedniaStacjaPromu) {
                 //prom jest na nowej stacji
                 this.federationAmbassador.liczbaPrzeplynietychStacji++;

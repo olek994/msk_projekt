@@ -17,7 +17,7 @@ import java.util.Random;
 
 public class PromFederate extends BaseFederate<PromAmbassador> {
 
-    public static int LICZBA_WOLNYCH_MIEJSC = 30;
+    public static int LICZBA_WOLNYCH_MIEJSC = 10;
 
     private int promObj = 0;
     private Random random = new Random();
@@ -89,17 +89,19 @@ public class PromFederate extends BaseFederate<PromAmbassador> {
         if(this.federationAmbassador.pasazerClassFlag_attrsUpdated){
             Pasazer pasazer = this.federationAmbassador.getPasazerObjInstances(this.federationAmbassador.pasazerOstatnioModyfikowany);
             this.federationAmbassador.pasazerClassFlag_attrsUpdated = false;
-            this.federationAmbassador.pasazerOstatnioModyfikowany   = 0;
 
 //            System.out.println("ZAKTUALIZOWANO PARAMETRY Pasazera: "+pasazer.getId());
+            System.out.println("TYP PASAAZERA"+pasazer.getTyp());
             if(pasazer.getNaPromie() == 1 && pasazer.getWysiada() == 0){ //TODO OGARNAC TYP
                 updatePromObj_LiczbaWolnychMiejsc(1,timeToAdvance);
                 System.out.println("LICZBA WOLNYCH MIEJSC: "+LICZBA_WOLNYCH_MIEJSC);
             }else if(pasazer.getNaPromie() == 1 && pasazer.getWysiada() == 1){
                 System.out.println("PASAZZER WYSIADL Z PROMU: "+pasazer.getId());
                 updatePromObj_LiczbaWolnychMiejscDodajWolneMiejsca(1,timeToAdvance);
+                this.federationAmbassador.removePasazerObjInstances(this.federationAmbassador.pasazerOstatnioModyfikowany);
             }
 
+            this.federationAmbassador.pasazerOstatnioModyfikowany   = 0;
         }
 
 

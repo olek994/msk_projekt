@@ -54,6 +54,7 @@ public class StatystykaAmbassador extends BaseAmbassador {
     public int liczbaSamochodowKtoreWsiadlyNaProm = 0;
     public int liczbaWysiadajacychPasazerow = 0;
     public int liczbaWysiadajacychSamochodow = 0;
+    public int liczbaMiejscNaPromie = 0;
     public double czasPrzyplynieciaPromu = 0.0;
 
     @Override
@@ -204,10 +205,11 @@ public class StatystykaAmbassador extends BaseAmbassador {
             System.out.println("------STATYSTYKI KONCOWE-----");
             System.out.println("Czas przyplyniecia promu na pierwsza stacje: "+czasPrzyplynieciaPromu);
             System.out.println("Czas zakonczenia symulacji: "+this.federateTime);
+            System.out.println("Liczba miejsc na promie: "+this.liczbaMiejscNaPromie);
             System.out.println("Liczba stacji: "+liczbaDodanychStacji);
             System.out.println("Liczba pasazerow: "+liczbaDodanychPasazerow);
             System.out.println("Liczba samochodow: "+liczbaDodanychSamochodow);
-            System.out.println("Liczba przepłynietych stacji: "+liczbaPrzeplynietychStacji);
+            System.out.println("Szacowana liczba stacji do przewiezienia pasazerow w liczbie : "+liczbaDodanychPasazerow+" oraz samochodow w liczbie"+liczbaDodanychSamochodow+" to: "+liczbaPrzeplynietychStacji);
             System.out.println("Liczba wsiadajacych pasazerow: "+liczbaPasazerowKtorzyWsiedliNaProm);
             System.out.println("Liczba wsiadajacych samochodow: "+liczbaSamochodowKtoreWsiadlyNaProm);
             System.out.println("Liczba wysiadajacych pasazerow: "+liczbaWysiadajacychPasazerow);

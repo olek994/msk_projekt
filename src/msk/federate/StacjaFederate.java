@@ -124,7 +124,6 @@ public class StacjaFederate extends BaseFederate<StacjaAmbassador> {
             Pasazer pasazer = this.federationAmbassador.getPasazerObjInstances(this.federationAmbassador.pasazerOstatnioModyfikowany);
             this.federationAmbassador.pasazerClassFlag_attrsUpdated = false;
             this.federationAmbassador.pasazerOstatnioModyfikowany   = 0;
-
             System.out.println("ZAKTUALIZOWANO PARAMETRY Pasazera: "+pasazer.getId());
         }
 
